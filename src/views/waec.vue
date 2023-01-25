@@ -1,6 +1,6 @@
 <template>
   <div>
-    <semipayment  card='waec' website=" www.waecdirect.org" full_name="West African Examination Council " @makepayment="paymentPage()"></semipayment>
+    <semipayment  card='waec'  website=" www.waecdirect.org" full_name="West African Examination Council " @makepayment="paymentPage()"></semipayment>
     <div class="w-full fixed top-0 z-20  bg-black bg-opacity-50 items-center flex justify-center h-full px-6 md:px-0 lg:px-10" :class="paymentpage ? 'block' : 'hidden'">
     <div class="ul overflow-scroll mx-auto mt-20  bg-white py-5 h-screen px-10 w-1/3 ">
           <div class="flex mb-5 justify-between">
@@ -15,17 +15,16 @@
             <h1 class="text-2xl font-normal text-secondary ">Waec Scratch Card</h1>
             <h1 class="text-xl  ">₦ 1,100</h1>
             </div>
-        <inpute label="Enter Quality"  type=Number  inputValue="1" min="1" max="5"  class="mt-4 "></inpute>
+        <inpute label="Enter Quantity" @input="calculateTotal()" :type="quantity_type" v-model:inputValue="form.quantity" class="mt-4 "></inpute>
         
-        <inpute label="Charges " type =String  inputValue="100" disabled=true   plaeholder="100"   class=" mt-4"></inpute>   
+        <inpute label="Charges" :type="charges_type" inputValue="100" disabled class=" mt-4"></inpute>   
 
-        <inpute label="Total " type =String inputValue="350" disabled=true  plaeholder="total"   class="mt-4"></inpute>  
+        <inpute label="Total" :type="total_type" :max="999999999"  v-model:inputValue="form.total"  class="mt-4"></inpute>  
+        <inpute label="Username" placeholder="enter username" inputValue="" class="mt-4"></inpute>
+               <h1>{{form.quantity*360}}</h1>
+          <inpute label="Phone no "  plaeholder="er"    class="mt-4"></inpute>
 
-        <inpute label="Username " type =String   plaeholder="enter username" inputValue=""   class="mt-4"></inpute>
-
-          <inpute label="Phone no " type =String   plaeholder="er"    class="mt-4"></inpute>
-
-          <inpute label="Email " type =String   placeholder="Enter your email"   inputeValue=Number class="mt-4"></inpute>
+          <inpute label="Email" placeholder="Enter your email"   inputeValue=Number class="mt-4"></inpute>
           <p class="text-sm text-center mt-5 ">Make payment with</p> 
           <div class="w-full flex justify-center">
             <PrimaryBtn class="rounded-xl text-xl flex gap-3 mt-5 w-fit">  Paystack<img src="@/assets/image/paystack.png" alt="" class="w-5 "></PrimaryBtn>
@@ -44,10 +43,19 @@
 export default {
 
  data(){
-   return {
-   paymentpage: false,
-     
+    return {
+      paymentpage: false,
+      form: {
+        quantity: 1,
+        total: 350,
+       
+      },
+      total_type: NaN,
+      charges_type: NaN,
+      quantity_type: NaN,
+       
     }
+    
   },
 
   methods:{
@@ -60,8 +68,15 @@ export default {
      console.log('working')
     },
 
-    
+    calculateTotal(){
+      console.log()
+      let tonumber = Number.form.quantity
+      console.log(tonumber)
+      this.form.total = tonumber *350
+      
+    }
   },
+
 }
 </script>
 

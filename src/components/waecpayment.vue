@@ -34,7 +34,7 @@
                     <div >
                         <h1 class="text-xl mb-2 font-bold text-primary">How to Check {{card}}Results Online </h1>
                         <ul class="tr tracking-normal list-decimal">
-                     <li> Visit the {{card}} Official Website,<a href="https://www.waecdirect.org/" class="hover:text-secondary">{{website}}</a></li>
+                     <li> Visit the {{card}} Official Website,<a href="" class="hover:text-secondary">{{website}}</a></li>
                      <li> Select your Exam Year and Exam Type</li>
                      <li>Enter your Exam Number (a combination of your Center Number and Seat Number).</li>
                      <li> Input the Card details (Pin and Serial Number) you bought from www.abaniseede.com</li>
@@ -68,11 +68,14 @@ export default {
     Card_pin: String,
     card: String,
      website: String,
+    
+   
   },
  
   methods:{
   Startpayment(){
   this.$emit('makepayment')
+
   }
   
   }
