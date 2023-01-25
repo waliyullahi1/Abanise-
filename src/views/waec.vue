@@ -21,7 +21,7 @@
 
         <inpute label="Total" :type="total_type" :max="999999999"  v-model:inputValue="form.total"  class="mt-4"></inpute>  
         <inpute label="Username" placeholder="enter username" inputValue="" class="mt-4"></inpute>
-               <h1>{{form.quantity*360}}</h1>
+               <h1>{{form.quantity}}</h1>
           <inpute label="Phone no "  plaeholder="er"    class="mt-4"></inpute>
 
           <inpute label="Email" placeholder="Enter your email"   inputeValue=Number class="mt-4"></inpute>
@@ -70,9 +70,9 @@ export default {
 
     calculateTotal(){
       console.log()
-      let tonumber = Number.form.quantity
-      console.log(tonumber)
-      this.form.total = tonumber *350
+      
+     
+      
       
     }
   },
