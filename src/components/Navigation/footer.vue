@@ -32,7 +32,7 @@
            </div>
 
           <div class="mt-5">
-             <p class="font-normal text-xl mb-5 text-center ">USEFUL LINKs</p>
+             <p class="font-normal text-xl mb-5 text-ce ">USEFUL LINKs</p>
                  <div class="   flex flex-col  items-center gap-2 ">
                     <a href="" class="text-lg hover:text-secondary font-normal ">How it is works </a>
                     <a href="" class="text-lg hover:text-secondary font-normal w-fit  ">Blogs </a>

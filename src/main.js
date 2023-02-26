@@ -9,7 +9,7 @@ import Header from './components/Header.vue'
 import PrimaryBtn from './components/Primary.vue'
 import semipayment from './components/waecpayment.vue'
 import Footer from './components/Navigation/footer.vue'
-import inpute from "./components/Input.vue";
+import Input from "./components/Input.vue";
 
 import './assets/tailwind.css'
 
@@ -24,4 +24,4 @@ app.component('PrimaryBtn', PrimaryBtn)
 app.mount('#app')
 app.component("semipayment", semipayment);
 app.component("Footer", Footer);
-app.component("inpute", inpute);
+app.component("Input", Input);

@@ -1,12 +1,13 @@
 <template>
     <div class="w-full">
-      <label class="block text-xl w-full px-2 text-black  mb-2" v-if="label">{{label}}
-         <!-- <span class="text-red text-xl">{{error}}</span> -->
+      <label class="block text-[1rem] font-bold px-2 text-black mb-2" v-if="label">{{label}}
+         <!-- <span class="text-red text-xs">{{error}}</span> -->
       </label>
-      <input :class="{'border-red-500 focus:border-red-500 active:border-red-500' : error}" autocomplete="off"  class="w-full py-2 px-4 text-sm outline-none border-none text-black ring-0 focus:border-primary active:border-primary rounded-lg border border-trans"
-    :type="type" :disabled="disabled" :placeholder="placeholder" :value="inputValue" @input="$emit('input', $event.target.value)" ref="input" :min="min" :max="max">
+      <input :class="{'border-red-500 focus:border-red-500 active:border-red-500' : error}" autocomplete="off"  class="w-full py-2 px-4 text-sm outline-none bg-gray-100 text-black ring-0  rounded-lg border border-transparent"
+    :type="type" :disabled="disabled" :placeholder="placeholder" :min="min" :value="inputValue" @input="$emit('update:inputValue', $event.target.value)" ref="input">
       <!-- <p></p> -->
     </div>
+
     
 </template>
 
@@ -17,21 +18,13 @@
       extraClass: String,
       error: Boolean,
       label:String,
-      inputValue:[Number, String], 
-      type: Number,
+      type: String,
       disabled: Boolean,
       placeholder:String,
-      rounded:Boolean,
-      min: {
-      default: 1,
-      type: Number
-      },
-      max:{
-      default: 100,
-      type: Number
-      },
+      inputValue: String,
+      min:Number,
     },
-   
+
     methods: {
       focus() {
         this.$refs.input.focus()
