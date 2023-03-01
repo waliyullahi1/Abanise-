@@ -21,7 +21,7 @@
       type: String,
       disabled: Boolean,
       placeholder:String,
-      inputValue: String,
+      inputValue: [String, Number],
       min:Number,
     },
 

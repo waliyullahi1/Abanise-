@@ -2,13 +2,16 @@
 <div class=" w-full bg-white shodow ">
  <div class=" container w-full  my-auto mx-auto bg-white mb-5  flex justify-between items-center ">
     <logo></logo>
-    <nav   class=" md:anination  mx duration-700 ease-in-out transform bg-white md:top-0 top-20  absolute place-content-center md:bg-white md:static justify-center md:translate-x- pl-20 h-scren md:h-7 md:w-full w-1/3 md:justify-end justify-end md:flex" :class="rotate ? ' -left-[0] block md:translate-x-[0rem] sm:translate-x-[34rem]   translate-x-[23rem] duration-700 ease-in-out transform ' : 'hidden'">
+    <nav   class=" md:anination  mx duration-700 ease-in-out transform bg-white md:top-0 top-20  absolute place-content-center md:bg-white md:static justify-center md:translate-x- pl-20 h-screen md:h-7 md:w-full w-1/3 md:justify-end justify-end items-center md:flex" :class="rotate ? ' -left-[0] block md:translate-x-[0rem] sm:translate-x-[34rem]   translate-x-[23rem] duration-700 ease-in-out transform ' : 'hidden'">
      <ul  class="  justify-center md:flex-row flex-col flex  md:gap-5 gap-4">
-      <li class=" font-semibold text-lg hover:text-primary md:hover:border-b boder border-transparent hover:border-b-primary transform duration-200 ease-in-out "> <router-link to="/">Home</router-link></li>
-      <li class=" font-semibold text-lg  hover:text-primary hover:border-b boder border-transparent hover:border-b-primary transform duration-200 ease-in-out "><router-link to="">Cards</router-link></li>
-      <li class=" font-semibold text-lg hover:text-primary hover:border-b boder border-transparent hover:border-b-primary transform duration-200 ease-in-out "><a href="">About</a></li>
+      <li class=" font-semibold  hover:text-primary md:hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "> <router-link to="/">Home</router-link></li>
+      <li class=" font-semibold   hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="">Cards</router-link></li>
+
+       <li class=" font-semibold   hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="">Transaction tracking</router-link></li>
+
+      <li class=" font-semibold  hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="">About</a></li>
      
-      <li class=" font-semibold text-lg  hover:text-primary hover:border-b boder border-transparent hover:border-b-primary transform duration-200 ease-in-out "><a href="">Sign in</a></li>
+      <li class=" font-semibold  hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="">Sign in</a></li>
      
      
      </ul>

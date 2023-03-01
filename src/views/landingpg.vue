@@ -2,22 +2,24 @@
    
  <div class="overflow-y-hidden">
   
-   <Header class="fixed z-50 top-0"></Header> 
-    <div class="w-full h-20"></div>
+   <Header class="fixed z-50 top-0"></Header>
+   
+    <div class="w-full h-10"></div>
     <section >
     <div class="  image w-full border h-[30rem] overflow-hidden ">
     <div class="container flex flex-col gap-5 justify-center h-full mx-auto "> 
-        <p class= "  font-semibold text-6xl text-white">Buy scratch <span class="text-secondary">Card</span></p>
+        <p class= "  font-semibold text-7xl text-white font-mermaid text-[Mermaid Swash Caps, Confetti Stream]">Buy scratch <span class="text-secondary">Card</span></p>
         <p class="text-xl text-white ">Get instant accesss to scratch card PINs for WAEC,  NECO  and NABTEB</p>
         
     </div>
     </div>
     </section>
     <section class="container  my-10  mt-10 mx-auto">
+        <marquee behavior="scroll" direction="left" scrollamount="" class="w-full text-black "><span>this is text 43535467586789782433453464575678562353346</span></marquee>
       <div class="  flex flex-col justify-center gap-5 items-center ">
         <p class="text-3xl font-bold text">CARDS PRODUCT</p>
         <p class="text-xl font-normal ">CLICK ON ANY CARD BELOW TO BUY THE CARD PIN INSTANTLY </p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-10 px-20 ">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-10 px-10 ">
             <div v-for="item in item" :key="item.id" class=" group shadows border-primary w-full overflow-hidden   flex flex-col gap-3 rounded-[2rem]  ">
                 <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
@@ -59,6 +61,7 @@
 
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
+    import nabteb from  '@/assets/image/nabteb1.jpg';
    
     export default {
         data(){
@@ -78,16 +81,16 @@
                         id: 2,
                         image: neco,
                         price:'1000',
-                        card:'Waec',
+                        card:'Neco',
                         header:'Scratch card ',
                         condition:'result checker'
                     },
 
                     {
                         id: 3,
-                        image: neco,
+                        image: nabteb,
                         price:'1000',
-                        card:'Waec',
+                        card:'Nabteb',
                         header:'Scratch card ',
                         condition:'result checker'
                     },
@@ -96,9 +99,19 @@
                       {
                         id: 4,
                         image: waecImg,
-                        price:'1000',
-                        card:'Waec',
+                        price:'1500',
+                        card:'GCEWaec',
                         header:'Pin card ',
+                        condition:'For registration'
+                    },
+
+                   
+                    {
+                        id: 5,
+                        image: neco,
+                        price:'1500',
+                        card:'Waec',
+                        header:'Result Verification ',
                         condition:'For registration'
                     }
                 ]
@@ -148,7 +161,7 @@
         background-size:cover;
     }
     .image{
-        background-image: url(../assets/image/waes.jpg);
+        background-image: url(../assets/image/hero5.jpg);
         background-position:right;
         background-repeat: no-repeat;
         background-size:cover;

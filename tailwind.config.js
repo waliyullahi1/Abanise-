@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-      primary : '#164b3b',
-      secondary: '#dc352d'
-      
+        primary: "#164b3b",
+        secondary: "#dc352d",
+      },
+      fontFamily: {
+        mermaid: "Mermaid Swash Caps",
       },
     },
   },
