@@ -12,9 +12,21 @@ const router = createRouter({
     },
 
     {
-      path: "/waec/:id",
-      name: "about",
+      path: "/card/:id",
+      name: "landingpadw",
       component: () => import("../views/waec.vue"),
+    },
+
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("../views/loginpage.vue"),
+    },
+
+    {
+      path: "/Register",
+      name: "register",
+      component: () => import("../views/Registerpage.vue"),
     },
   ],
 });
