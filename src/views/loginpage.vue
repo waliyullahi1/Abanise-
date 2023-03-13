@@ -13,7 +13,7 @@
 
           <label for="" class="text-primary  font-semibold text-xl ">Password</label><br>
          <div class="flex bg-white drop-shadow-md border-primary mt-2 bg-gray-100  ">
-          <img src="@/assets/image/password.svg" alt="" class=" py-2  w-[2.5rem] border-primary border-b-4"> <input type="password" class="w-full focus:bg-grey-100 font-semibold  border-primary border-b-4 bg-gray-100 outline-none focus:border-secondary  border-r-4 rounded-r-lg  " placeholder="Username">
+          <input type="password" class="w-full focus:bg-grey-100 font-semibold  border-primary border-b-4 bg-gray-100 outline-none focus:border-secondary  border-r-4 rounded-r-lg  " placeholder="Username">
         </div>
           <a href="" class="font-semibold text-x">Forget password </a>
            <Button class="mt-10" :loading="loadingState" loadingText="Authenticating">Login </Button> 
@@ -26,7 +26,7 @@
         </form>
       </div>
     </div>
-        <!-- <Input label="Charges" type="text" class="  " placeholder="Enter your email address" :error="false" inputValue="100" :disabled=disabled ></Input> -->
+       
         </div>
     </div>
   </div>
