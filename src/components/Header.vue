@@ -11,7 +11,7 @@
 
       <li class=" font-semibold  hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="">About</a></li>
      
-      <li class=" font-semibold  hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="">Sign in</a></li>
+      <li class=" font-semibold  hover:text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/register">Sign in</router-link></li>
      
      
      </ul>

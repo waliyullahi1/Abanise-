@@ -19,7 +19,9 @@
            <Button class="mt-10" :loading="loadingState" loadingText="Authenticating">Login </Button> 
             <div class="justify-between flex ">
               
-             <p>Dont have account <a href="" class="text-secondary text-[15px] font-semibold">Sign up</a></p>
+            <router-link to="/Register">
+              <p>Dont have account <a href="" class="text-secondary text-[15px] font-semibold">Sign up</a></p>
+            </router-link> 
             </div> 
         </form>
       </div>

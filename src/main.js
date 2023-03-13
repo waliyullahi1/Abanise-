@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import dashbord from "./components/dashboardbtn.vue"
 import logo from './components/Navigation/logo.vue'
 import logos from './components/Navigation/Logos.vue'
 import Header from './components/Header.vue'
@@ -27,3 +28,4 @@ app.component("semipayment", semipayment);
 app.component("Footer", Footer);
 app.component("Input", Input);
 app.component("Button", Button);
+app.component("dashbord", dashbord);

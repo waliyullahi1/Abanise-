@@ -233,7 +233,7 @@
            <div @click="hiddenpage()"> <img src="@/assets/image/cancel.svg" class="w-8"/></div>
           </div>
 
-           <div class=" border drop-shadow-2xl py-5 px-5   rounded-xl bg-white bg-slate-200">
+           <div class=" border drop-shadow-2xl py-5 px-5   rounded-xl bg-white bg-gray-100">
           <form action="" class=" ">
             <div class="flex flex-col justify-center mb-10 items-center">
             <h1 class="text-primary font-bold text-xl ">Scratch card</h1>

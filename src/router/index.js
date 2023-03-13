@@ -28,6 +28,35 @@ const router = createRouter({
       name: "register",
       component: () => import("../views/Registerpage.vue"),
     },
+
+    {
+      path: "/Dashboard",
+      name: "dashboard",
+      component: () => import("../views/Homepage.vue"),
+    },
+
+    {
+      path: "/datapage",
+      name: "datapge",
+      component: () => import("../views/Datapage.vue"),
+    },
+
+    {
+      path: "/airtime",
+      name: "airtime",
+      component: () => import("../views/Airtime.vue"),
+    },
+
+    {
+      path: "/fund",
+      name: "fund",
+      component: () => import("../views/fund.vue"),
+    },
+    {
+      path: "/scratchcards",
+      name: "scratch",
+      component: () => import("../views/scratch.vue"),
+    },
   ],
 });
 
