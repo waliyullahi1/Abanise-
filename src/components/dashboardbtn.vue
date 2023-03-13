@@ -7,7 +7,7 @@
       </div>
       
       <div class="flex gap-3 items-center">
-        <img src="../assets/image/Account.svg" class="w-[30px]  border rounded-full" alt="">
+        <img src="../assets/image/account.svg" class="w-[30px]  border rounded-full" alt="">
         <p class="font-semibold flex text-sm ">{{accountname}} Account  <img src="../assets/image/down.svg" alt="" class="w-5 z-10 ml-7"></p>
       </div>
      <div>
