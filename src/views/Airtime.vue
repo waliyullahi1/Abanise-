@@ -37,7 +37,7 @@
                   <small>Seperate multiple Recipient with comma (,)</small>
               </div>
              <label for="" class="text-sm" >Allow Ported Numbers</label>
-               <Button class="mt-" :loading="loadingState" @click="register()" loadingText="Authenticating"> Sign up </Button> 
+               <Button class="mt-" :loading="loadingState" @click="register()" loadingText="Authenticating"> Previews </Button> 
            
         </form>
 

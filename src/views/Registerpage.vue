@@ -46,7 +46,7 @@
         </form>
       </div>
     </div>
-        <!-- <Input label="Charges" type="text" class="  " placeholder="Enter your email address" :error="false" inputValue="100" :disabled=disabled ></Input> -->
+       
         </div>
     </div>
   </div>
