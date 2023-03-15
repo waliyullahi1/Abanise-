@@ -5,12 +5,12 @@
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
         <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-semibold text-2xl shadow bg-white ">
-          <form action="" class=" flex  flex-col gap-5 h-fit p-8 text-xl font-semibold">
+        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-s tl shadow bg-white ">
+          <form action="" class=" flex  flex-col gap-5 h-fit p-8 text-xl ">
 
               <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Network</label>
-                 <select  class="w-full font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " placeholder="Password">
+                 <select  class="w-full  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] " placeholder="Password">
                   <option value="network">Network</option>
                   <option value="mtn">MTN</option>
                   <option value="mtn">GLO</option>
@@ -21,19 +21,15 @@
 
                <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Amount</label>
-                 <input   class="w-full font-semibold rounded-[.2rem]  py-1 px-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " placeholder="Amount">
-                
+                 <input   class="w-full  rounded-[.2rem]  py-1 px-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100  py-[.5rem] border " placeholder="Amount">
 
-                 
-
-                  
 
                   
               </div>
 
               <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary   text-[17px] ">Recipients</label>
-                  <textarea name="" rows="4" placeholder="Recipients" class="text-primary border-gray-100  border-[3px] py-2 px-2   outline-none text-[17px]"></textarea>
+                  <textarea name="" rows="3" placeholder="Recipients" class="text-primary border-gray-100 border py- px-2   outline-none text-[17px]"></textarea>
                   <small>Seperate multiple Recipient with comma (,)</small>
               </div>
              <label for="" class="text-sm" >Allow Ported Numbers</label>
@@ -49,8 +45,23 @@
 
 <script>
 export default {
+  data(){
+      return{
+      loadingState:false,
+      
+    }
+  },
 
+  methods:{
+     register(){
+      this.loadingState = true
+      setTimeout(() => {
+        this.$router.push({path: '/preview'})
+      }, 1000);
+    }
+  }
 }
+   
 </script>
 
 <style>

@@ -57,6 +57,18 @@ const router = createRouter({
       name: "scratch",
       component: () => import("../views/scratch.vue"),
     },
+
+    {
+      path: "/preview",
+      name: "previews",
+      component: () => import("../views/preview.vue"),
+    },
+
+    {
+      path: "/prev",
+      name: "prev",
+      component: () => import("../views/previewsd.vue"),
+    },
   ],
 });
 

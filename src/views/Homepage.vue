@@ -5,7 +5,7 @@
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
        <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full w-2/5 h-fit shadows rounded-[1rem] py-5 px-5 text-semibold text-2xl shadow bg-white ">
+        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-s tl shadow bg-white  ">
            <h1 class="text-4xl">Welcome {{User}} Waliulahi</h1>
            <div>
               <div class="w-full bg-gray-100 shadow-xl mt-[7rem] shadow py-5 bg-priary">

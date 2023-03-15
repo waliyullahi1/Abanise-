@@ -12,7 +12,7 @@
          <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-7 "><img src="@/assets/image/user.svg" alt="" class=" py-2 w-[2.5rem] border-primary border-b-4"> <input type="email" class="w-full font-semibold  border-primary border-b-4 bg-gray-100 for outline-none   border-r-4 rounded-r-lg focus:border-secondary " placeholder="Email"></div>
 
           <label for="" class="text-primary  font-semibold text-xl ">Password</label><br>
-         <div class="flex bg-white drop-shadow-md border-primary mt-2 bg-gray-100  ">
+         <div class="flex bg-white drop-shadow-md border-primary mt-2 bg-gray-100  "><img src="@/assets/image/password.svg" alt="" class=" py-2 w-[2.5rem] border-primary border-b-4">
           <input type="password" class="w-full focus:bg-grey-100 font-semibold  border-primary border-b-4 bg-gray-100 outline-none focus:border-secondary  border-r-4 rounded-r-lg  " placeholder="Username">
         </div>
           <a href="" class="font-semibold text-x">Forget password </a>

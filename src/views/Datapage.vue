@@ -5,12 +5,12 @@
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
        <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] text-semibold text-2xl shadow bg-white ">
-          <form action="" class=" flex  flex-col gap-5 h-fit p-8 text-xl font-semibold">
+        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white ">
+          <form action="" class=" flex  flex-col gap-5 h-fit p-8 text-xl font-semild">
 
               <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Network</label>
-                 <select  class="w-full font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " placeholder="Password">
+                 <select  class="w-full font-seibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " placeholder="Password">
                   <option value="network">Network</option>
                   <option value="mtn">MTN</option>
                   <option value="mtn">GLO</option>
@@ -21,7 +21,7 @@
 
                <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Data Plan</label>
-                 <select  class="w-full font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
+                 <select  class="w-full  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
                   <option value="">Select Data Plan</option>
                   <option value="1">500MB CG - ₦130 - 1 Month </option>
                   <option value="2">1GB CG - ₦260 - 1 Month </option>
@@ -37,7 +37,7 @@
                   <option value="40" >10GB SME DATA - ₦2,210 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hidden font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
+                  <select  class="w-full hiddend rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
                   <option value="">Select Data Plan</option>
                    <option value="8" >9mobile </option>
                   <option value="8" >500MB - ₦430 - 1 Month </option>
@@ -49,7 +49,7 @@
                   <option value="14" >15GB - ₦4,500 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hidden  font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
+                  <select  class="w-full hidden  d rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
                   <option value="">Select Data Plan</option>
                   <option value=""> Glo</option>
                   <option value="15" >1GB - ₦475 - 1 Month </option>
@@ -68,7 +68,7 @@
                   <option value="61" >Lasting GLO 10GB - ₦3,400 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hidden font-semibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
+                  <select  class="w-full hidden  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
                   <option value="">Select Data Plan</option>
                   <option value=""> Airtime</option>
                   <option value="">Select Data Plan</option>
@@ -96,7 +96,21 @@
 
 <script>
 export default {
+   data(){
+      return{
+         loadingState:false
 
+      }
+   },
+
+   methods:{
+      register(){
+         this.loadingState=true
+         setTimeout(() => {
+            this.$router.push({path: '/prev'}) 
+         }, 1000);
+      }
+   }
 }
 </script>
 

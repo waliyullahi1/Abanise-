@@ -19,7 +19,7 @@
     </div>
     </div>
     <div class="w-full bg-primary ">
-        <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-2 gap-10 py-10 w-full h-fit">
+        <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-1 gap-10 py-10 w-full h-fit">
         <div class=" text-white  border-l-2 pl-3 ">
             <h1 class="font-bold text-[20px] mb-2  text-white">Discounted Prices</h1>
             <p class="text-[17px] font leading-relaxed ">Buy Waec , Neco, Nabteb resultchecker and Waec pin, Nabteb pin at highly subsized prices</p>
@@ -43,7 +43,7 @@
     </div>
     </section>
     <section class="container  my-10  mt-10 mx-auto">
-        <marquee behavior="scroll" direction="left" scrollamount="" class=" text-xl w-full font-bold text-primary "><span>If you want to process your admission to any university or polythenic kindly call this whatsapp number 07068393706</span></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="" class=" text-sm md:text-xl w-full font-bo text-primary "><span>If you want to process your admission to any university or polythenic kindly call this whatsapp number 07068393706</span></marquee>
       <div class="  flex flex-col justify-cen
       ter gap-5 items-center ">
         <p class="text-3xl font-bold text">CARDS PRODUCT</p>
@@ -71,7 +71,7 @@
     </section>
     <section class="container mx-auto my-20 py-5">
        <div class="">
-        <h1 class="text-4xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
+        <h1 class="md:text-4xl text-xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
         <p class="font-normal text-2xl mb-20 text-center">We provide affordable Price for card</p>
         <div class="grid md:grid-cols-4 grid-cols-2  gap-10 justify-center "> 
             <div class="flex flex-col justify-center items-center">
