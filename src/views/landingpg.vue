@@ -8,7 +8,7 @@
     <section  class=" " >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]   overflow-hidden ">
     <div  class="container   flex flex-col gap-5 px-4 justify-center h-full mx-auto "> 
-        <p class= "  font-semibold text-5xl  md:text-[7rem] text-white font-mermaid text-[Mermaid Swash Caps, Confetti Stream]">Buy scratch <span class="text-secondary">Card</span></p>
+        <p class= "  font-semibold text-4xl px-1  md:text-[7rem] text-white font-mermaid text-[Mermaid Swash Caps, Confetti Stream]">Buy scratch <span class="text-secondary">Card</span></p>
         <p class="text-xl text-white ">Get instant accesss to scratch card PINs for WAEC,  NECO  and NABTEB</p>
         <div class="flex gap-5 mt-8 items-center">
             <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 text-2xl text-white"> <img src="@/assets/image/sign.svg" class="w-10" alt=""> login in</p></router-link>
@@ -72,24 +72,24 @@
     <section class="container mx-auto my-20 py-5">
        <div class="">
         <h1 class="md:text-4xl text-xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
-        <p class="font-normal text-2xl mb-20 text-center">We provide affordable Price for card</p>
-        <div class="grid md:grid-cols-4 grid-cols-2  gap-10 justify-center "> 
+        <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable Price for card</p>
+        <div class="grid md:grid-cols-4 grid-cols-2  md:gap-10 gap-3 justify-center "> 
             <div class="flex flex-col justify-center items-center">
-                <div class="shadows rounded-[2rem] overflow-hidden w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>
+                <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center   text-[1rem]">MTN Airtime VTU And Data</h1>
                       <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
-                <div class="shadows rounded-[2rem] overflow-hidden w-[10rem]"><img src="@/assets/image/airtel.png" alt="mtn logo" class="w-[13rem]"></div>
+                <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/airtel.png" alt="mtn logo" class="md:w-[13rem] w-[10rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
-                    <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem]  font-semibold">Buy now</PrimaryBtn>>
+                    <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem]  font-semibold">Buy now</PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
-                <div class="shadows rounded-[2rem] overflow-hidden w-[10rem]"><img src="@/assets/image/9mobile.png" alt="mtn logo" class="w-[13rem]"></div>
+                <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/9mobile.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
                       <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
@@ -97,7 +97,7 @@
             </div>
 
             <div class="flex flex-col justify-center items-center">
-                <div class="shadows  rounded-[2rem] overflow-hidden w-[10rem]"><img src="@/assets/image/glo.png" alt="mtn logo" class="w-[13rem]"></div>
+                <div class="shadows  rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/glo.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
                       <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
@@ -110,7 +110,7 @@
     <section class="container my-20 mx-auto py-5 ">
      <div class="flex flex-col gap-5 justify-center images h-96 items-center">
      <p class="text-3xl justify-center font-semibold text-white  ">ABOUT US</p>
-     <p class="w-2/3 font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack and Flutterwave, you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
+     <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack and Flutterwave, you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
      </div>
     </section>
     <section>

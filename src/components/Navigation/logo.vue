@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/logo.png" class="w-60" alt="">
+  <img src="@/assets/logo.png" class="md:w-60 w-32 " alt="">
 </template>
 
 <script>

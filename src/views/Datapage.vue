@@ -10,7 +10,7 @@
 
               <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Network</label>
-                 <select  class="w-full font-seibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " placeholder="Password">
+                 <select  class="w-full font-seibold rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] " placeholder="Password">
                   <option value="network">Network</option>
                   <option value="mtn">MTN</option>
                   <option value="mtn">GLO</option>
@@ -21,7 +21,7 @@
 
                <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary mb- ml-2  text-[17px] ">Data Plan</label>
-                 <select  class="w-full  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
+                 <select  class="w-full  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] " >
                   <option value="">Select Data Plan</option>
                   <option value="1">500MB CG - ₦130 - 1 Month </option>
                   <option value="2">1GB CG - ₦260 - 1 Month </option>
@@ -37,7 +37,7 @@
                   <option value="40" >10GB SME DATA - ₦2,210 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hiddend rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
+                  <select  class="w-full hidden rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] ">
                   <option value="">Select Data Plan</option>
                    <option value="8" >9mobile </option>
                   <option value="8" >500MB - ₦430 - 1 Month </option>
@@ -49,7 +49,7 @@
                   <option value="14" >15GB - ₦4,500 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hidden  d rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] " >
+                  <select  class="w-full hidden  d rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] " >
                   <option value="">Select Data Plan</option>
                   <option value=""> Glo</option>
                   <option value="15" >1GB - ₦475 - 1 Month </option>
@@ -68,7 +68,7 @@
                   <option value="61" >Lasting GLO 10GB - ₦3,400 - 1 Month </option>
                  </select>
 
-                  <select  class="w-full hidden  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border-[3px] py-[.5rem] ">
+                  <select  class="w-full hidden  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] ">
                   <option value="">Select Data Plan</option>
                   <option value=""> Airtime</option>
                   <option value="">Select Data Plan</option>
@@ -80,11 +80,11 @@
 
               <div class="flex bg-white flex-col   ">
                  <label for="" class="text-primary   text-[17px] ">Recipients</label>
-                  <textarea name="" rows="4" placeholder="Recipients" class="text-primary border-gray-100  border-[3px] py-2 px-2   outline-none text-[17px]"></textarea>
-                  <small>Seperate multiple Recipient with comma (,)</small>
+                  <textarea name="" rows="4" placeholder="Recipients" class="text-primary border-gray-100  border py-2 px-2   outline-none text-[17px] text-"></textarea>
+                  <small class="text-[10px] text-sm">Seperate multiple Recipient with comma (,)</small>
               </div>
              <label for="" class="text-sm" >Allow Ported Numbers</label>
-               <Button class="mt-" :loading="loadingState" @click="register()" loadingText="Authenticating"> Sign up </Button> 
+               <Button class="mt-" :loading="loadingState" @click="register()" loadingText="Authenticating">  Sign up </Button> 
            
         </form>
 

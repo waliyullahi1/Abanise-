@@ -1,40 +1,40 @@
 <template>
   <div class="h-screen image  fle place-items-end justify-end w-full overflow-x-hidden ">
       <div class="w-">
-        <div class="md:max-w-md lg:max-w-md sm:w-full border-4 border-primary mt-20 mx-auto w-5/6   bg-white container opacity  flex flex-col justify- [35rem]  rounded-[1rem] h-fit">
+        <div class="md:max-w-md lg:max-w-md sm:w-full border-2 border-primary mt-20 mx-auto w-5/6   bg-white container opacity  flex flex-col justify- [35rem]  rounded-[1rem] h-fit">
         <div class="py-5 px-5"><div class="w-full mb-10" > 
-          <h1 class="text-4xl md:text-5xl py-  font-bold text-center">Create account</h1>
+          <h1 class="text-2xl md:text-4xl   font-semibold text-center">Create account</h1>
           <p class="text-center text-secondary  text-[20px]">Please enter your credentials to proceed</p>
         </div>
        <div>
         <form action="" @submit="register()">
-         <div class="flex gap-5 mb-7 w-full ">
+         <div class="md:flex block gap-3 mb-4 w-full ">
           <div class="w-full">
-             <label for="" class="text-primary font-semibold text-[17px]">First Name*</label><br>
-            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2  "> <input type="text" v-model="form.firstName"  class="w-full font-semibold  h-[3.5rem] ml-4  border-primary border-b-4 bg-gray-100 for outline-none   border-r-4 rounded-r-lg focus:border-secondary " placeholder="First Name"></div>{{form.firstName}}
+             <label for="" class="text-primary font-d text-[15px]">First Name*</label><br>
+            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2  "> <input type="text" v-model="form.firstName"  class="w-full font-semiold  h-[2.5rem] ml-4  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondary " placeholder="First Name"></div>{{form.firstName}}
           </div>
-            <div class="w-full">
-             <label for="" class="text-primary font-semibold text-[17px]">Last Name*</label><br>
-            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 ">  <input type="text" class="w-full font-semibold  border-primary border-b-4  h-[3.5rem] ml-4 bg-gray-100 for outline-none   border-r-4 rounded-r-lg focus:border-secondary " placeholder="LastName" v-model="form.lastName"  ></div>
+            <div class="w-full mt-5 md:mt-0 ">
+             <label for="" class="text-primary font-semold text-[15px]">Last Name*</label><br>
+            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 ">  <input type="text" class="w-full font-semiold  h-[2.5rem] ml-4  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondary" placeholder="LastName" v-model="form.lastName"  ></div>
           </div>
          </div>
 
-          <label for="" class="text-primary  font-semibold text-[17px] ">Email</label><br>
-         <div class="flex bg-white drop-shadow-md border-primary mt-2 mb-7 bg-gray-100  ">
-          <input type="email" v-model="form.email"   class="w-full h-[3.5rem] ml-4 focus:bg-grey-100 font-semibold  border-primary border-b-4 bg-gray-100 outline-none focus:border-secondary border-r-4 rounded-r-lg  " placeholder="Enter your email">
+          <label for="" class="text-primary  font-seibold text-[15px] ">Email</label><br>
+         <div class="flex bg-white drop-shadow-md border-primary   mb-4 mt-2 bg-gray-100  ">
+          <input type="email" v-model="form.email"   class="w-full font-semiold  h-[2.5rem] ml-4  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondary " placeholder="Enter your email">
             </div>
-            <div class="flex gap-5 w-full ">
+            <div class="md:flex block k gap-3 w-full ">
           <div class="w-full">
-             <label for="" class="text-primary font-semibold text-[17px] ">Password*</label><br>
-            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-7 "> <input type="password" class="w-full h-[3.5rem] ml-4 font-semibold  border-primary border-b-4 bg-gray-100 for outline-none   border-r-4 rounded-r-lg focus:border-secondary " v-model="form.password" placeholder="Password"></div>
+             <label for="" class="text-primary font-sibold text-[15px] ">Password*</label><br>
+            <div class=" flex  bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-3 "> <input type="password" class="w-full font-semiold  h-[2.5rem] ml-4  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondary" v-model="form.password" placeholder="Password"></div>
           </div> 
             <div class="w-full">
-             <label for="" class="text-primary font-semibold text-[17px] ">Comfirm Password*</label><br>
-            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-7 "> <input type="password" class="w-full font-semibold h-[3.5rem] ml-4 border-primary border-b-4 bg-gray-100 for outline-none   border-r-4 rounded-r-lg focus:border-secondary " placeholder="Password"></div>
+             <label for="" class="text-primary font-sebold text-[15px] ">Comfirm Password*</label><br>
+            <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2  mb-10 "> <input type="password" class="w-full font-semiold  h-[2.5rem] ml-4  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondaryfocus:border-secondary "  placeholder="Password"></div>
           </div>
          </div>
 
-           <Button class="mt-10" :loading="loadingState" @click="register()" loadingText="Authenticating">Sign up </Button> 
+           <Button class="mt-2" :loading="loadingState" @click="register()" loadingText="Authenticating">Sign up </Button> 
             <div class="justify-between flex ">
               
             
@@ -62,7 +62,11 @@ export default {
         lastName:'',
         email:'',
         password:'',
-      }
+      },
+
+      user: [
+
+      ]
     }
   },
   methods: {
