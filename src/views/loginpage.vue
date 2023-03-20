@@ -7,14 +7,14 @@
           <p class="text-center text-gray-500  text-[15px]">Please enter your credentials to proceed</p>
         </div>
        <div>
-        <form action="">
+        <form action="" @click.prevent="waliu()">
           <label for="" class="text-primary font-semd text-[15px] ">Email Address</label><br>
-         <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-4 "><img src="@/assets/image/user.svg" alt="" class=" py-2 w-[1rem] border-primary border-b-2"> <input type="email" class="w-full font-semiold  h-[2.5rem] ml-  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondaryfocus:border-secondary " placeholder="Email"></div>
+         <div class="flex bg-white  bg-gray-100 drop-shadow-md border-primary mt-2 mb-4 "><img src="@/assets/image/user.svg" alt="" class=" py-2 w-[1rem] border-primary border-b-2"> <input type="email" v-model="form.name"  class="w-full font-semiold  h-[2.5rem] ml-  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondaryfocus:border-secondary " placeholder="Email"></div>
 
           <label for="" class="text-primary  font-semiold text-[15px] ">Password</label><br>
          <div class="flex bg-white drop-shadow-md border-primary mt-2 bg-gray-100  ">
           <img src="@/assets/image/passwords.svg" alt="" class=" py-2 w-[1rem] border-primary border-b-2">
-          <input type="password" class="w-full font-semiold  h-[2.5rem] ml-  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondaryfocus:border-secondary  " placeholder="Username">
+          <input type="password" v-model="form.passwords" class="w-full font-semiold  h-[2.5rem] ml-  border-primary border-b-2 bg-gray-100 for outline-none   border-r-2 rounded-r-lg focus:border-secondaryfocus:border-secondary  " placeholder="Username">
         </div>
           <a href="" class="font-semibold text-x">Forget password </a>
            <Button class="mt-10" :loading="loadingState" loadingText="Authenticating">Login </Button> 
@@ -35,7 +35,21 @@
 
 <script>
 export default {
+  data(){
+   return{
+    loadingState : false,
+    form:{
+      passwords:'',
+      name:'',
+    }
+   }
+  },
 
+  methods:{
+    waliu(){
+      console.warn('waliu', this.form.passwords, this.form.name)
+    }
+  }
 }
 </script>
 

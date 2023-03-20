@@ -12,8 +12,8 @@ const router = createRouter({
     },
 
     {
-      path: "/card/:id",
-      name: "landingpadw",
+      path: "/card/:id(.*)*",
+      name: "id",
       component: () => import("../views/waec.vue"),
     },
 
