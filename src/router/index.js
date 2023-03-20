@@ -12,8 +12,14 @@ const router = createRouter({
     },
 
     {
+<<<<<<< HEAD
       path: "/card/:id(.*)*",
       name: "id",
+=======
+      path: "/card/:id",
+      props: true,
+      name: "landingpadw",
+>>>>>>> 911dfa9e6e2f0bce07c5a92b656729a03b9d9a69
       component: () => import("../views/waec.vue"),
     },
 
