@@ -12,12 +12,13 @@ const router = createRouter({
     },
 
     {
-
-  
       path: "/card/:id",
       props: true,
       name: "landingpadw",
       component: () => import("../views/waec.vue"),
+      children: [
+        { path: "", component: () => import("../views/landingpg.vue") },
+      ],
     },
 
     {
