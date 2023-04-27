@@ -5,6 +5,9 @@
     <div class="  h-[7rem] w-full  "></div>
      <div  class="flex  gap-10 ">
       <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-[5rem]  ml-[2rem] "></div>
+      <div>
+        
+      </div>
         <!-- <div class="w-full w-fit h-fit shadows rounded-[1rem] py-5 px-5 text-semibold text-2xl shadow bg-white ">
            <div class="grid md:grid-cols-2  sm:grid-cols-2  grid-cols-1 md:gap-10 lg:gap-32 gap-10 px-10 ">
             <div v-for="item in item" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
@@ -43,7 +46,7 @@
     import nabteb from  '@/assets/image/nabteb1.jpg';
    import gcewaec from  '../assets/image/gce.jpg'
    import nabtebgce from '../assets/image/pinnabteb.jpg'
-export default {
+ export default {
     data(){
             return{
                 track: true,
@@ -110,7 +113,7 @@ export default {
     components:{
          
     }
-}
+ }
 </script>
 
 <style>

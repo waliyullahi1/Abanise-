@@ -63,7 +63,7 @@
                     </div>
                     <p class="flex justify-between font-semibold font-lg ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
                 </div>
-                 <router-link target="_blank" :to="/card/`${item.id}`"><PrimaryBtn class="w-full text-center font-semibold">Buy now</PrimaryBtn></router-link>
+                 <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-semibold">Buy now</PrimaryBtn></router-link>
             </div>
             
         </div>
@@ -118,7 +118,7 @@
             <div class="w-[30rem]   mx-auto shadows bg-white h-[10rem] mt-[20rem] ">
                 <div class="border flex border-b-primary py-3 text-center mt-2 justify-center item-center w-full text-primary ">
                     <p class="font-semibold text- text-sm">Transaction ID </p>
-                    <img @click="idHidden()" src="@/assets/image/cancel.svg" class="w-4  relative  left-[10rem]" />
+                    <img @click="idHidden()" src="@/assets/image/cancel.svg" class="w-4  relative  left-[10rem]"/>
                 </div>
 
                 <form action="" class=" py-10 mb-5 px-3">

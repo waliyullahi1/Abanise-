@@ -11,12 +11,7 @@ const router = createRouter({
       component: () => import("../views/landingpg.vue"),
     },
 
-    // {
-    //   path: "/card/:id",
-    //   props: true,
-    // s  name: "landingpadw",
-    //   component: () => import("../views/waec.vue"),
-    // },
+  
 
     {
       path: "/card/:id",
