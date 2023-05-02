@@ -7,7 +7,7 @@
       <div class="h-32 w-full">
       
       </div>
-   
+        
   
     <div :class="card ? 'block' : 'hidden'"> 
       <section class=" container my-5 mx-auto "> 
@@ -18,7 +18,7 @@
       <div class="flex flex-col items-center gap-5  ">
 
         <div class=" w-1/2"><img :src="waecImg" alt="" ></div>
-            <PrimaryBtn @click="Startpayment" class="ronded duration-500 rounded-xl hover:bg-secondary">Proceed to payment</PrimaryBtn>
+            <PrimaryBtn @click="Startpayment()" class="ronded duration-500 rounded-xl hover:bg-secondary">Proceed to payment</PrimaryBtn>
             <div class="w-  flex flex-col gap-3">
             <div class="flex flex-col gap-5">
                 <div :class="waec ? 'block' : 'hidden'"><h1 class="text-primary  font-bold text-xl"   >Buy {{cardName}} Online</h1>
@@ -91,7 +91,7 @@
       <div class="flex flex-col items-center gap-5  ">
 
       <div class=" w-1/2"><img :src="waecImg" alt="" ></div>
-          <PrimaryBtn @click="Startpayment" class="ronded duration-500 rounded-xl hover:bg-secondary">Proceed to payment</PrimaryBtn>
+          <PrimaryBtn @click="Startpayment()" class="ronded duration-500 rounded-xl hover:bg-secondary">Proceed to payment</PrimaryBtn>
           <div class="w-2/3  flex flex-col gap-3">
           <div class="flex flex-col gap-5">
               <div :class="vcard ? 'block' : 'hidden'"><h1 class="text-primary  font-bold text-xl"   >Buy {{cardName}} Online</h1>
@@ -150,7 +150,7 @@
             </div>
             <p class="text-xl">NOW CLICK ON THE 'PROCEED TO PAYMENT'</p>
 
-          <div class="w-full flex items-center"> <PrimaryBtn class="ronded duration-500 w-fit  text-center rounded-xl hover:bg-secondary" @click="Startpayment">Proceed to payment</PrimaryBtn></div>
+          <div class="w-full flex items-center"> <PrimaryBtn class="ronded duration-500 w-fit  text-center rounded-xl hover:bg-secondary" @click="Startpayment()" >Proceed to payment</PrimaryBtn></div>
           </div>
         <div> 
       </div>
@@ -234,28 +234,52 @@
           </div>
 
            <div class=" border drop-shadow-2xl py-5 px-5   rounded-xl bg-white bg-gray-100">
+            <div class="flex flex-col justify-center mb-10 items-center" >
           <form action="" class=" ">
-            <div class="flex flex-col justify-center mb-10 items-center">
+            <div >
             <h1 class="text-primary font-bold text-xl ">Scratch card</h1>
             <h1 class="text-2xl font-normal text-secondary ">{{cardName}} Scratch Card</h1>
-            <h1 class="text2xl text-black  ">{{this.form.semiprice}}</h1>
+            <h1 class="text2xl text-black  "> ₦{{this.form.semiprice}}</h1>
             </div>
-            <Input label="Enter Quantity" type="number"    @click="calculate()" placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" inputValue="1"  :min="numm"></Input>
+            <Input label="Enter Quantity" type="number"    @click="calculate()" placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" inputValue="1"  :min="1"></Input>
            
-           <Input label="Charges" type="text" placeholder="Enter your email address" :error="false" inputValue="100" :disabled=disabled ></Input>
-        <Input label="Total"   type="Number" :min="numm" :disabled=disabled  :error="false" v-model:inputValue="form.total"
-          class="mt-4 "></Input>
+           <Input label="Charges" type="text" placeholder="Enter your email address" :error="false" inputValue="₦100" :disabled=disabled class="mt-4  -300"  ></Input>
+
+          <Input label="Total"   type="Number" :min="numm" :disabled=disabled  :error="false" v-model:inputValue="form.total" class="mt-4  bg-gry-300"></Input>
+
+           <Input label="Email" type="String" placeholder="Your Email" :error="false"   class="mt-4  bg-gay-300" ></Input>
+
+          <Input label="Phone Number"   :type=Number :error="false" :inputValue="form.ttal"
+          class="mt-4 bg-g-200"  placeholder="Your Number" ></Input>
+              
               
           
      
-          <p class="text-sm text-center mt-5 ">Make payment with</p> 
-          <div class="w-full flex justify-center">
-            <PrimaryBtn @click="calculate()" class="rounded-xl text-xl flex gap-3 mt-5 w-fit">  Paystack<img src="@/assets/image/paystack.png" alt="" class="w-5 "></PrimaryBtn>
+          <p class="text-sm text-center mt-5 ">Makeimport paystack from  payment with</p> 
+   
            
-            
-          </div> <div class="h-10 w-full"></div>
-        </form>
+    
+          
+         
 
+              
+          
+       
+            
+        
+        </form>
+         <paystack
+                style="font-size:20px," 
+                buttonClass="'button-class btn btn-primary'"
+                buttonText="Pay Online"
+                :publicKey="publicKey"
+                :email="email"
+                :amount=amount
+                :reference=ref
+                :onSuccess="onSuccessfulPayment"
+                :onCanel="onCancelledPayment"
+              ></paystack>
+        </div>
         </div>
        
     </div>
@@ -265,22 +289,29 @@
   </div>
   <Footer></Footer>
 </template>
-  <script>
-
+    <script>
+   import { StripeElementCard } from '@vue-stripe/vue-stripe'
   import waec from '../assets/image/waec.png'
   import neco from '../assets/image/neco12.jpg'
   import nabteb from '../assets/image/nee.jpg'
   import nabtebgce from '../assets/image/pinnabteb.jpg'
   import vwaec from '../assets/image/waecver.jpg'
   import gcewaec from  '../assets/image/gce.jpg'
+  import paystack from "vue3-paystack"
    const locationName = window.location.href
  const splitloc = locationName.split('/');
 console.log(splitloc);
-
 export default {
    
  data(){
     return {
+      Nabtebre: "",
+   
+      gceWaec:"",
+        publicKey:'pk_test_6e7188c6a08247d1027aef4d5bd5eb2312c801fd',
+        amount:"",
+        email:'somteacodes@gmail.com',
+        ref:'wali3yu24334uwwww',
       nysecard:'',
       descrption:'',
      disabled:true,
@@ -290,6 +321,7 @@ export default {
       nabteb:'',
       waec:'',
       neco:'',
+      email:'alfaabanise@gmail.com',
       waecImg:'waec',
       cardlink:'',
       cardName : '',
@@ -301,7 +333,7 @@ export default {
         quantity:  1,
         total:  '', 
         price:Number,
-        email:'',
+        
        
       },
      
@@ -311,6 +343,12 @@ export default {
   },
  
   methods:{
+     processPayment: () => {
+      window.alert("Payment recieved")
+    },
+    close: () => {
+     console.log("You closed checkout page")
+    },
       Startpayment(){
        this.paymentpage = !this.paymentpage
       },
@@ -327,20 +365,25 @@ export default {
       this.form.total = this.form.quantity * this.form.price
       console.log(this.form.total)
     },
-   
-  },
+      onSuccessfulPayment: function(response) {
+      console.log("thanks you");
+    },
+    onCancelledPayment: function() {
+      console.log("Payment cancelled by user");
 
+    }
+  },
  created(){
   this.form.email  
-  console.log(this.form.email)
+  
   if (splitloc[4]== 1 ) {
     this.form.semiprice = Number(3200)
     this.form.price = this.form.semiprice
     this.cardName='Waec',
     this.waecImg=waec,
+    this.amount= parseInt(this.form.price)*100,
      this.card=true
     this.wlabel=true
-
     this.waec=true
     this.full_name='Western Afriacan Examination Councell'
   } else {
@@ -400,11 +443,24 @@ export default {
       }
   }
  },
- 
-components:{
-  
-}    
+  computed: {
+    
+   reference() {
+      let text = "";
+      let possible =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+      for (let i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+    }
+  },
+    
+components:{
+ StripeElementCard,
+ paystack
+}    
 }
 </script>
 

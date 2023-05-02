@@ -1,5 +1,16 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+
+
+
+
+
+
+
+
+
+
+
 
 import App from './App.vue'
 import router from './router'
@@ -23,9 +34,10 @@ app.component('logo', logo)
 app.component("logos", logos);
 app.component('Header', Header)
 app.component('PrimaryBtn', PrimaryBtn)
-app.mount('#app')
+app.mount("#app");
 app.component("semipayment", semipayment);
 app.component("Footer", Footer);
 app.component("Input", Input);
 app.component("Button", Button);
 app.component("dashbord", dashbord);
+

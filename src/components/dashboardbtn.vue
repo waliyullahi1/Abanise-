@@ -90,7 +90,7 @@ export default {
     -moz-box-shadow: -1px 3px 49px -10px rgba(0,0,0,0.29);
     }
     .sas{
-     opacity: ;
+    
      background-color: black;
     }
 </style>
