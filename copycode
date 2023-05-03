@@ -1,0 +1,66 @@
+// // Import Paystack Inline script in your HTML file
+// <script src="https://js.paystack.co/v1/inline.js"></script>
+
+// // Create a Vue component for the payment form
+// <template>
+//   <form id="payment-form" @submit.prevent="payWithPaystack">
+//     <input type="email" v-model="email" placeholder="Enter your email" required>
+//     <input type="number" v-model="amount" placeholder="Enter the amount in kobo" required>
+//     <button type="submit">Pay</button>
+//   </form>
+// </template>
+
+// <script>
+// export default {
+//   data() {
+//     return {
+//       email: '', // the email of the client
+//       amount: 0, // the amount to collect in kobo
+//       reference: '', // the reference of the transaction
+//     };
+//   },
+//   methods: {
+//     // Generate a random reference for the transaction
+//     generateReference() {
+//       let text = '';
+//       let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//       for (let i = 0; i < 10; i++) {
+//         text += possible.charAt(Math.floor(Math.random() * possible.length));
+//       }
+//       return text;
+//     },
+//     // Initialize and verify the payment using Paystack Inline
+//     payWithPaystack() {
+//       // Set the reference
+//       this.reference = this.generateReference();
+//       // Initialize Paystack Inline
+//       let paystackInline = PaystackPop.setup({
+//         key: 'pk_test_51JL3DSLJetNHxQ3207t13nuwhCB1KPvUJJshapsOQATnZn79vA4wK3p9Hf2yi2uUXfXXWdAtLZGRepfJGvRnd7oI006Kw6rFTC', // your public key
+//         email: this.email,
+//         amount: this.amount,
+//         ref: this.reference,
+//         callback: (response) => {
+//           // Send a pin to the client using your preferred method (e.g., email, SMS, etc.)
+//           this.sendPin(response.reference);
+//           // Redirect the client to another page using window.location.href
+//           window.location.href = 'https://example.com/thank-you';
+//         },
+//         onClose: () => {
+//           // Handle what happens when the user closes the payment modal
+//           alert('Transaction cancelled');
+//         },
+//       });
+//       // Open the payment modal
+//       paystackInline.openIframe();
+//     },
+//     // Send a pin to the client using your preferred method (e.g., email, SMS, etc.)
+//     sendPin(reference) {
+//       // You can use any API or service to send a pin to the client
+//       // For example, you can use axios to make a POST request to your server
+//       axios.post('https://example.com/send-pin', {
+//         reference: reference,
+//         email: this.email,
+//       });
+//     },
+//   },
+// };

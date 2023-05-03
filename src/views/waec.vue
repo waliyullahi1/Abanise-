@@ -247,9 +247,9 @@
 
           <Input label="Total"   type="Number" :min="numm" :disabled=disabled  :error="false" v-model:inputValue="form.total" class="mt-4  bg-gry-300"></Input>
 
-           <Input label="Email" type="String" placeholder="Your Email" :error="false"   class="mt-4  bg-gay-300" ></Input>
-
-          <Input label="Phone Number"   :type=Number :error="false" :inputValue="form.ttal"
+           <Input label="Email" type="String" placeholder="Your Email" :error="false"   class="mt-4  bg-gay-300" v-model:inputValue="email" ></Input>
+            {{email}}
+          <Input label="Phone Number"   :type=Number :error="false" :inputValue="phone"
           class="mt-4 bg-g-200"  placeholder="Your Number" ></Input>
               
               
@@ -269,12 +269,12 @@
         
         </form>
         <button @click="calculate()">my name</button>
-         <paystack 
+         <paystack @click=" processPayment()"
                 style="font-size:20px," 
                 buttonClass="'button-class btn btn-primary'"
                 buttonText="Pay Online"
                 :publicKey="publicKey"
-                :email="email"
+                :email= email
                 :amount=amount
                 :reference="reference"
                 :onSuccess="onSuccessfulPayment"
@@ -313,11 +313,10 @@ export default {
  data(){
     return {
       Nabtebre: "",
-   
       gceWaec:"",
         publicKey:'pk_test_6e7188c6a08247d1027aef4d5bd5eb2312c801fd',
         amount:"",
-        email:'somteacodes@gmail.com',
+        email: "",
       nysecard:'',
       descrption:'',
       disabled:true,
@@ -327,7 +326,6 @@ export default {
       nabteb:'',
       waec:'',
       neco:'',
-      email:'alfaabanise@gmail.com',
       waecImg:'waec',
       cardlink:'',
       cardName : '',
@@ -335,6 +333,7 @@ export default {
       website: '',
       paymentpage: false,
       form: {
+        email:'',
         semiprice:'',
         quantity:  1,
         total:  '', 
@@ -351,7 +350,7 @@ export default {
    reference : function() { 
 
       let randomRef = "";
-        let characters = "ABCDEFGHYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let characters = "ABANISEEDUCATION0123456789";
 
         for( let i=0; i < 15; i++ )
           randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -361,10 +360,12 @@ export default {
   },
  
   methods:{
-   
      processPayment: () => {
-      window.alert("Payment recieved")
-       this.form.total = this.form.quantity * this.form.price
+      var client = this.form.total
+      window.alert([
+       client
+     ])
+
     },
     close: () => {
      console.log("You closed checkout page")
@@ -393,7 +394,7 @@ export default {
     //   return  console.log(text);
     // },
       onSuccessfulPayment: function(response) {
-      console.log("thanks you");
+       this.sendPin(response.reference)
     },
     onCancelledPayment: function() {
       console.log("Payment cancelled by user");
