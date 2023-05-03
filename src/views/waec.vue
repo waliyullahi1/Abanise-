@@ -268,14 +268,15 @@
             
         
         </form>
-         <paystack
+        <button @click="calculate()">my name</button>
+         <paystack 
                 style="font-size:20px," 
                 buttonClass="'button-class btn btn-primary'"
                 buttonText="Pay Online"
                 :publicKey="publicKey"
                 :email="email"
                 :amount=amount
-                :reference=ref
+                :reference="reference"
                 :onSuccess="onSuccessfulPayment"
                 :onCanel="onCancelledPayment"
               ></paystack>
@@ -302,7 +303,13 @@
  const splitloc = locationName.split('/');
 console.log(splitloc);
 export default {
-   
+   name: 'Vue3Paystack',
+   props:{
+     reference: {
+      type: String,
+      required: true,
+    }, 
+   },
  data(){
     return {
       Nabtebre: "",
@@ -311,10 +318,9 @@ export default {
         publicKey:'pk_test_6e7188c6a08247d1027aef4d5bd5eb2312c801fd',
         amount:"",
         email:'somteacodes@gmail.com',
-        ref:'wali3yu24334uwwww',
       nysecard:'',
       descrption:'',
-     disabled:true,
+      disabled:true,
       numm:Number(1),
       vcard:'',
       wlabel:'',
@@ -341,10 +347,24 @@ export default {
    
     
   },
+ computed: {
+   reference : function() { 
+
+      let randomRef = "";
+        let characters = "ABCDEFGHYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( let i=0; i < 15; i++ )
+          randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
+
+        return randomRef;
+    } 
+  },
  
   methods:{
+   
      processPayment: () => {
       window.alert("Payment recieved")
+       this.form.total = this.form.quantity * this.form.price
     },
     close: () => {
      console.log("You closed checkout page")
@@ -361,10 +381,17 @@ export default {
      this.paymentpage = !this.paymentpage
      
     },
-    calculate(){
-      this.form.total = this.form.quantity * this.form.price
-      console.log(this.form.total)
-    },
+  
+
+  
+    //   let text = "";
+    //   let possible =  "ABCDEFGHIJKLMNOPQRSTUVWXYZaqrstuvwxyz0123456789";
+
+    //   for (let i = 0; i < 10; i++)
+    //     text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    //   return  console.log(text);
+    // },
       onSuccessfulPayment: function(response) {
       console.log("thanks you");
     },
@@ -378,10 +405,11 @@ export default {
   
   if (splitloc[4]== 1 ) {
     this.form.semiprice = Number(3200)
-    this.form.price = this.form.semiprice
+    this.form.price = this.form.semiprice,
+    this.form.total=this.form.price
     this.cardName='Waec',
     this.waecImg=waec,
-    this.amount= parseInt(this.form.price)*100,
+    this.amount= parseInt(this.form.total)*100,
      this.card=true
     this.wlabel=true
     this.waec=true
@@ -390,6 +418,7 @@ export default {
       if (splitloc[4]== 2) {
       this.form.semiprice = Number(1000)
       this.form.price = this.form.semiprice
+       this.amount= parseInt(this.form.price)*100,
       this.cardName='Neco',
       this.waecImg=waec,
       this.card=true
@@ -400,6 +429,7 @@ export default {
        if (splitloc[4]== 3) {
         this.form.semiprice = Number(1500)
         this.form.price = this.form.semiprice
+         this.amount= parseInt(this.form.price)*100,
         this.cardName='Nabteb',
         this.websiteLink='www.eworld.nabteb.gov.ng',
         this.full_name='National Businesss technology cancil'
@@ -410,6 +440,7 @@ export default {
         if (splitloc[4]== 4) {
           this.form.semiprice = Number(19000)
         this.form.price = this.form.semiprice
+         this.amount= parseInt(this.form.price)*100,
           this.vcard=true
           this.card=false
           this.Nabtebre =true
@@ -419,6 +450,8 @@ export default {
         } else {
           if (splitloc[4]== 5) {
           this.form.semiprice = Number(19000)
+          this.form.price = this.form.semiprice
+           this.amount= parseInt(this.form.price)*100,
             this.vcard=true
            this.card=false
            this.gceWaec = true
@@ -428,6 +461,9 @@ export default {
             this.descrption='NABTEB GCE O LEVEL card is a product of National Business and Technical Examinations Board. It is used to register candidates for NABTEB Private Examination.'
           } else {
             if (splitloc[4]== 6) {
+              this.form.semiprice = Number(19000)
+          this.form.price = this.form.semiprice
+           this.amount= parseInt(this.form.price)*100,
                this.nysecard= true
                 this.vcard= false
                  this.card= false
@@ -443,19 +479,7 @@ export default {
       }
   }
  },
-  computed: {
-    
-   reference() {
-      let text = "";
-      let possible =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-      for (let i = 0; i < 10; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-      return text;
-    }
-  },
+  
     
 components:{
  StripeElementCard,
