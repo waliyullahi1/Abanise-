@@ -114,7 +114,7 @@
      </div>
     </section>
     <section>
-        <div :class=" track ? 'translate-x-0 ' : 'translate-x-[140rem]'" class=" duration-700 ease-in-out w-full transform top-0 fixed z-50  blurr h-[50rem]">
+        <div :class=" track ? 'translate-x-0 ' : 'translate-x-[250rem]'" class=" duration-700 ease-in-out w-full transform top-0 fixed z-50  blurr h-[50rem]">
             <div class="w-[30rem]  transl duration-700 ease-in-out transform mx-auto shadows bg-white h-[10rem] mt-[20rem]  "   :class=" track ? '' : 'translate-x-[1rem]'" >
                 <div class="border flex border-b-primary  transform py-3 text-center mt-2 justify-center item-center w-full text-primary ">
                     <p class="font-semibold text- text-sm">Transaction ID </p>

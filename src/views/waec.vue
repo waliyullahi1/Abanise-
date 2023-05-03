@@ -1,7 +1,7 @@
 <template>
   <div class="  ">
     <div class="overflow-hidden">
-    <Header class="absolute top-0  z-0 h-20"></Header>
+    <Header class="fixed top-0  z-0 h-20"></Header>
     
     
       <div class="h-32 w-full">
@@ -226,8 +226,8 @@
     </div>
     </section>
     </div>
-    <div class="w-full  fixed top-0 z-20  bg-black bg-opacity-50 items-center flex justify-center h-full px-6 md:px-0 lg:px-10" :class="paymentpage ? 'block' : 'hidden'">
-    <div class="ul overflow-scroll mx-auto mt-20  bg-white py-5 h-screen px-10 lg:w-1/3 md:w-1/2 w-fu ">
+    <div class="w-full  fixed top-0 z-20  bg-black duration-700 translate transform bg-opacity-50 items-center flex justify-center h-full px-6 md:px-0 lg:px-10" :class="paymentpage ? 'translate-y-0 ' : 'translate-y-[140rem]' "  >
+    <div  class="ul overflow-scroll mx-auto mt-20  bg-white py-5 duration-400 translate transform h-screen px-10 lg:w-1/3 md:w-1/2 w-fu ">
           <div class="flex mb-5 justify-between">
             <p class=" font-bold">check point</p>
            <div @click="hiddenpage()"> <img src="@/assets/image/cancel.svg" class="w-8"/></div>
