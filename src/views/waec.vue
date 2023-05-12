@@ -573,17 +573,17 @@ export default {
       },
       ];
 
-       console.log(arr1)
-       const pinss = [{name:"waliu"},{ score:"200"}]
-       const arrr1 = [{name:"waliu"}]
-     const results = pinss.filter(item => !arrr1.includes(item));
-        console.log(results);
+    //    console.log(arr1)
+    //    const pinss = [{name:"waliu"},{ score:"200"}]
+    //    const arrr1 = [{name:"waliu"}]
+    //  const results = pinss.filter(item => !arrr1.includes(item));
+    //     console.log(results);
       
-       const result = pins.filter((item) => item.name ===  this.cardName).slice(0, 2);
-       const arr4 = ["apple", "banana", "orange"];
-        const arr2 = ["banana", "orange"];
-        const resulta = arr1.filter(item => pins.includes(item));
-        console.log(resulta); // ["apple"]
+    //    const result = pins.filter((item) => item.name ===  this.cardName).slice(0, 2);
+    //    const arr4 = ["apple", "banana", "orange"];
+    //     const arr2 = ["banana", "orange"];
+    //     const resulta = arr1.filter(item => pins.includes(item));
+        // console.log(resulta); // ["apple"]
         // console.log(this.form.semiprice)
  },
 
