@@ -344,8 +344,8 @@ export default defineComponent({
    let data = [{name:'waliu', pin:21424244, price:2000},{name:'soliu', pin:214243244,price:2000},{name:'w335liu', pin:2142467, price:2000}, ]
     let result = useProductStore()
       // const array =  data.filter(item => result.includes(item))
-        console.log("'waliyu'")
-        console.log(array); 
+        // console.log("'waliyu'")
+        // console.log(array); 
       
       
 
@@ -396,10 +396,10 @@ export default defineComponent({
   // const product = useProductStore();
   // console.log(result)
   // console.log(data)
-   const pinw = useProductStore()
-         const pins  = pinw.items 
+  //  const pinw = useProductStore()
+  //        const pins  = pinw.items 
 
-         console.log('waliu')
+  //        console.log('waliu')
          
          
         
@@ -589,28 +589,28 @@ export default {
 
 
   methods:{
-    text(){
+    // text(){
       
-        // const array = arr1.filter(item => result.includes(item));
-        // console.log("'waliyu'")
-        // console.log(array); 
-        // this.array = results
+    //     // const array = arr1.filter(item => result.includes(item));
+    //     // console.log("'waliyu'")
+    //     // console.log(array); 
+    //     // this.array = results
        
-      // console.log(result)
-      //console.log('ready to mov')
-      //result.push(localStorage)
-      //console.log(result.name)
-      const result = pins.filter((item) => item.name ===  this.cardName).slice(0, form.quantity)
-      localStorage.setItem('result', JSON.stringify(result));
-      this.$router.push({path: `/pagesucess`})
+    //   // console.log(result)
+    //   //console.log('ready to mov')
+    //   //result.push(localStorage)
+    //   //console.log(result.name)
+    //   const result = pins.filter((item) => item.name ===  this.cardName).slice(0, form.quantity)
+    //   localStorage.setItem('result', JSON.stringify(result));
+    //   this.$router.push({path: `/pagesucess`})
   
 
     
 
-      let storedFruits = JSON.parse(localStorage.getItem('result'));
-      console.log(storedFruits)
+    //   let storedFruits = JSON.parse(localStorage.getItem('result'));
+    //   console.log(storedFruits)
 
-    },
+    // },
      processPayment: () => {
       var client = this.form.total
       window.alert([
