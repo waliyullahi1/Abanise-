@@ -343,7 +343,7 @@ export default defineComponent({
 
    let data = [{name:'waliu', pin:21424244, price:2000},{name:'soliu', pin:214243244,price:2000},{name:'w335liu', pin:2142467, price:2000}, ]
     let result = useProductStore()
-      const array =  data.filter(item => result.includes(item))
+      // const array =  data.filter(item => result.includes(item))
         console.log("'waliyu'")
         console.log(array); 
       
