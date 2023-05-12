@@ -591,10 +591,10 @@ export default {
   methods:{
     text(){
       
-        const array = arr1.filter(item => result.includes(item));
-        console.log("'waliyu'")
-        console.log(array); 
-        this.array = results
+        // const array = arr1.filter(item => result.includes(item));
+        // console.log("'waliyu'")
+        // console.log(array); 
+        // this.array = results
        
       // console.log(result)
       //console.log('ready to mov')
