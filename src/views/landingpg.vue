@@ -1,15 +1,15 @@
 <template>
    
- <div class="overflow-y-hidden">
+ <div class="overflow-y-hidden font-[Poppins]">
   
    <Header class="fixed z-40 top-0"></Header>
    
     <div class="w-full h-10"></div>
     <section  class=" " >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]   overflow-hidden ">
-    <div  class="container   flex flex-col gap-5 px-4 justify-center h-full mx-auto "> 
-        <p class= "  font-semibold text-4xl px-1  md:text-[7rem] text-white font-mermaid text-[Mermaid Swash Caps, Confetti Stream]">Buy scratch <span class="text-secondary">Card</span></p>
-        <p class="text-xl text-white ">Get instant accesss to scratch card PINs for WAEC,  NECO  and NABTEB</p>
+    <div  class="container   flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
+        <p class= "  font- text-6xl px-1  md:text-[6rem] text-white font-[Poppins] text-[Advert]">Buy scratch <span class="text-secondary">Card</span></p>
+        <p class="text-2xl text-[white] ">Get instant accesss to scratch card PINs for WAEC,  NECO  and NABTEB</p>
         <div class="flex gap-5 mt-8 items-center">
             <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 text-2xl text-white"> <img src="@/assets/image/sign.svg" class="w-10" alt=""> login in</p></router-link>
             <p><router-link  to="/register" class="text-2xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>

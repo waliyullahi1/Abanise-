@@ -1,14 +1,32 @@
 <template>
   <div class="  ">
-    <div class="overflow-hidden">
+    <div class="overflow-hidden font-[Poppins]">
     <Header class="fixed top-0  z-0 h-20"></Header>
-    
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
+           
+            
+        </div>
     
       <div class="h-32 w-full">
       
       </div>
         
-  
+       <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
+                <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
+                   <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
+                   
+                </div>
+                <div class=" flex py-3 px-3 flex-col gap-3 border-primary transform duration-300">
+                    <div class=" group-hover:w-full w-1 duration-500 h-1 bg-primary"></div>
+                    <p class="text-xl "><span>{{product.card}}</span> {{product.header}} <span class="tex- text-base font-semibold">({{item.condition}})</span></p>
+                    <div class="flex justify-between">
+                    <p class="text-xl font-semibold">Price</p> 
+                    <p class="font-semibold font-lg ">₦{{item.price}}</p>
+                    </div>
+                    <p class="flex justify-between font-semibold font-lg ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
+                </div>
+                 <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-semibold">Buy now</PrimaryBtn></router-link>
+            </div>
     <div :class="card ? 'block' : 'hidden'"> 
       <section class=" container my-5 mx-auto "> 
       <h1 class="family text-5xl text-center">{{cardName}} Scratch Card</h1>
@@ -257,7 +275,27 @@
      
           <p class="text-sm text-center mt-5 ">Makeimport paystack from  payment with</p> 
    
-           
+           <!-- import { defineComponent } from "vue";
+import { useStore } from "../store";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const store = useStore();
+
+    function removeItem(id) {
+      const index = store.items.findIndex((item) => item.id === id);
+      if (index !== -1) {
+        store.items.splice(index, 1);
+        store.items = [...store.items];
+      }
+    }
+
+    return {
+      removeItem,
+    };
+  },
+}); -->
     
           
          
@@ -283,6 +321,8 @@
         </div>
         </div>
        
+
+       
     </div>
     </div>
    
@@ -291,7 +331,7 @@
   <Footer></Footer>
 </template>
     <script>
-   import { StripeElementCard } from '@vue-stripe/vue-stripe'
+  
   import waec from '../assets/image/waec.png'
   import neco from '../assets/image/neco12.jpg'
   import nabteb from '../assets/image/nee.jpg'
@@ -299,9 +339,80 @@
   import vwaec from '../assets/image/waecver.jpg'
   import gcewaec from  '../assets/image/gce.jpg'
   import paystack from "vue3-paystack"
+  import { useProductStore } from "../stores/counter.js"
+
+   let data = [{name:'waliu', pin:21424244, price:2000},{name:'soliu', pin:214243244,price:2000},{name:'w335liu', pin:2142467, price:2000}, ]
+    let result = useProductStore()
+      const array =  data.filter(item => result.includes(item))
+        console.log("'waliyu'")
+        console.log(array); 
+      
+      
+
+  //     const index = data.filter((item) => item.price === 2000).slice(0, 2)
+  //    storee.setup() {
+  //   const store = useStore();
+
+  //   const deleteObject = () => {
+  //     store.deleteObject();
+  //   };
+        
+  //   return {
+  //     deleteObject,
+  //   };
+//   // },
+//      function removeItem(id, ) {
+//       if (index !== -1) {
+//         data.items.splice(index, 2);
+//         data.items = [...data.items];
+//       }
+//       return id
+//       }
+// console.log(data)
+// let waecq = '3500'
+//  let count = 1
+// data.splice(data.filter((item) => item.price === waecq).slice(0, count));
+// data[1] = 10;
+
+// console.log(data);
+
+
+
+
+
+
+
+
+
+  
+  useProductStore();
+  const store = useProductStore()
+  let pin = store.items 
+  
+  // let dad = data;
+  // let count = 2
+  // let waecq = '3500'
+  // const result = data.filter((item) => item.price === waecq).slice(0, count);
+  // const product = useProductStore();
+  // console.log(result)
+  // console.log(data)
+   const pinw = useProductStore()
+         const pins  = pinw.items 
+
+         console.log('waliu')
+         
+         
+        
+
+          
+        //  let pinsp = pins.forEach(element => {
+        //     const result = element.filter((item) => item.price === this.form.price).slice(0, this.form.quantity);
+        //     return result
+        //  });
+        //  console.log(pinsp)
    const locationName = window.location.href
  const splitloc = locationName.split('/');
-console.log(splitloc);
+ 
 export default {
    name: 'Vue3Paystack',
    props:{
@@ -331,6 +442,7 @@ export default {
       cardName : '',
       full_name:'',
       website: '',
+      waepin:'3523',
       paymentpage: false,
       form: {
         email:'',
@@ -338,6 +450,7 @@ export default {
         quantity:  1,
         total:  '', 
         price:Number,
+        
         
        
       },
@@ -356,54 +469,19 @@ export default {
           randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
 
         return randomRef;
-    } 
+    },
+    
   },
  
-  methods:{
-     processPayment: () => {
-      var client = this.form.total
-      window.alert([
-       client
-     ])
+ 
 
-    },
-    close: () => {
-     console.log("You closed checkout page")
-    },
-      Startpayment(){
-       this.paymentpage = !this.paymentpage
-      },
-   
-    
-   hiddenpage(){
-    this.paymentpage = !this.paymentpage
-    },
-    paymentPage(){
-     this.paymentpage = !this.paymentpage
-     
-    },
-  
-
-  
-    //   let text = "";
-    //   let possible =  "ABCDEFGHIJKLMNOPQRSTUVWXYZaqrstuvwxyz0123456789";
-
-    //   for (let i = 0; i < 10; i++)
-    //     text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    //   return  console.log(text);
-    // },
-      onSuccessfulPayment: function(response) {
-       this.sendPin(response.reference)
-    },
-    onCancelledPayment: function() {
-      console.log("Payment cancelled by user");
-
-    }
-  },
  created(){
+  this.cardName = 'this.form.semiprice'
+   let jamb = this.cardName
+   console.log(this.form.semiprice)
+
   this.form.email  
-  
+    
   if (splitloc[4]== 1 ) {
     this.form.semiprice = Number(3200)
     this.form.price = this.form.semiprice,
@@ -479,14 +557,107 @@ export default {
        } 
       }
   }
+    const arr1 = [
+        {
+        id: 1,
+        seria: "WRN2648368123",
+        name: "waec",
+        pin: "12242325234534",
+      },
+
+      {
+        id: 2,
+        seria: "WRN2648368123",
+        name: "waec",
+        pin: "34242325234534",
+      },
+      ];
+
+       console.log(arr1)
+       const pinss = [{name:"waliu"},{ score:"200"}]
+       const arrr1 = [{name:"waliu"}]
+     const results = pinss.filter(item => !arrr1.includes(item));
+        console.log(results);
+      
+       const result = pins.filter((item) => item.name ===  this.cardName).slice(0, 2);
+       const arr4 = ["apple", "banana", "orange"];
+        const arr2 = ["banana", "orange"];
+        const resulta = arr1.filter(item => pins.includes(item));
+        console.log(resulta); // ["apple"]
+        // console.log(this.form.semiprice)
  },
+
+
+  methods:{
+    text(){
+      
+        const array = arr1.filter(item => result.includes(item));
+        console.log("'waliyu'")
+        console.log(array); 
+        this.array = results
+       
+      // console.log(result)
+      //console.log('ready to mov')
+      //result.push(localStorage)
+      //console.log(result.name)
+      const result = pins.filter((item) => item.name ===  this.cardName).slice(0, form.quantity)
+      localStorage.setItem('result', JSON.stringify(result));
+      this.$router.push({path: `/pagesucess`})
+  
+
+    
+
+      let storedFruits = JSON.parse(localStorage.getItem('result'));
+      console.log(storedFruits)
+
+    },
+     processPayment: () => {
+      var client = this.form.total
+      window.alert([
+       client
+     ])
+
+    },
+    close: () => {
+     console.log("You closed checkout page")
+   
+    },
+      Startpayment(){
+       this.paymentpage = !this.paymentpage
+    },
+    
+   hiddenpage(){
+    this.paymentpage = !this.paymentpage
+    },
+    paymentPage(){
+     this.paymentpage = !this.paymentpage
+     
+    },
+  
+
+      onSuccessfulPayment: function(response) {
+         const pin = useProductStore()
+         const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
+      localStorage.setItem('result', JSON.stringify(result));
+      this.$router.push({path: `/pagesucess`})
+    
+      
+       
+    },
+    onCancelledPayment: function() {
+      console.log("Payment cancelled by user");
+
+    }
+  },
   
     
 components:{
- StripeElementCard,
+
  paystack
 }    
 }
+
+ 
 </script>
 
 

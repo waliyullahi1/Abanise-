@@ -1,0 +1,27 @@
+[
+  {
+    " name": "John",
+    "image": "waecImg",
+    "price": "3500",
+    "card": "'Waec'",
+    " header": "'Scratch card '",
+    " condition": "'result checker'"
+  },
+  {
+    " name": "John",
+    "image": "waecImg",
+    "price": "3500",
+    "card": "'Waec'",
+    " header": "'Scratch card '",
+    " condition": "'result checker'"
+  },
+
+  {
+    " name": "John",
+    "image": "wa667ecImg",
+    "price": "357600",
+    "card": "'Waec'",
+    " header": "'Scratch card '",
+    " condition": "'result checker'"
+  }
+]

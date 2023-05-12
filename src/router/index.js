@@ -11,8 +11,6 @@ const router = createRouter({
       component: () => import("../views/landingpg.vue"),
     },
 
-  
-
     {
       path: "/card/:id",
       props: true,
@@ -71,6 +69,12 @@ const router = createRouter({
       path: "/prev",
       name: "prev",
       component: () => import("../views/previewsd.vue"),
+    },
+
+    {
+      path: `/pagesucess/`,
+      name: "pagesucess",
+      component: () => import("../views/thankspage.vue"),
     },
   ],
 });
