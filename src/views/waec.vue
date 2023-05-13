@@ -10,7 +10,7 @@
       <div class="h-32 w-full">
       
       </div>
-        <h1 @click="tolink()"> pay</h1>
+        
        <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
                 <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
