@@ -603,6 +603,7 @@ export default {
           localStorage.setItem('result', JSON.stringify(newArray))
          console.log(this.cardName);
          console.log(newArray);
+         window.location.href = '/pagesucess'
          pin.value = newArray.value.filter(obj => obj !== myObject);
         window.location.href = '/pagesucess'
       
