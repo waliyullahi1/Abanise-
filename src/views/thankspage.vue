@@ -7,7 +7,7 @@
                  <img src="@/assets/image/success.gif" alt="sucessful payment"   class="w-52 mx-0 justify-center " >
                </div>
                 <h1 class="font-bold text-[40px] text-whte  text-[puppins] ">Thanks for your <span class=" text-[red]">Subscribing</span></h1>
-                <h1 class="text-[20px] font-semibold text-primary">Look  the below button to copy your scratch card pin </h1>
+                <h1 class="text-[20px] font-semibold text-primary">Look  at the below to copy your scratch card pin </h1>
                 <p></p>
             </div>
                 <div>
