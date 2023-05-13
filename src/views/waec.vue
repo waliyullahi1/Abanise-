@@ -10,7 +10,7 @@
       <div class="h-32 w-full">
       
       </div>
-        
+        <h1 @click="tolink()"> pay</h1>
        <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
                 <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
@@ -270,7 +270,7 @@
           <Input label="Phone Number"   :type=Number :error="false" :inputValue="phone"
           class="mt-4 bg-g-200"  placeholder="Your Number" ></Input>
               
-              
+              <a href="../views/thankspage.vue"></a>
           
      
           <p class="text-sm text-center mt-5 ">Makeimport paystack from  payment with</p> 
@@ -296,6 +296,26 @@ export default defineComponent({
     };
   },
 }); -->
+ <!--//  window.location.href = '/pagesucess'
+
+//          const store = useStore();
+// const myRef = ref(null);
+
+// store.$subscribe((mutation) => {
+//   if (mutation.key === 'myKey') {
+//     myRef.value = mutation.value;
+//   }
+// });
+         
+          // const myObject = {name: 'John', age: 30};
+
+          // myArray.value = myArray.value.filter(obj => obj !== myObject);
+          // console.log(myArray.value)
+          // window.location.href = '/pagesucess'
+      
+        //    localStorage.setItem('result', JSON.stringify(myArray));
+        //  console.log()  -->
+
     
           
          
@@ -306,9 +326,9 @@ export default defineComponent({
             
         
         </form>
-        <button @click="calculate()">my name</button>
-         <paystack @click=" processPayment()"
-                style="font-size:20px," 
+          <div class="bg-primary text-white py-2 px-4 rounded-xl mt-4 font-bold">
+         <paystack @click=" processPayment()" class="bg-red"
+                style="font-size:20px, background-color:red, " 
                 buttonClass="'button-class btn btn-primary'"
                 buttonText="Pay Online"
                 :publicKey="publicKey"
@@ -318,6 +338,7 @@ export default defineComponent({
                 :onSuccess="onSuccessfulPayment"
                 :onCanel="onCancelledPayment"
               ></paystack>
+            </div>
         </div>
         </div>
        
@@ -332,6 +353,7 @@ export default defineComponent({
 </template>
     <script>
   
+import { ref } from 'vue';
   import waec from '../assets/image/waec.png'
   import neco from '../assets/image/neco12.jpg'
   import nabteb from '../assets/image/nee.jpg'
@@ -340,44 +362,14 @@ export default defineComponent({
   import gcewaec from  '../assets/image/gce.jpg'
   import paystack from "vue3-paystack"
   import { useProductStore } from "../stores/counter.js"
-
-   let data = [{name:'waliu', pin:21424244, price:2000},{name:'soliu', pin:214243244,price:2000},{name:'w335liu', pin:2142467, price:2000}, ]
-    let result = useProductStore()
-      // const array =  data.filter(item => result.includes(item))
-        // console.log("'waliyu'")
-        // console.log(array); 
+    
+   
+    
       
       
-
-  //     const index = data.filter((item) => item.price === 2000).slice(0, 2)
-  //    storee.setup() {
-  //   const store = useStore();
-
-  //   const deleteObject = () => {
-  //     store.deleteObject();
-  //   };
-        
-  //   return {
-  //     deleteObject,
-  //   };
-//   // },
-//      function removeItem(id, ) {
-//       if (index !== -1) {
-//         data.items.splice(index, 2);
-//         data.items = [...data.items];
-//       }
-//       return id
-//       }
-// console.log(data)
-// let waecq = '3500'
-//  let count = 1
-// data.splice(data.filter((item) => item.price === waecq).slice(0, count));
-// data[1] = 10;
-
-// console.log(data);
-
-
-
+const pin = useProductStore()
+  //   const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
+  // console.log(result);
 
 
 
@@ -387,29 +379,7 @@ export default defineComponent({
   
   useProductStore();
   const store = useProductStore()
-  let pin = store.items 
-  
-  // let dad = data;
-  // let count = 2
-  // let waecq = '3500'
-  // const result = data.filter((item) => item.price === waecq).slice(0, count);
-  // const product = useProductStore();
-  // console.log(result)
-  // console.log(data)
-  //  const pinw = useProductStore()
-  //        const pins  = pinw.items 
-
-  //        console.log('waliu')
-         
-         
-        
-
-          
-        //  let pinsp = pins.forEach(element => {
-        //     const result = element.filter((item) => item.price === this.form.price).slice(0, this.form.quantity);
-        //     return result
-        //  });
-        //  console.log(pinsp)
+      
    const locationName = window.location.href
  const splitloc = locationName.split('/');
  
@@ -476,10 +446,11 @@ export default {
  
 
  created(){
+  
   this.cardName = 'this.form.semiprice'
    let jamb = this.cardName
    console.log(this.form.semiprice)
-
+  
   this.form.email  
     
   if (splitloc[4]== 1 ) {
@@ -557,39 +528,19 @@ export default {
        } 
       }
   }
-    const arr1 = [
-        {
-        id: 1,
-        seria: "WRN2648368123",
-        name: "waec",
-        pin: "12242325234534",
-      },
-
-      {
-        id: 2,
-        seria: "WRN2648368123",
-        name: "waec",
-        pin: "34242325234534",
-      },
-      ];
-
-    //    console.log(arr1)
-    //    const pinss = [{name:"waliu"},{ score:"200"}]
-    //    const arrr1 = [{name:"waliu"}]
-    //  const results = pinss.filter(item => !arrr1.includes(item));
-    //     console.log(results);
-      
-    //    const result = pins.filter((item) => item.name ===  this.cardName).slice(0, 2);
-    //    const arr4 = ["apple", "banana", "orange"];
-    //     const arr2 = ["banana", "orange"];
-    //     const resulta = arr1.filter(item => pins.includes(item));
-        // console.log(resulta); // ["apple"]
-        // console.log(this.form.semiprice)
+   
+ 
  },
 
 
   methods:{
-    // text(){
+    tolink(){
+      const pin = useProductStore() 
+      const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
+     localStorage.setItem('result', JSON.stringify(result));
+      window.location.href = '/pagesucess'
+    },
+   
       
     //     // const array = arr1.filter(item => result.includes(item));
     //     // console.log("'waliyu'")
@@ -612,9 +563,9 @@ export default {
 
     // },
      processPayment: () => {
-      var client = this.form.total
+    
       window.alert([
-       client
+      
      ])
 
     },
@@ -636,13 +587,25 @@ export default {
   
 
       onSuccessfulPayment: function(response) {
-         const pin = useProductStore()
-         const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
-      localStorage.setItem('result', JSON.stringify(result));
-      this.$router.push({path: `/pagesucess`})
-    
+    //     const myArray = useProductStore();
+    //      const pin = myArray.items
+
+    //      const removeItem = (index) => {
+    //    items = store.state.items.slice();
+    //   constitems.filter((item) => item.name ===  this.cardName).slice(0, this.form.quantity)
+    //   store.state.items = items;
+    //   delete store.state.object;
+    // };
+
+         const myArray = useProductStore();
+         const pin = myArray.items
+         const newArray = pin.filter((item) => item.name ===  this.cardName).slice(0, this.form.quantity)
+          localStorage.setItem('result', JSON.stringify(newArray))
+         console.log(this.cardName);
+         console.log(newArray);
+         pin.value = newArray.value.filter(obj => obj !== myObject);
+        window.location.href = '/pagesucess'
       
-       
     },
     onCancelledPayment: function() {
       console.log("Payment cancelled by user");
