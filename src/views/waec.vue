@@ -2,7 +2,7 @@
   <div class="  ">
     <div class="overflow-hidden font-[Poppins]">
     <Header class="fixed top-0  z-0 h-20"></Header>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 https://www.xvideos.com/video7925980/merciless_male_domination  sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
            
             
         </div>
@@ -145,7 +145,7 @@
               </div>
 
               <div :class="gceWaec? 'hidden' : 'block'">               
-                   <h1 class="text-xl font-semibold mb-2 font-bold text-primary">How to Register for{{cardName}}  Online </h1>
+                   <h1 class="text-xl font-semibold mb-2  text-primary">How to Register for{{cardName}}  Online </h1>
                   <p  class="text-[14px] font-semibold ">firstly All you have to do is download the software from the WAEC website and purchase a registration PIN from our website, abaniseedu.com. The WAEC Biometric Fingerprint Registration software is a collection of applications that candidates must use in order to successfully register their fingerprints for the Nov/Dec WASSCE registration exercise. </p>
                   <p class="font-semibold text-[15px]">Software and processes you need for registration</p>
                  
@@ -259,72 +259,20 @@
             <h1 class="text-2xl font-normal text-secondary ">{{cardName}} Scratch Card</h1>
             <h1 class="text2xl text-black  "> ₦{{this.form.semiprice}}</h1>
             </div>
-            <Input label="Enter Quantity" type="number" @click=" tolink()"  placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" inputValue="1"  :min="1"></Input>
+            <Input label="Enter Quantity" type="number" @click=" tolink()"  placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" inputValue="1"    min=1 ></Input>
+           
         
            <Input label="Charges" type="text" placeholder="Enter your email address" :error="false" inputValue="₦100" :disabled=disabled class="mt-4  -300" ></Input>
 
-          <Input label="Total"   type="Number" :min="numm" :disabled=disabled  :error="false" v-model:inputValue="form.total" class="mt-4  bg-gry-300"></Input>
-
-           <Input label="Email" type="String" placeholder="Your Email" :error="false"   class="mt-4  bg-gay-300" v-model:inputValue="email" ></Input>
+          <Input label="Total"   type="Number" :min="numm" :disabled=disabled  :error="false" v-model:inputValue="form.total" class="mt-4 hidden  bg-gry-300"></Input>
+              <h1 class=" mt-5"> Total</h1>
+              <div class="py-2 w-full h-10 px-5  bg-gray-300 mt-2  rounded-lg ">{{ this.form.quantity * this.form.semiprice }}</div>
+           <Input label="Email" @click="tolink()" type="String" placeholder="Your Email" :error="false"  class="mt-4  bg-gay-300" v-model:inputValue="email"> </Input>
            
           <Input label="Phone Number"   :type=Number :error="false" :inputValue="phone"
           class="mt-4 bg-g-200"  placeholder="Your Number" ></Input>
-              
-              <a href="../views/thankspage.vue"></a>
-          
-     
           <p class="text-sm text-center mt-5 ">Makeimport paystack from  payment with</p> 
    
-           <!-- import { defineComponent } from "vue";
-import { useStore } from "../store";
-
-export default defineComponent({
-  name: "App",
-  setup() {
-    const store = useStore();
-
-    function removeItem(id) {
-      const index = store.items.findIndex((item) => item.id === id);
-      if (index !== -1) {
-        store.items.splice(index, 1);
-        store.items = [...store.items];
-      }
-    }
-
-    return {
-      removeItem,
-    };
-  },
-}); -->
- <!--//  window.location.href = '/pagesucess'
-
-//          const store = useStore();
-// const myRef = ref(null);
-
-// store.$subscribe((mutation) => {
-//   if (mutation.key === 'myKey') {
-//     myRef.value = mutation.value;
-//   }
-// });
-         
-          // const myObject = {name: 'John', age: 30};
-
-          // myArray.value = myArray.value.filter(obj => obj !== myObject);
-          // console.log(myArray.value)
-          // window.location.href = '/pagesucess'
-      
-        //    localStorage.setItem('result', JSON.stringify(myArray));
-        //  console.log()  -->
-
-    
-          
-         
-
-              
-          
-       
-            
-        
         </form>
           <div class="bg-primary text-white py-2 px-4 rounded-xl mt-4 font-bold">
          <paystack @click=" processPayment()" class="bg-red"
@@ -368,13 +316,6 @@ import { ref } from 'vue';
       
       
 const pin = useProductStore()
-  //   const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
-  // console.log(result);
-
-
-
-
-
 
   
   useProductStore();
@@ -452,7 +393,8 @@ export default {
   this.form.email  
    
   if (splitloc[4]== 1 ) {
-    this.form.semiprice = Number(3200)
+    this.form.semiprice = Number(3200)*this.form.quantity
+    console.log(this.form.semiprice);
     this.form.price = this.form.quantity * this.form.semiprice
     console.log(this.form.price)
     this.form.total = this.form.price
@@ -465,8 +407,9 @@ export default {
   } else {
       if (splitloc[4]== 2) {
       this.form.semiprice = Number(1000)
-      this.form.price = this.form.semiprice
-       this.amount= parseInt(this.form.price)*100,
+      this.form.price = this.form.quantity * this.form.semiprice
+      this.form.total = this.form.quantity * this.form.semiprice
+       this.amount= parseInt(this.form.total)*100,
       this.cardName='Neco',
       this.waecImg=waec,
       this.card=true
@@ -535,34 +478,11 @@ export default {
    
     tolink(){
        this.form.total = this.form.quantity * this.form.semiprice
-       this.amount= parseInt(this.form.price)*100
+       this.form.total = this.form.price
+       this.amount = parseInt( this.form.quantity * this.form.semiprice)*100
      console.log(this.amount)
-      const result = pin.filter((item) => item.name ===  this.cardName).slice(0, 2)
-     localStorage.setItem('result', JSON.stringify(result));
      
     },
-   
-      
-    //     // const array = arr1.filter(item => result.includes(item));
-    //     // console.log("'waliyu'")
-    //     // console.log(array); 
-    //     // this.array = results
-       
-    //   // console.log(result)
-    //   //console.log('ready to mov')
-    //   //result.push(localStorage)
-    //   //console.log(result.name)
-    //   const result = pins.filter((item) => item.name ===  this.cardName).slice(0, form.quantity)
-    //   localStorage.setItem('result', JSON.stringify(result));
-    //   this.$router.push({path: `/pagesucess`})
-  
-
-    
-
-    //   let storedFruits = JSON.parse(localStorage.getItem('result'));
-    //   console.log(storedFruits)
-
-    // },
      processPayment: () => {
     
       window.alert([
@@ -590,16 +510,7 @@ export default {
       onSuccessfulPayment: function(response) {
         this.form.price = this.form.quantity * this.form.semiprice
          this.amount= parseInt(this.form.price)*100
-    //     const myArray = useProductStore();
-    //      const pin = myArray.items
-
-    //      const removeItem = (index) => {
-    //    items = store.state.items.slice();
-    //   constitems.filter((item) => item.name ===  this.cardName).slice(0, this.form.quantity)
-    //   store.state.items = items;
-    //   delete store.state.object;
-    // };
-
+    
          const myArray = useProductStore();
          const pin = myArray.items
          const newArray = pin.filter((item) => item.name ===  this.cardName).slice(0, this.form.quantity)

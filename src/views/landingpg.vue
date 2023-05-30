@@ -6,13 +6,13 @@
    
     <div class="w-full h-10"></div>
     <section  class=" " >
-    <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]   overflow-hidden ">
+    <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
     <div  class="container   flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
-        <p class= "  font- text-6xl px-1  md:text-[6rem] text-white font-[Poppins] text-[Advert]">Buy scratch <span class="text-secondary">Card</span></p>
-        <p class="text-2xl text-[white] ">Get instant accesss to scratch card PINs for WAEC,  NECO  and NABTEB</p>
+        <p class= "  font- text-4xl px-1  md:text-[4rem] text-white font-[Poppins] ">Buy scratch <span class="text-secondary">Card</span></p>
+        <p class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for <br> WAEC,  NECO  and NABTEB</p>
         <div class="flex gap-5 mt-8 items-center">
-            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 text-2xl text-white"> <img src="@/assets/image/sign.svg" class="w-10" alt=""> login in</p></router-link>
-            <p><router-link  to="/register" class="text-2xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
+            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
+            <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
             
         </div>
          <p class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</p>
@@ -21,49 +21,49 @@
     <div class="w-full bg-primary ">
         <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-1 gap-10 py-10 w-full h-fit">
         <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class="font-bold text-[20px] mb-2  text-white">Discounted Prices</h1>
-            <p class="text-[17px] font leading-relaxed ">Buy Waec , Neco, Nabteb resultchecker and Waec pin, Nabteb pin at highly subsized prices</p>
+            <h1 class=" text-[20px] mb-2  text-white">Discounted Prices</h1>
+            <p class="text-[14px] font leading-relaxed ">Buy Waec , Neco, Nabteb resultchecker and Waec pin, Nabteb pin at highly subsized prices</p>
         </div>
 
          <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class="font-bold text-[20px] mb-2  text-white">Instant Delivery</h1>
-            <p class="text-[17px] font leading-relaxed ">Users receive Product atmost 3 minutes after Purchase</p>
+            <h1 class=" text-[20px] mb-2  text-white">Instant Delivery</h1>
+            <p class="text-[14px] font leading-relaxed ">Users receive Product atmost 3 minutes after Purchase</p>
         </div>
 
          <div class=" text-white border-l-2 pl-3  ">
-            <h1 class="font-bold text-[20px] mb-2  text-white">24/7 Customer Support</h1>
-            <p class="text-[17px] font leading-relaxed ">Our customer service agent are always available to respond to any issues that you might have</p>
+            <h1 class=" text-[20px] mb-2  text-white">24/7 Customer Support</h1>
+            <p class="text-[14px] font leading-relaxed ">Our customer service agent are always available to respond to any issues that you might have</p>
         </div>
 
          <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class="font-bold text-[20px] mb-2  text-white">User-Friendly Experience</h1>
-            <p class="text-[17px] font leading-relaxed ">Top notch user Interface that give you a smooth and satisfying experience</p>
+            <h1 class=" text-[20px] mb-2  text-white">User-Friendly Experience</h1>
+            <p class="text-[14px] font leading-relaxed ">Top notch user Interface that give you a smooth and satisfying experience</p>
         </div>
     </div>
     </div>
     </section>
     <section class="container  my-10  mt-10 mx-auto">
-        <marquee behavior="scroll" direction="left" scrollamount="" class=" text-sm md:text-xl w-full font-bo text-primary "><span>If you want to process your admission to any university or polythenic kindly call this whatsapp number 07068393706</span></marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="" class=" text-sm md:text-xl w-full font-bo text-primary "><span>IF YOU WANT  TO PROCESS YOUR ADDMISSION TO ANY UNIVERSITY OR POLYTECHNIC KINDLY MESSAGE  THIS WHATSAPP NUMBER 07068393706 </span></marquee>
       <div class="  flex flex-col justify-cen
       ter gap-5 items-center ">
         <p class="text-3xl font-bold text">CARDS PRODUCT</p>
         <p class="md:text-xl text-sm  font-normal ">CLICK ON ANY CARD BELOW TO BUY THE CARD PIN INSTANTLY </p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 ">
-            <div v-for="item in item" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
-                <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
-                   <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
+        <div class="grid md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 ">
+            <div v-for="item in item" :key="item.id" class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
+                <div class="w-full rounded-[2rem] group-hover:drop-shadow-xl group-hover:scale-125 duration-700  pt-3 px-3 overflow-hidden ">
+                   <div class="overflow-hidden group-hover:scale-125 duration-700   rounded-[2rem] "> <img v-bind:src="item.image" /></div>
                    
                 </div>
                 <div class=" flex py-3 px-3 flex-col gap-3 border-primary transform duration-300">
                     <div class=" group-hover:w-full w-1 duration-500 h-1 bg-primary"></div>
-                    <p class="text-xl "><span>{{item.card}}</span> {{item.header}} <span class="tex- text-base font-semibold">({{item.condition}})</span></p>
+                    <p class="text-[17px] "><span>{{item.card}}</span> {{item.header}} <span class="tex- text-base font-sebold">({{item.condition}})</span></p>
                     <div class="flex justify-between">
-                    <p class="text-xl font-semibold">Price</p> 
+                    <p class="text-[17px]">Price</p> 
                     <p class="font-semibold font-lg ">₦{{item.price}}</p>
                     </div>
-                    <p class="flex justify-between font-semibold font-lg ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
+                    <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
                 </div>
-                 <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-semibold">Buy now</PrimaryBtn></router-link>
+                 <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
             </div>
             
         </div>
@@ -110,7 +110,7 @@
     <section class="container my-20 mx-auto py-5 ">
      <div class="flex flex-col gap-5 justify-center images h-96 items-center">
      <p class="text-3xl justify-center font-semibold text-white  ">ABOUT US</p>
-     <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack and Flutterwave, you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
+     <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
      </div>
     </section>
     <section>
@@ -130,6 +130,7 @@
 
         </div>
     </section>
+   <div class="w-full"><img src="@/assets/image/whatsapp.png" alt="" class="w-[120px] fixed top- right- buttom-  " /></div>
     <Footer></Footer>
  </div>
  </template>
@@ -204,7 +205,21 @@
                         card:'Waec',
                         header:'Result Verification ',
                         condition:''
-                    }
+                    },
+
+                    
+
+                  
+
+
+                   
+
+
+
+               
+
+
+                    
                 ]
             }
         },

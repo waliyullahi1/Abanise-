@@ -14,7 +14,7 @@
         <div class="flex py-10 gap- container px-5 border-t-2 mx-auto">
         <div class="w-full md:w-1/3 mr-10">
           <logos class="w-32 "></logos>
-          <p class="text-[15px] text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo doloribus neque non eveniet laborum inventore obcaecati.</p>
+          <p class="text-[15px] text-white">We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries</p>
         </div>
 
        <div class=" w-full md:flex hidden">

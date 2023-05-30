@@ -4,7 +4,7 @@
          <!-- <span class="text-red text-xs">{{error}}</span> -->
       </label>
       <input :class="{'border-red-500 focus:border-red-500 active:border-red-500' : error}" autocomplete="off"  class="w-full py-2 px-4 text-sm  outline-none bg-gray-300 ring-0  active:bordr-primary rounded-lg h-[40px] border border-transparent"
-    :type="type" :disabled="disabled" :placeholder="placeholder" :value="inputValue" @input="$emit('update:inputValue', $event.target.value)" ref="input">
+    :type="type" :disabled="disabled" :max="max" :min="min" :placeholder="placeholder" :value="inputValue" @input="$emit('update:inputValue', $event.target.value)" ref="input">
       <!-- <p></p> -->
     </div>
 
@@ -21,7 +21,10 @@
       type: String,
       disabled: Boolean,
       placeholder:String,
-      inputValue: String
+      inputValue: String,
+      min:Number,
+      max:Number,
+
     },
 
     methods: {
