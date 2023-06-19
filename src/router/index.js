@@ -10,6 +10,11 @@ const router = createRouter({
       name: "landingpage",
       component: () => import("../views/landingpg.vue"),
     },
+    {
+      path: "/aboutus",
+      name: "aboutus",
+      component: () => import("../views/aboutus.vue"),
+    },
 
     {
       path: "/card/:id",
@@ -69,6 +74,11 @@ const router = createRouter({
       path: "/prev",
       name: "prev",
       component: () => import("../views/previewsd.vue"),
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: () => import("../views/test.vue"),
     },
 
     {

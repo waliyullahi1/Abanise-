@@ -8,8 +8,8 @@
     <section  class=" " >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
     <div  class="container   flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
-        <p class= "  font- text-4xl px-1  md:text-[4rem] text-white font-[Poppins] ">Buy scratch <span class="text-secondary">Card</span></p>
-        <p class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for <br> WAEC,  NECO  and NABTEB</p>
+        <p class= "  font- text-4xl px-1  md:text-[5rem] text-white font-[Poppins] ">Buy scratch <span class="text-secondary">Card</span></p>
+        <a class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for  WAEC,<br>  NECO  and NABTEB</a>
         <div class="flex gap-5 mt-8 items-center">
             <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
             <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
@@ -42,16 +42,16 @@
     </div>
     </div>
     </section>
-    <section class="container  my-10  mt-10 mx-auto">
+    <section id="section" class="container  my-10  mt-10 mx-auto">
         <marquee behavior="scroll" direction="left" scrollamount="" class=" text-sm md:text-xl w-full font-bo text-primary "><span>IF YOU WANT  TO PROCESS YOUR ADDMISSION TO ANY UNIVERSITY OR POLYTECHNIC KINDLY MESSAGE  THIS WHATSAPP NUMBER 07068393706 </span></marquee>
       <div class="  flex flex-col justify-cen
       ter gap-5 items-center ">
         <p class="text-3xl font-bold text">CARDS PRODUCT</p>
         <p class="md:text-xl text-sm  font-normal ">CLICK ON ANY CARD BELOW TO BUY THE CARD PIN INSTANTLY </p>
         <div class="grid md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 ">
-            <div v-for="item in item" :key="item.id" class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
-                <div class="w-full rounded-[2rem] group-hover:drop-shadow-xl group-hover:scale-125 duration-700  pt-3 px-3 overflow-hidden ">
-                   <div class="overflow-hidden group-hover:scale-125 duration-700   rounded-[2rem] "> <img v-bind:src="item.image" /></div>
+            <div  v-for="item in item" :key="item.id" v-motion-pop-visible class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
+                <div class="w-full rounded-[2rem] group-hover:drop-shadow-xl  duration-700  pt-3 px-3 overflow-hidden ">
+                   <div class="overflow-hidden duration-700   rounded-[2rem] "> <img v-bind:src="item.image" class="w-[20rem]" /></div>
                    
                 </div>
                 <div class=" flex py-3 px-3 flex-col gap-3 border-primary transform duration-300">
@@ -69,12 +69,12 @@
         </div>
       </div>
     </section>
-    <section class="container mx-auto my-20 py-5">
+    <section class="container hidden mx-auto my-20 py-5">
        <div class="">
         <h1 class="md:text-4xl text-xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
         <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable Price for card</p>
         <div class="grid md:grid-cols-4 grid-cols-2  md:gap-10 gap-3 justify-center "> 
-            <div class="flex flex-col justify-center items-center">
+            <div  v-motion-pop-visible class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center   text-[1rem]">MTN Airtime VTU And Data</h1>
@@ -107,12 +107,54 @@
         </div>
        </div>
     </section>
-    <section class="container my-20 mx-auto py-5 ">
+    <section id="how" class="bg-gray-200">
+        <div class="container  mx-auto my-20 py-20">
+            <p class="text-3xl text-center text-primary">How it is works</p>
+            <p class="text-xl py-6 text-center text-primary">Start purchasing cards now. It’s easy, secure and takes only a few minutes!</p>
+
+            <div class="w-full grid grid-cols-1 sm:px-5 px-11 sm:grid-cols-3 gap-6">
+                <div  v-motion-slide-visible-left class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
+                    
+                    <div><img class="bg w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/card1.svg" alt=""></div>
+                    <h1 class="text-3xl text-secondary font-mermaid">1</h1>
+                    <p class=" text-xl text-center font-semibold ">Select Card type <br> & number of pins</p>
+                    <p class=" text-[15px] text-center">Start by selecting the card you want to purchase from the above list, then select the number of pins in next page </p>
+                </div>
+                <div v-motion-pop-visible class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
+                    
+                    <div ><img class="bg-  w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/payment.svg" alt=""></div>
+                    <h1 class="text-3xl text-secondary font-mermaid">2</h1>
+                    <p class=" text-xl text-center font-semibold ">Make Payment <br> </p>
+                    <p class=" text-[15px]  text-center">We partnered with Paystack to make your payment process fast and secure.   </p>
+                </div>
+                <div  v-motion-slide-visible-once-bottom class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
+                    
+                    <div><img class="bg-  w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/token.svg" alt=""></div>
+                    <h1 class="text-3xl text-secondary font-mermaid">3</h1>
+                    <p class=" text-xl text-center font-semibold ">Receive Tokens Instantly <br> </p>
+                    <p class=" text-[15px]  text-center">Immediately after your payment, if successful,you will be direct to another page automatically to copy you token.   </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container hidden my-20 mx-auto py-5 ">
      <div class="flex flex-col gap-5 justify-center images h-96 items-center">
      <p class="text-3xl justify-center font-semibold text-white  ">ABOUT US</p>
      <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
      </div>
     </section>
+    <carousel :autoplay="6000"  :wrap-around="true" class=" " :items-to-show="1">
+        <slide v-for="slide in hero" :key="slide.id" class="w-full  ">
+           <div>
+             <div class="w-full h-[20rem] px-3"><img class=" h-ull" v-bind:src="slide.image" ></div>
+            <div class="text-left flex flex-col relative left-10 bottom-[8rem]">
+                <p class=" font- text-4xl text-[white]  md:text-[3rem] text-whte font-[Poppins]">Registration you O'level </p>
+                <p class="md:text-xl text-xl  text-[white] pt-2  m">Registered your results with us and get a good grade </p>
+                <a href="" class="bg-primary text-[white] mt-4 py-2 px-2 w-fit rounded-lg text-white text-">Contact us now </a>
+            </div>
+           </div>
+        </slide>
+    </carousel>
     <section>
         <div :class=" track ? 'translate-x-0 ' : 'translate-x-[250rem]'" class=" duration-700 ease-in-out w-full transform top-0 fixed z-50  blurr h-[50rem]">
             <div class="w-[30rem]  transl duration-700 ease-in-out transform mx-auto shadows bg-white h-[10rem] mt-[20rem]  "   :class=" track ? '' : 'translate-x-[1rem]'" >
@@ -130,14 +172,42 @@
 
         </div>
     </section>
-   <div class="w-full"><img src="@/assets/image/whatsapp.png" alt="" class="w-[120px] fixed top- right- buttom-  " /></div>
+   
     <Footer></Footer>
+    
+   <carousel :autoplay="4000"  :wrap-around="true" class=" " :items-to-show="1">
+   <slide v-for="slide in hero" :key="slide.id" class=" w-6 overflow-hidden carousel__item carousel__slide"  >
+                <div class="l group-hover:scale-125 duration-700  pt-3 px-3 overflow-hidden ">
+                   <div class="w-20 group-hover:scale-125 duration-700    "> <img v-bind:src="slide.image"  class="w-20"/></div>
+                   
+                </div>
+                <div class=" flex py-3 px-3 flex-col gap-3 border-primary transform duration-300">
+                    <div class=" group-hover:w-full w-1 duration-500 h-1 bg-primary"></div>
+                    <p class="text-[17px] "><span>{{slide.card}}</span> {{slide.header}} <span class="tex- text-base font-sebold">({{slide.condition}})</span></p>
+                    <div class="flex justify-between">
+                    <p class="text-[17px]">Price</p> 
+                    <p class="font-semibold font-lg ">₦{{slide.price}}</p>
+                    </div>
+                    <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
+                </div>
+                 <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
+    </slide>
+
+    <template #addons>
+      <navigation />
+      <pagination />
+    </template>
+  </carousel>
  </div>
  </template>
 
 
 <script>
+    import 'vue3-carousel/dist/carousel.css'
+    import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+    
 
+     import hero1 from '@/assets/image/exam.jpg';
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
      import vwaec from '../assets/image/vgce.jpg'
@@ -146,6 +216,12 @@
    import nabtebgce from '../assets/image/pinnabteb.jpg'
 
     export default {
+         name: 'Autoplay',
+         components: {
+    Carousel,
+    Slide,
+    Pagination,
+  },
         data(){
             return{
                 track: false,
@@ -220,6 +296,37 @@
 
 
                     
+                ],
+               hero:[
+                    {
+                        id: 1,
+                       
+                        image:hero1 ,
+                        price:'3500',
+                        card:'Waec',
+                        header:'Scratch card ',
+                        condition:'result checker'
+                    },
+
+                    {
+                        id: hero1,
+                        image: neco,
+                        price:'1000',
+                        card:'Neco',
+                        header:'Scratch card ',
+                        condition:'result checker'
+                    },
+
+                    {
+                        id: hero1,
+                        image: nabteb,
+                        price:'1000',
+                        card:'Nabteb',
+                        header:'Scratch card ',
+                        condition:'result checker'
+                    },
+                    
+   
                 ]
             }
         },
@@ -234,7 +341,12 @@
     }
 </script>
 
-<style>
+<style scoped>
+.carousel__item {
+   width: 200%;
+  
+}
+
 
 
 
