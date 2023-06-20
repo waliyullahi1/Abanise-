@@ -2,15 +2,14 @@
   <div class="  ">
     <div class="overflow-hidden font-[Poppins]">
     <Header class="fixed top-0  z-0 h-20"></Header>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 https://www.xvideos.com/video7925980/merciless_male_domination  sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
-           
-            
-        </div>
+     
+     <div class="grid md:grid-cols-2 lg:grid-cols-3   sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
+              </div>
     
       <div class="h-32 w-full">
       
       </div>
-        
+         
        <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
                 <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
@@ -271,7 +270,7 @@
            
           <Input label="Phone Number"   :type=Number :error="false" :inputValue="phone"
           class="mt-4 bg-g-200"  placeholder="Your Number" ></Input>
-          <p class="text-sm text-center mt-5 ">Makeimport paystack from  payment with</p> 
+          <p class="text-sm text-center mt-5 ">Makepayment with  Paystack   </p> 
    
         </form>
           <div class="bg-primary text-white py-2 px-4 rounded-xl mt-4 font-bold">
@@ -409,7 +408,7 @@ export default {
       this.form.semiprice = Number(1000)
       this.form.price = this.form.quantity * this.form.semiprice
       this.form.total = this.form.quantity * this.form.semiprice
-       this.amount= parseInt(this.form.total)*100,
+       this.amount= (parseInt(this.form.price)*100) + 100,
       this.cardName='Neco',
       this.waecImg=waec,
       this.card=true
@@ -431,7 +430,7 @@ export default {
         if (splitloc[4]== 4) {
           this.form.semiprice = Number(19000)
         this.form.price = this.form.semiprice*this.form.quantity
-         this.amount= parseInt(this.form.price)*100,
+         this.amount= (parseInt(this.form.price)*100) + 100,
           this.vcard=true
           this.card=false
           this.Nabtebre =true
@@ -454,7 +453,7 @@ export default {
             if (splitloc[4]== 6) {
               this.form.semiprice = Number(19000)
           this.form.price = this.form.semiprice
-           this.amount= parseInt(this.form.price)*100,
+           this.amount= (parseInt(this.form.price)*100) + 100,
                this.nysecard= true
                 this.vcard= false
                  this.card= false
@@ -479,15 +478,14 @@ export default {
     tolink(){
        this.form.total = this.form.quantity * this.form.semiprice
        this.form.total = this.form.price
-       this.amount = parseInt( this.form.quantity * this.form.semiprice)*100
-     console.log(this.amount)
+       this.amount = (parseInt( this.form.quantity * this.form.semiprice)*100)+100*100
+     
      
     },
      processPayment: () => {
     
-      window.alert([
-      
-     ])
+      window.alert(
+     "Are you sure you want to continue transaction ")
 
     },
     close: () => {
@@ -509,7 +507,7 @@ export default {
 
       onSuccessfulPayment: function(response) {
         this.form.price = this.form.quantity * this.form.semiprice
-         this.amount= parseInt(this.form.price)*100+100
+         this.amount= (parseInt(this.form.price)*100) + 100
     
          const myArray = useProductStore();
          const pin = myArray.items
