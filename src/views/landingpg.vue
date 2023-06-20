@@ -187,9 +187,9 @@
 <script>
     import 'vue3-carousel/dist/carousel.css'
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-    import hero3 from '@/assets/image/heroo.jpg';
+    import hero3 from '@/assets/image/fill.jpg';
     
-     import hero1 from '@/assets/image/hero2.jpg';
+     import hero1 from '@/assets/image/fi1.jpg';
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
      import vwaec from '../assets/image/vgce.jpg'
