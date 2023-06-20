@@ -35,7 +35,7 @@
       <section class="container mx-auto">
       <div class="flex flex-col items-center gap-5  ">
 
-        <div class=" w-1/2"><img :src="waecImg" alt="" ></div>
+        <div class=" w-1/3"><img :src="waecImg" alt="" ></div>
             <PrimaryBtn @click="Startpayment()" class="ronded duration-500 rounded-xl hover:bg-secondary">Proceed to payment</PrimaryBtn>
             <div class="w-  flex flex-col gap-3">
             <div class="flex flex-col gap-5">

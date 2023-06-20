@@ -11,7 +11,7 @@
                 <img src="../assets/image/receive.svg" class="w-20 bg-primary rounded-full p-3" alt="">
                 <p class="font-semibold text-center">SCRATCH CARD PRODUCTS</p>
                 <p class="text-center text-[15px] ">We have variety of examination scratch cards and we provide you a secure on-line payment method to make purchase</p>
-                 <router-link to="/register" class="bg-primary py-2 px-2 rounded-lg text-white text-center">Check it now </router-link>
+                 <h1 to="/" class="bg-primary py-2 px-2 rounded-lg text-white text-center"> <a href="/#section">Check it now</a></h1>
             </div>
 
              <div class="flex  shadow-lg py-4 px-4 border flex-col justify-center items-center  w-96 gap-3">
