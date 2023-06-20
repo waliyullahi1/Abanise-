@@ -15,7 +15,7 @@
       <li class=" font-semibold text-primary md:hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "> <router-link to="/">Home</router-link></li>
       <p to="/"  class=" font-semibold   text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#section">Cards</a></p>
 
-       <li class=" font-semibold   hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="">Transaction tracking</router-link></li>
+       <li @click=" transc()" class=" font-semibold   text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><h1>Transaction tracking</h1></li>
 
       <router-link to="/aboutus" class=" font-semibold  text-primary hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#section">About us</a></router-link>
 
@@ -49,6 +49,9 @@ export default {
     }
   },
    methods:{
+    transc(){
+       this.$emit("transaction",)
+    },
    emitclick(){
     this.rotate = !this.rotate
    

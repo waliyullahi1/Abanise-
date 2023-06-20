@@ -2,7 +2,7 @@
    
  <div class="overflow-y-hidden font-[Poppins]">
   
-   <Header class="fixed z-40 top-0"></Header>
+   <Header @transaction="transact()" class="fixed z-40 top-0"></Header>
    
     <div class="w-full h-10"></div>
     <section  class=" " >
@@ -307,8 +307,9 @@
             }
         },
         methods:{
-            procced(){
+           transact(){
                 this.track = !this.track
+                console.log('happyis')
             },
             idHidden(){
                 this.track = !this.track

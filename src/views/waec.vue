@@ -509,7 +509,7 @@ export default {
 
       onSuccessfulPayment: function(response) {
         this.form.price = this.form.quantity * this.form.semiprice
-         this.amount= parseInt(this.form.price)*100
+         this.amount= parseInt(this.form.price)*100+100
     
          const myArray = useProductStore();
          const pin = myArray.items
