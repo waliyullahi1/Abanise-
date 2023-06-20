@@ -3,7 +3,7 @@
     <div class="w-full fixed z-40 h-[5rem] shadows flex justify-between abslute pr-20 bg-white" >
       <div class=" w-full gap-5 items-center  flex py-4 px-4">
         <img src="../assets/image/Menu.svg" class="w-7 " @click="shows()" alt="">
-       <img src="@/assets/abanise.png" class="w-[160px]" alt="">
+       <img src="@/assets/abanisee.png" class="w-[160px]" alt="">
       </div>
       
       <div class="flex gap-3 items-center">
