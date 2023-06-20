@@ -485,7 +485,7 @@ export default {
      processPayment: () => {
     
       window.alert(
-     "Are you sure you want to continue transaction ")
+     "Are you sure you want to continue this transaction ")
 
     },
     close: () => {
