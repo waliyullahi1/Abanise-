@@ -36,7 +36,7 @@ import { findDir } from '@vue/compiler-core';
    export default {
     data(){
             return{
-              items : JSON.parse(localStorage.getItem("result")),
+              items : JSON.parse(localStorage.getItem("savedItems")),
                 
             }
         },

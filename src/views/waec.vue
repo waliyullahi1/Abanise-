@@ -335,7 +335,7 @@ export default {
     return {
       Nabtebre: "",
       gceWaec:"",
-        publicKey:'pk_test_6e7188c6a08247d1027aef4d5bd5eb2312c801fd',
+        publicKey:'pk_live_98f0335f99f7a0e2b1399a55ad5903b3f88a92af',
         amount:"",
         email: "",
       nysecard:'',
