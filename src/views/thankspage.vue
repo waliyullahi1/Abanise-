@@ -1,6 +1,6 @@
 <template class="">
     <div class="  bg-blak text-[puppins] ">
-       <Header class="fixed z-40 top-0"></Header> 
+       <Header :headertext="true"  class="fixed z-40 top-0"></Header> 
        <section class="container h-screen mx-auto ">
             <div class="md:w-1/2  w-full  mx-auto   justify-center text-center 08086375698 items-center pt-[5rem] ">
                <div class="w-full flex justify-center">

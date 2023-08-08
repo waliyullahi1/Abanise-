@@ -8,7 +8,7 @@ import App from './App.vue'
 import router from './router'
 import dashbord from "./components/dashboardbtn.vue"
 import logo from './components/Navigation/logo.vue'
-import logos from './components/Navigation/Logos.vue'
+import logo1 from './components/Navigation/logo2.vue'
 import Header from './components/Header.vue'
 import PrimaryBtn from './components/Primary.vue'
 import semipayment from './components/waecpayment.vue'
@@ -23,7 +23,8 @@ app.use(MotionPlugin);
 app.use(createPinia())
 app.use(router)
 app.component('logo', logo)
-app.component("logos", logos);
+app.component("logo1", logo1);
+
 app.component('Header', Header)
 app.component('PrimaryBtn', PrimaryBtn)
 app.mount("#app");

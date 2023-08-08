@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/abanisee.png" class="md:w-[80px]  w-32 " alt="">
+  <img src="@/assets/abanisee.png" class="w-[70px]  2 " alt="">
 </template>
 
 <script>

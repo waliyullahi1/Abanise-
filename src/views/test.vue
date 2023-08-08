@@ -1,36 +1,36 @@
 <template>
-  <div class="container https://e-cardmarket.com.ng/ https://www.intech.org.ng/our-services">
-    <transition name="scroll">
-      <div v-if="show" class="fixed">
-       ggggggggggggggggggggg
-      </div>
-    </transition>
-    <div class="scroll" @scroll="onScroll">
-      ...
-    </div>
+  <div>
+    <header style="po" :style="{ backgroundColor: bgColor, position:pos }">
+      <h1>Header</h1>
+    </header>
+    <main>
+      <p>Scroll down to see the header background color change.</p>
+      <p v-for="i in 20" :key="i">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel aliquam bibendum, velit sapien lacinia nunc, vel bibendum velit quam ac nibh. Donec euismod, sapien vel aliquet tincidunt, lorem enim bibendum nisl, vel bibendum velit quam ac nibh.</p>
+    </main>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
-  methods: {
-    onScroll() {
-      const el = document.querySelector(".scroll");
-      const scrollTop = el.scrollTop;
-      if (scrollTop > 100) {
-        this.show = true;
+  setup() {
+    const bgColor = ref('transparent');
+    const pos  =  ref('static')
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        bgColor.value = 'lightblue';
+         pos.value = 'fixed';
       } else {
-        this.show = false;
+        bgColor.value = 'transparent';
+        pos  =  ref('static')
       }
-    },
+    });
+    return { bgColor, pos };
   },
 };
 </script>
+
 
 <style>
 .container {

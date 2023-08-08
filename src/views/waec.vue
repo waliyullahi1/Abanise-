@@ -1,16 +1,16 @@
 <template>
   <div class="  ">
     <div class="overflow-hidden font-[Poppins]">
-    <Header class="fixed top-0  z-0 h-20"></Header>
+    <Header :headertext="false" class="fixed top-0  z-0 h-20"></Header>
      
-     <div class="grid md:grid-cols-2 lg:grid-cols-3   sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
+     <div class="grid md:grid-cols-2 lg:grid-cols-3  sm:grid-cols-2  grid-cols-1 gap-20 px-10 "> 
               </div>
     
       <div class="h-32 w-full">
       
       </div>
          
-       <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
+       <div v-for="item in product" :key="item.id" class=" group shadows border-primary w-full overflow-hidden  h-fit flex flex-col gap-3  px-4 rounded-[2rem]" >
                 <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden rounded-[2rem] "> <img v-bind:src="item.image" /></div>
                    
@@ -26,7 +26,7 @@
                 </div>
                  <router-link target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-semibold">Buy now</PrimaryBtn></router-link>
             </div>
-    <div :class="card ? 'block' : 'hidden'"> 
+    <div  class="px-4" :class="card ? 'block' : 'hidden'"> 
       <section class=" container my-5 mx-auto "> 
       <h1 class="family text-5xl text-center">{{cardName}} Scratch Card</h1>
       <p class="text-2xl font-semibold text-center ">Buy {{cardName}} Direct Access Card Here</p>
@@ -98,7 +98,7 @@
 
 
 
-   <div :class="vcard ? 'block' : 'hidden'"> 
+   <div  class="px-4" :class="vcard ? 'block' : 'hidden'"> 
     <section class=" container my-5 mx-auto "> 
     <h1 class="family text-4xl text-center">Buy  {{cardName}} Pin Online</h1>
     <p class="text-2xl font-semibold text-center ">Buy GCE{{cardName}} Pin Direct Access  Here</p>
@@ -179,7 +179,7 @@
 
 
     
-   <div :class="nysecard ? 'block' : 'hidden'"> 
+   <div class="px-4" :class="nysecard ? 'block' : 'hidden'"> 
     <section class=" container my-5 mx-auto "> 
     <h1 class="family text-3xl text-center">Buy  {{cardName}}</h1>
     <p class="text-2xl font-semibold text-center ">Buy {{cardName}} Direct Access  Here</p>
@@ -243,7 +243,7 @@
     </div>
     </section>
     </div>
-    <div class="w-full  fixed top-0 z-20  bg-black duration-700 translate transform bg-opacity-50 items-center flex justify-center h-full px-6 md:px-0 lg:px-10" :class="paymentpage ? 'translate-y-0 ' : 'translate-y-[140rem]' "  >
+    <div  class="w-full  fixed top-0 z-20  bg-black duration-700 translate transform bg-opacity-50 items-center flex justify-center h-full px-6 md:px-0 lg:px-10" :class="paymentpage ? 'translate-y-0 ' : 'translate-y-[140rem]' "  >
     <div  class="ul overflow-scroll mx-auto mt-20  bg-white py-5 duration-400 translate transform h-screen px-10 lg:w-1/3 md:w-1/2 w-fu ">
           <div class="flex mb-5 justify-between">
             <p class=" font-bold">check point</p>

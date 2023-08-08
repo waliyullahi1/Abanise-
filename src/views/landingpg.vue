@@ -2,21 +2,21 @@
    
  <div class="overflow-y-hidden font-[Poppins]">
   
-   <Header @transaction="transact()" class="fixed z-40 top-0"></Header>
-   
-    <div class="w-full h-10"></div>
-    <section  class=" " >
+   <Header @transaction="transact()" :headertext="headerChange" class="fixed z-40 top-0"></Header>
+    
+    <div class="w-full h"></div>
+    <section  class=" j" >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
-    <div  class="container   flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
-        <p class= "  font- text-4xl px-1  md:text-[5rem] text-white font-[Poppins] ">Buy scratch <span class="text-secondary">Card</span></p>
+    <div  class="container pt-8  flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
+        <p class= "  font- text-4xl px-1  md:text-[5rem] text-white font-[roboto] ">Buy scratch <span class="text-secondary">Card</span></p>
         <a class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for  WAEC,<br class="md:flex hidden">  NECO  and NABTEB</a>
         <div class="flex gap-5 mt-8 items-center">
-            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
-            <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
+            <router-link  to="/"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
+            <p><router-link  to="/" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
             
         </div>
          <p class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</p>
-    </div>
+    </div>j
     </div>
     <div class="w-full bg-primary ">
         <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-1 gap-10 py-10 w-full h-fit">
@@ -188,7 +188,7 @@
     import 'vue3-carousel/dist/carousel.css'
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
     import hero3 from '@/assets/image/fill.jpg';
-    
+    import { ref } from 'vue';
      import hero1 from '@/assets/image/fi1.jpg';
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
@@ -199,6 +199,18 @@
 
     export default {
          name: 'Autoplay',
+
+          setup() {
+    const headerChange=ref()
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 70) {
+       headerChange.value =false  
+      } else {
+        headerChange.value = true
+      }
+    });
+    return { headerChange};
+  },
          components: {
     Carousel,
     Slide,
@@ -206,6 +218,7 @@
   },
         data(){
             return{
+                 scrollPosition: null,
                 track: false,
                 item:[
                     {
@@ -307,6 +320,7 @@
             }
         },
         methods:{
+            
            transact(){
                 this.track = !this.track
                 console.log('happyis')
@@ -314,7 +328,8 @@
             idHidden(){
                 this.track = !this.track
             }
-        }
+        },
+       
     }
 </script>
 
@@ -365,6 +380,7 @@
     }
     .image{
         background-image: url(../assets/image/dash.jpg);
+        background-color: #164b3b;
         background-position:right;
         background-repeat: no-repeat;
         background-size:cover;
