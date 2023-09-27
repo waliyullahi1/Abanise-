@@ -8,7 +8,7 @@
       justify-center
       flex
       bg-primary
-      hover:bg-secondary
+      hover:bg-green-900
       text-white
       font-medium
       text-base

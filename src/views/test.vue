@@ -16,7 +16,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const bgColor = ref('transparent');
-    const pos  =  ref('static')
+    let pos  =  ref('static')
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         bgColor.value = 'lightblue';

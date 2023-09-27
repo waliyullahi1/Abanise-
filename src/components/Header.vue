@@ -22,7 +22,7 @@
 
       <li  class=" font-semibold  text-white  hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#how">How it work</a></li>
      
-      <li  class=" font-semibold  text-white hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/">Sign in</router-link></li>
+    <li  class=" font-semibold  text-white hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/login">Sign in</router-link></li>
      
          
      </ul>
