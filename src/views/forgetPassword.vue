@@ -2,10 +2,10 @@
   <div class="h-screen     w-full overflow-x-hidden ">
 
     <div class=" md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
-      <h1 class="font-semibold text-xl font-sans py-11 text-center ">Sign in to your account to continue.</h1>
+      <h1 class="font-semibold text-xl font-sans py-11 text-center ">Reset Password.</h1>
       <form class="md:max-w-md  lg:max-w-md sm:w-full"  @submit.prevent="submit" action="">
         
-           <div  >
+           <div class="mb-5" >
               <div  class="flex  b drop-shadow-md  mt-2 ">  <input type="text" :class="erroremail ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="Email " v-model="form.email"  ></div>
               <p :class="erroremail ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']"> enter email</p>
 
@@ -14,24 +14,14 @@
   
 
 
-           <div  class="my-5  gap-5">
-             <div>
-               <div class="flex  b drop-shadow-md border-primary mt-2 ">  <input :type="password" @input="onInput" :class="errorpassword? ' border-secondary':'  border-gray-500 '"  class="w-full   h-[2.5rem]  px-5 outline-none font-normal    border-2 rounded-[5px] focus:border-primary" placeholder="Password " v-model="form.password"  >  
-              <div class="w-0 h-1"><toggle  class="  relative top-3 right-5" @revealPassword="revealPassword" @hidePassword="hidePassword"> </toggle></div> 
-               </div>
-              <p :class="errorpassword ? 'flex':'hidden '" class="absolute pl-5 text-red-700 text-sm">password must be at least 6 characters.</p>
-              <router-link class=" text-primary" to="/Forgetpassword"><p class="mt- text-red-800 text-right font-semibold "> Forgot Password?</p></router-link>
-             </div>
-
-           
-            </div>
+          
              
 
               <Button :loading="loadingState" @click="submit()" loadingText="Authenticating"> Login</Button>
               
       </form>
 
-      <p class=" font-semibold">Dont have an account yet?  <router-link class=" text-primary" to="/Register">Register</router-link></p>
+      <p class=" font-semibold">Back to home?  <router-link class=" text-primary" to="/login">Register</router-link></p>
     </div>
       </div>
 </template>
@@ -51,33 +41,19 @@ export default {
 
   data(){
     return{
-      password:"password",
-      erroremail:false,
-      errorpassword:false,
-      loadingState:false,
+        loadingState:false,
+     erroremail : '' ,
       form:{
-        username:'',
-        email:'',
-        password:'',
-        comfirmpassword:'',
-        phone:"",
-        transactionCode:"",
+        email:'',  
       },
 
-      user: [
-
-      ]
+ 
     }
   },
  
    methods: {
 
-     revealPassword() {
-      this.password = 'text';
-    },
-    hidePassword() {
-      this.password = 'password';
-    },
+   
       //async sign(){
 //   console.log('tttfhcb')
 //     try {
@@ -100,28 +76,24 @@ export default {
 //   }
 //   },
 
-  resetErrors() {
-
-    this.erroremail = false;
-    this.errorpassword = false;
+   
+   resetErrors() {
+   this.erroremail1 = false;
+   
   },
-    onInput() {
+  onInput() {
     this.resetErrors();
   },
   
 async submit() {
-  this.loadingState = true;
-  
+    this.loadingState = true;
   if (!this.form.email) {
+    console.log('hhhhh');
     this.erroremail = true;
     this.loadingState = false;
     return false;
-  }  else if (!this.form.password ) {
-    this.errorpassword = true;
-    this.loadingState = false;
-    return false;
-  }  else {
-    this.loadingState = true;
+  } else {
+
   }
 },
 
