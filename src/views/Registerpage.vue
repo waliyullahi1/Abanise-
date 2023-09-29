@@ -1,15 +1,18 @@
 <template>
   <div class="h-screen     w-full overflow-x-hidden ">
 
-    <div class="  md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
-      <h1 class="font-semibold text-xl font-sans py-11 text-center ">Create an Account.</h1>
-      <form class="md:max-w-md  lg:max-w-md sm:w-full"  @submit.prevent="submit" action="">
-        
-             
+    <div class=" md:w-fit w-full md:pt-32 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
+      <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-10 md:px-20 sm:w-full ">
+        <h1 class="font-semibold text-xl font-sans  text-center pt-5">Create an Account.</h1>
+       <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
+             <p  class=" message pl-5 text-2xl text-green-700 pb-9 text-center text-">{{message}}</p>
+          
+      <form class="mx-"  @submit.prevent="submit" action="">
+         
             <div  >
-              <div  class="flex  b drop-shadow-md  mt-2 ">  <input type="text" :class="errorname ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="Name" v-model="form.name"  ></div>
-              <p :class="errorname ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']">please enter your  name</p>
-
+              <div  class="flex   drop-shadow-md  mt-2 ">  <input type="username" :class="errorname ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="username" v-model="form.username"  ></div>
+              <p :class="errorname ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']">please enter your  username</p>
+                           
             </div>
 
              <div  class="my-5 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 justify-between">
@@ -60,8 +63,10 @@
       </form>
 
       <p class=" font-semibold">Already have an account yet? <router-link class=" text-primary" to="/login">Home</router-link></p>
-    </div>
+  
       </div>
+    </div>
+  </div>
 </template>
 
 
@@ -79,6 +84,8 @@ export default {
 
   data(){
     return{
+      message:'',
+      erromessage:'',
       password:'password',
       transaction:'password',
       passwordConfirm:'password',
@@ -106,27 +113,7 @@ export default {
   },
  
    methods: {
-  //async sign(){
-//   console.log('tttfhcb')
-//     try {
-//     const response = await fetch('http://localhost:3500/register',{
-//       method : "POST",
-//       headers: {'Content-Type':'application/json'},
-//       credentials:'include',
-//       body:JSON.stringify({
-//           firstname:this.form.firstName,
-//         lastName:this.form.lastName,
-//         email:this.form.email,
-//         pwd:this.form.password,
-//         phone:this.form.phone,
-//       })
-      
-//     })
-//   console.log(response.status);
-//   } catch (error) {
-//     console.log(error)
-//   }
-//   },
+ 
 
   revealPassword() {
       this.password = 'text';
@@ -164,10 +151,10 @@ export default {
   },
   
 async submit() {
-  this.loadingState = true;
+  this.loadingState = false;
   let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regex = /[a-zA-Z]/
-  if (!this.form.name) {
+  if (!this.form.username) {
     this.errorname = true;
     this.loadingState = false;
     return false;
@@ -196,7 +183,39 @@ const regex = /[a-zA-Z]/
     this.loadingState = false;
     return false;
   } else {
-
+    console.log('yyyyyy');
+      try {
+    const response = await fetch('http://localhost:3500/register',{
+      method : "POST",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
+      body:JSON.stringify({
+          username:this.form.username,
+        transaction:this.form.transactionCode,
+        email:this.form.email,
+        pwd:this.form.password,
+        phone:this.form.phone,
+      })
+      
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+   this.erromessage = errorData.message;
+    throw new Error(errorData.message);
+    
+  }
+   this.loadingState = true
+  const data = await response.json();
+  this.message = data.success
+  console.log('Success:', data);
+  setTimeout(() => {
+        this.$router.push({name: 'login'})
+        this.loadingState = false
+      }, 7000);
+  } catch (error) {
+    console.log(error)
+  }
   }
 },
 
@@ -214,5 +233,11 @@ const regex = /[a-zA-Z]/
 <style>
   .image{
     background-image: url(../assets/image/dash.jpg);
+  }
+
+  .shadow{
+    -webkit-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
+-moz-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
+box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
   }
 </style>

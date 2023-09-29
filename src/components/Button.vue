@@ -1,6 +1,6 @@
 <template>
   <button
-    type="submit"
+    type="button"
     class="
       py-3
       px-4

@@ -1,9 +1,12 @@
 <template>
   <div class="h-screen     w-full overflow-x-hidden ">
 
-    <div class=" md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
-      <h1 class="font-semibold text-xl font-sans py-11 text-center ">Sign in to your account to continue.</h1>
-      <form class="md:max-w-md  lg:max-w-md sm:w-full"  @submit.prevent="submit" action="">
+    <div class=" w-fit pt-32 drop-shadow-md  h-screen shadow  ">
+
+      <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-20  sm:w-full">
+         <h1 class="font-semibold text-xl font-sans  text-center ">Sign in to your account to continue.</h1>
+       <p  class=" message pl-5 text-xl text-red-700 pb-9 text-center text-">{{erromessage}}</p>
+      <form class=" "  @submit.prevent="submit" action="">
         
            <div  >
               <div  class="flex  b drop-shadow-md  mt-2 ">  <input type="text" :class="erroremail ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="Email " v-model="form.email"  ></div>
@@ -32,8 +35,12 @@
       </form>
 
       <p class=" font-semibold">Dont have an account yet?  <router-link class=" text-primary" to="/Register">Register</router-link></p>
-    </div>
+  
       </div>
+       </div>
+
+
+  </div>
 </template>
 
 
@@ -51,6 +58,7 @@ export default {
 
   data(){
     return{
+      erromessage:'',
       password:"password",
       erroremail:false,
       errorpassword:false,
@@ -78,29 +86,7 @@ export default {
     hidePassword() {
       this.password = 'password';
     },
-      //async sign(){
-//   console.log('tttfhcb')
-//     try {
-//     const response = await fetch('http://localhost:3500/register',{
-//       method : "POST",
-//       headers: {'Content-Type':'application/json'},
-//       credentials:'include',
-//       body:JSON.stringify({
-//           firstname:this.form.firstName,
-//         lastName:this.form.lastName,
-//         email:this.form.email,
-//         pwd:this.form.password,
-//         phone:this.form.phone,
-//       })
-      
-//     })
-//   console.log(response.status);
-//   } catch (error) {
-//     console.log(error)
-//   }
-//   },
-
-  resetErrors() {
+     resetErrors() {
 
     this.erroremail = false;
     this.errorpassword = false;
@@ -109,21 +95,54 @@ export default {
     this.resetErrors();
   },
   
+
+
 async submit() {
-  this.loadingState = true;
-  
-  if (!this.form.email) {
+  this.loadingState = false;
+ 
+     if (!this.form.email) {
     this.erroremail = true;
     this.loadingState = false;
     return false;
-  }  else if (!this.form.password ) {
+  } else if (!this.form.password) {
     this.errorpassword = true;
     this.loadingState = false;
     return false;
-  }  else {
-    this.loadingState = true;
+  } else {
+    console.log('yyyyyy');
+      try {
+    const response = await fetch('http://localhost:3500/login',{
+      method : "POST",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
+      body:JSON.stringify({
+                email: this.form.email,
+                pwd: this.form.password,
+      })
+      
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+   this.erromessage = errorData.message;
+    throw new Error(errorData.message);
+    
+  }
+   this.loadingState = true
+  const data = await response.json();
+  this.message = data.success
+  console.log('Success:', data);
+  setTimeout(() => {
+        this.$router.push({name: 'Dashboard'})
+        this.loadingState = false
+      }, 7000);
+  } catch (error) {
+    console.log(error)
+  }
   }
 },
+
+
 
   },
 
@@ -139,5 +158,11 @@ async submit() {
 <style>
   .image{
     background-image: url(../assets/image/dash.jpg);
+  }
+
+  .shadow{
+    -webkit-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
+-moz-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
+box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
   }
 </style>
