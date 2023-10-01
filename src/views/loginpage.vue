@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen     w-full overflow-x-hidden ">
 
-    <div class=" w-fit pt-32 drop-shadow-md  h-screen shadow  ">
+    <div class=" w-fit pt-20 drop-shadow-md  h-screen shadow  ">
 
       <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-20  sm:w-full">
          <h1 class="font-semibold text-xl font-sans  text-center ">Sign in to your account to continue.</h1>

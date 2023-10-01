@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import axios from 'axios';
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
 const routes = [
   {
     path: "/",
@@ -31,31 +34,31 @@ const routes = [
     path: "/Dashboard",
     name: "dashboard",
     component: () => import("../views/Homepage.vue"),
-    beforeEnter: checkAuth,
+    // beforeEnter: checkAuth,
   },
   {
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
-    meta: { requiresAuth: true }
+   
   },
   {
     path: "/airtime",
     name: "airtime",
     component: () => import("../views/Airtime.vue"),
-    meta: { requiresAuth: true },
+  
   },
   {
     path: "/fund",
     name: "fund",
     component: () => import("../views/fund.vue"),
-    meta: { requiresAuth: true },
+   
   },
   {
     path: "/scratchcards",
     name: "scratch",
     component: () => import("../views/scratch.vue"),
-    meta: { requiresAuth: true },
+   
   },
   {
     path: "/preview",
@@ -63,14 +66,16 @@ const routes = [
     component: () => import("../views/preview.vue"),
   },
   {
-    path: "/Forgetpassword",
+    path: "/forgetpassword",
     name: "forgetpassword",
     component: () => import("../views/forgetPassword.vue"),
   },
   {
-    path: "/verify",
+    path: "/verify/:token",
+    props: true,
     name: "verify",
-    component: () => import("../views/verify.vue"),
+    component: () => import("../views/resetpassword.vue"),
+     beforeEnter: verifyJWT,
   },
   {
       path: "/prev",
@@ -99,7 +104,42 @@ async function checkAuth(to, from, next) {
     await axios.get('http://localhost:3500/refreshtoken', { withCredentials: true });
     next();
   } catch (error) {
-    next('/login'); // redirect to login page if not authenticated
+    next('/login'); 
   }
 }
+
+  
+async function verifyJWT(to, from, next) {
+   // Accessing the token parameter
+   const token = to.params.token;
+
+   try {
+    const response = await fetch('http://localhost:3500/valid', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+            token: token
+        })
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        console.log(errorData, 'fffffffff');
+        next({ name: 'login' });
+        throw new Error(errorData.message);
+    }
+    const data = await response.json();
+    
+  console.log(data.message)
+    next();
+} catch (error) {
+    console.log(error);
+    next({ name: 'login' });
+}
+
+}
+
+
+
 export default router

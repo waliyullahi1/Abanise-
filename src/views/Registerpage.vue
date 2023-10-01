@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen     w-full overflow-x-hidden ">
 
-    <div class=" md:w-fit w-full md:pt-32 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
+    <div class=" md:w-fit w-full md:pt-10 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
       <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-10 md:px-20 sm:w-full ">
         <h1 class="font-semibold text-xl font-sans  text-center pt-5">Create an Account.</h1>
        <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>

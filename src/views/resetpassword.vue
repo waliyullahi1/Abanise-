@@ -2,7 +2,9 @@
   <div class="h-screen     w-full overflow-x-hidden ">
 
     <div class="  md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
-      <h1 class="font-semibold text-xl font-sans py-11 text-center ">Create an Account.</h1>
+      <h1 class="font-semibold text-xl font-sans  text-center ">Reset password</h1>
+             <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
+             <p  class=" message pl-5 text-2xl text-green-700 pb-9 text-center text-">{{message}}</p>
       <form class="md:max-w-md  lg:max-w-md sm:w-full"  @submit.prevent="submit" action="">
         
              
@@ -34,11 +36,11 @@
 
              
 
-              <Button :loading="loadingState" @click="submit()" loadingText="Authenticating"> Register</Button>
+              <Button :loading="loadingState" @click="submit()" loadingText="Authenticating"> reset password</Button>
               
       </form>
 
-      <p class=" font-semibold">Already have an account yet? <router-link class=" text-primary" to="/login">Home</router-link></p>
+      <p class=" font-semibold">Back Home <router-link class=" text-primary" to="/login">Home</router-link></p>
     </div>
       </div>
 </template>
@@ -51,21 +53,29 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-
+ const locationName = window.location.href
+ const splitloc = locationName.split('/');
+const token =  (splitloc[4])
 
 export default {
- 
+
 
   data(){
     return{
+      form:{
+        password:''
+      },
+      erromessage:'',
+      message:'',
       password:'password',
       passwordConfirm:'password',
       errorpassword:false,
       errorconfirmpassword:false,
-    
+    erromessage:'',
+    message:'',
       loadingState:false,
       form:{
-        password:'', 
+        password:'3333333333333', 
       },
 
   
@@ -73,27 +83,6 @@ export default {
   },
  
    methods: {
-  //async sign(){
-//   console.log('tttfhcb')
-//     try {
-//     const response = await fetch('http://localhost:3500/register',{
-//       method : "POST",
-//       headers: {'Content-Type':'application/json'},
-//       credentials:'include',
-//       body:JSON.stringify({
-//           firstname:this.form.firstName,
-//         lastName:this.form.lastName,
-//         email:this.form.email,
-//         pwd:this.form.password,
-//         phone:this.form.phone,
-//       })
-      
-//     })
-//   console.log(response.status);
-//   } catch (error) {
-//     console.log(error)
-//   }
-//   },
 
   revealPassword() {
       this.password = 'text';
@@ -132,6 +121,36 @@ async submit() {
     return false;
   } else {
      this.loadingState = true;
+   
+   // Accessing the token parameter
+  
+
+   try {
+    const response = await fetch('http://localhost:3500/resetpassword', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+            token: token,
+            newPassword:this.form.password
+        })
+    });
+
+    if (!response.ok) {
+        const errorData = await response.json();
+      this.erromessage = errorData.message; 
+        throw new Error(errorData.message);
+    }
+    const data = await response.json();
+    
+  console.log(data.message)
+         this.message =  data.sucesss
+} catch (error) {
+    console.log(error);
+    next({ name: 'login' });
+}
+
+
   }
 },
 

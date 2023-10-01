@@ -3,6 +3,9 @@
 
     <div class=" md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
       <h1 class="font-semibold text-xl font-sans py-11 text-center ">Reset Password.</h1>
+       <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
+        <p  class=" message pl-5 text-2xl text-green-700 pb-9 text-center text-">{{message}}</p>
+          
       <form class="md:max-w-md  lg:max-w-md sm:w-full"  @submit.prevent="submit" action="">
         
            <div class="mb-5" >
@@ -11,12 +14,6 @@
 
             </div>
            
-  
-
-
-          
-             
-
               <Button :loading="loadingState" @click="submit()" loadingText="Authenticating"> Login</Button>
               
       </form>
@@ -53,28 +50,6 @@ export default {
  
    methods: {
 
-   
-      //async sign(){
-//   console.log('tttfhcb')
-//     try {
-//     const response = await fetch('http://localhost:3500/register',{
-//       method : "POST",
-//       headers: {'Content-Type':'application/json'},
-//       credentials:'include',
-//       body:JSON.stringify({
-//           firstname:this.form.firstName,
-//         lastName:this.form.lastName,
-//         email:this.form.email,
-//         pwd:this.form.password,
-//         phone:this.form.phone,
-//       })
-      
-//     })
-//   console.log(response.status);
-//   } catch (error) {
-//     console.log(error)
-//   }
-//   },
 
    
    resetErrors() {
@@ -86,14 +61,44 @@ export default {
   },
   
 async submit() {
-    this.loadingState = true;
+    // this.loadingState = true;
   if (!this.form.email) {
     console.log('hhhhh');
     this.erroremail = true;
     this.loadingState = false;
     return false;
   } else {
-
+    console.log('fffffffff')
+         try {
+    const response = await fetch('http://localhost:3500/resetpassword/requestPasswordReset',{
+      method : "POST",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
+      body:JSON.stringify({
+         
+        email:this.form.email,
+        
+      })
+      
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+   this.erromessage = errorData.message;
+    throw new Error(errorData.message);
+    
+  }
+   this.loadingState = true
+  const data = await response.json();
+  this.message = data.success
+  console.log('Success:', data);
+  setTimeout(() => {
+        this.$router.push({name: 'login'})
+        this.loadingState = false
+      }, 7000);
+  } catch (error) {
+    console.log(error)
+  }
   }
 },
 
