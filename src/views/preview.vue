@@ -5,21 +5,22 @@
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
         <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-semibold text-2xl shadow bg-white ">
+        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md   mx-4 shadows  h-fit shadows rounded-[1rem] text-semibold text-2xl shadow bg-white ">
          
-
-
+    <div>
+      <div>
+        <ul>
+          <li class="font-normal text-[15px] flex ju">Network <span>MTN</span></li>
+        </ul>
+      </div>
+    </div>
+      
      
         <div class="text-[16px] m py-5 px-6">
             <p class="text-xl">Transaction Previews</p>
 
             <div class="mt-10 mb-" >
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border-t-2 px-4 ">Network <span>Mtn</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border--2 px-4">Amount <span>{{}}100#</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 bordert-2 px-4 "> Recipients <span>{{}}0879973453</span></p>
-                <p class="grid grid-cols-2 gap-[rem] justify-between py-1 border-b-2 bordert-2 px-4 "> Recipients Count <span class="ml-[6rem]">{{}}2</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border--2 px-4 ">Total <span>260 NGN</span></p>
-
+               
             </div>
              <router-link to="/airtime" class=" text-secondary pt-1">  <p >Cancel</p></router-link>
             <form action="">

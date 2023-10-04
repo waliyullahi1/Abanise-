@@ -44,13 +44,13 @@
         <div class="text-[16px] m py-5 px-6">
             <p class="text-xl">Transaction Previews</p>
 
-            <div class="mt-10 mb-" >
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border-t-2 px-4 ">Network <span>Mtn</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border--2 px-4">Data Plan <span>{{}}1GB</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 bordert-2 px-4 "> Recipients <span>{{}}0879973453</span></p>
-                <p class="grid grid-cols-2 gap-[rem] justify-between py-1 border-b-2 bordert-2 px-4 "> Recipients Count <span class="ml-[6rem]">{{}}2</span></p>
-                <p class="grid grid-cols-2 gap-[12rem] justify-between py-1 border-b-2 border--2 px-4 ">Total <span>260 NGN</span></p>
-
+            <div class="mt-10 w-full  mb-" >
+                <p class="grid  grid-cols-6 justify-between ml-6 py-1 border-b-2 border-t-2 px-4 "><span class="col-span-4">Network</span> <span class="col-span-2">Mtn</span></p>
+                <p class="grid  grid-cols-6 justify-between ml-6 py-1 border-b-2  px-4 "><span class="col-span-4">Data Plan</span> <span class="col-span-2">1GB</span></p>
+                 <p class="grid  grid-cols-6 justify-between ml-6 py-1 border-b-2  px-4 "><span class="col-span-4">Recipients</span> <span class="col-span-">0879973453</span></p>
+                <p class="grid  grid-cols-6 justify-between ml-6 py-1 border-b-2  px-4 "><span class="col-span-4">Total</span> <span class="col-span-">260NGN</span></p>
+                
+                
             </div>
              <router-link to="/airtime" class=" text-secondary pt-1">  <p >Cancel</p></router-link>
             <form action="">

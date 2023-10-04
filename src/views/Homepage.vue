@@ -1,42 +1,74 @@
 <template>
-
   <div>
-     <dashbord class="  w-full hiddn "></dashbord>
-     <div class="w-full h-[5.5rem] bg-secondary"></div>
-    <div  class="flex mt-10 gap-10 ">
-       <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-s tl shadow bg-white  ">
-           <h1 class="text-4xl">Welcome {{User}} Waliulahi</h1>
-           <div>
-              <div class="w-full bg-gray-100 shadow-xl mt-[7rem] shadow py-5 bg-priary">
-                <h1 class="text-3xl mb-2 font- text-center">Current Account</h1>
-                <p class="text-4xl text-center mb-4">{{balance}}71,189.00 NGN</p>
-              </div> 
-           
-              <div class="w-full bg-gray-100 shadow-xl mt-[4rem] shadow py-5 bg-priary">
-                <h1 class="text-3xl mb-2 font-normal text-center">Virtual Account</h1>
-                <p class="text-2xl text-center ">{{accountBranch}}Wema bank</p>
-                <p class="text-xl  text-center ">{{accountName}}waheed walilahi</p>
-                <p class="text-xl mt-1 text-center ">{{accountNumber}}02345465475443</p>
-              </div> 
+     <dashbord class="w-full hiddn"></dashbord>
+    <div class=" flex bg-gray-200 gap-5">
+      <div class=" w-1/4 hidden md:block border-4"></div>
+      <div class="w-full mt-28  border-4">
+        <div class="bg-white rounded-lg shadows">
+          <h1 class=" mx-5 text-[14px] border font-semibold w-fit py-2 px-4">WEMA BANK</h1>
+          <div class="mx-5  ">
+            <div class="bg-primary flex justify-between items-center rounded-md font-normal py-5 px-5 text-white">
+             <div>
+               <img src="@/assets/abanisee.png" alt="" class="w-[4rem] py-4 h-[2rem]">
+                <div class="font-semibold">
+                  <p class="py-2 ">Account Number : <span>477898753344</span></p>
+                  <p>Account Name : <span class=" ">Abaniseedu waliu</span></p>
+                   <p>Bank Name : <span class=" ">Wema Bank</span></p>
+                   <div class=" mt-6 text-gray-300 text-[12px] font-normal">
+                    <h1>AUTOMATED BANK TRANSFER</h1>
+                      <p>Make transfer to this account to fund your wallet</p>
+                   </div>
+                </div>
+             </div>
+                <div>
+                  <h1 class="text-xl text-center font-semibold">1%</h1>
+                  <h1 class="font-semibold text-gray-300">Charges</h1>
+                </div>
             </div>
-        <div class="flex gap-1"> <img src="../assets/image/copy.svg" alt="" class="w-3"><small class="font-semibold text- text-sm gap-1 flex text-gray-800">abaniseedu.com <img src="../assets/image/copy.svg" alt="" class="w-3">2023</small></div>
-        </div>
-    </div>
-  </div>
-  <div>
+            <h1 class="mt-10 mx-5 font-semibold text-xl">Welcome to Abaniseedu </h1>
+            <div class=" grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-between gap-4 text-[15px] py-6 ">
+              <div class="flex items-center gap-4 font-semibold bg-white shadows rounded-lg py-2 px-2 "> 
+                <div class=" bg-blue-800 w-fit h-fit  rounded-lg py-2 px-3"><img src="../assets/image/account.svg" class="w-10" alt=""> </div>
+                <div>
+                  <h1 class="   text-gray-400 tracking-[2xl]">Wallet Balance</h1>
+                  <p class=" text-xl">₦ <span >22.0</span></p>
+                </div>
+              </div>
 
+               <div class="flex items-center gap-4 font-semibold bg-white shadows rounded-lg py-2 px-2 "> 
+                <div class=" bg-blue-800 w-fit h-fit  rounded-lg py-2 px-3"><img src="../assets/image/account.svg" class="w-10" alt=""> </div>
+                <div>
+                  <h1 class="   text-gray-400 tracking-[2xl]">Transactions</h1>
+                 
+                </div>
+              </div>
+              
+                 <div class="flex items-center gap-4 font-semibold bg-white shadows rounded-lg py-2 px-2 "> 
+                <div class=" bg-blue-800 w-fit h-fit  rounded-lg py-2 px-3"><img src="../assets/image/account.svg" class="w-10" alt=""> </div>
+                <div>
+                  <h1 class="   text-gray-400 tracking-[2xl]">Wallet Summary</h1>
+                  
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    components:{
-       
-    }
+
 }
 </script>
 
 <style>
-
+.shadows {
+  box-shadow: -1px 3px 49px -10px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: -1px 3px 49px -10px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -1px 3px 49px -10px rgba(0, 0, 0, 0.29);
+}
 </style>
