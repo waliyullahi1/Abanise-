@@ -29,7 +29,7 @@
                  
                  </div>
              </div>
-             <Button class="mt-" :loading="loadingState"  @click="prevTrans()" loadingText="Authenticating">Sign up</Button>
+             <Button class="mt-" :loading="loadingState"  @click="prevTrans()" loadingText="Authenticating">Previews</Button>
              </form>
           
           <div class="flex gap-1">
@@ -91,7 +91,7 @@
                 Cancel
               </p>
 
-              <form action=""></form>
+            
               <label for="" class="">Transaction code</label><br />
               <input
                 type="password"
@@ -113,7 +113,7 @@
       </div>
     </div>
     <div>
-      <form @submit.prevent="submitForm">
+      <!-- <form @submit.prevent="submitForm">
         <div v-for="(field, index) in formFields" :key="index">
           <label :for="field.name">{{ field.label }}</label>
           <select :id="field.name" v-model="formValues[field.name]">
@@ -133,10 +133,10 @@
             {{ part }}
           </div>
           <h1>{{ getSelectedOptionText(field) }}</h1>
-          <!-- <input type="text" v-model="form.phone" placeholder="phone" />-->
+           <input type="text" v-model="form.phone" placeholder="phone" />
         </div> 
         <button type="submit">Submit</button>
-      </form>
+      </form> -->
 
       <button @click="submitting" type="button">Submit</button>
     </div>

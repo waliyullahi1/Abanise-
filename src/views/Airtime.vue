@@ -5,34 +5,34 @@
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
         <div class="  h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>
-        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md  h-fit mx-4 shadows rounded-[1rem] h-fit shadows rounded-[1rem] text-s tl shadow bg-white ">
+        <div class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md   mx-4 shadows rounded-[1rem] h-fit shadows  text-s tl shadow bg-white ">
           <form action="" class=" flex  flex-col gap-5 h-fit p-8 text-xl ">
 
               <div class="flex bg-white flex-col   ">
-                 <label for="" class="text-primary mb- ml-2  text-[17px] ">Network</label>
-                 <select  class="w-full  rounded-[.2rem]  py-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100 border py-[.5rem] " placeholder="Password">
+                 <label for="" class="text-primary mb- px-4  text-[17px] ">Network</label>
+                 <select v-model="form.network" class="w-full  rounded-[.2rem]  px-3 ml-2  py-[.5rem] text-[17px] outline-none focus:border-primary border-gray-100 border " placeholder="Password">
                   <option value="network">Network</option>
                   <option value="mtn">MTN</option>
-                  <option value="mtn">GLO</option>
+                  <option value="glo">GLO</option>
                   <option value="9mobile">9mobile</option>
                   <option value="airtime">Airtime</option>
                  </select>
               </div>
 
                <div class="flex bg-white flex-col   ">
-                 <label for="" class="text-primary mb- ml-2  text-[17px] ">Amount</label>
-                 <input   class="w-full  rounded-[.2rem]  py-1 px-1 ml-2 border-gray-100  text-[17px] outline-none focus:border-primary border-gray-100  py-[.5rem] border " placeholder="Amount">
+                 <label for="" class="text-primary mb-  px-4 text-[17px] ">Amount</label>
+                 <input v-model="form.amount" type="number"  class="w-full font-seibold rounded-[.2rem] px-4 ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]" placeholder="Amount">
 
 
                   
               </div>
 
               <div class="flex bg-white flex-col   ">
-                 <label for="" class="text-primary   text-[17px] ">Recipients</label>
-                  <textarea name="" rows="3" placeholder="Recipients" class="text-primary border-gray-100 border py- px-2   outline-none text-[17px]"></textarea>
-                  <small>Seperate multiple Recipient with comma (,)</small>
+                 <label for="" class="text-primary  px-4 text-[17px] ">Recipients</label>
+                  <input v-model="form.recipients" type="number"  class="w-full font-seibold rounded-[.2rem] px-4 ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]" placeholder="phone number ">
+                 
               </div>
-             <label for="" class="text-sm" >Allow Ported Numbers</label>
+           
                <Button class="mt-" :loading="loadingState" @click="register()" loadingText="Authenticating"> Previews </Button> 
            
         </form>
@@ -48,16 +48,41 @@ export default {
   data(){
       return{
       loadingState:false,
+      form:{
+        network:' network',
+        amount:'',
+        recipients:'',
+        
+      }
       
     }
   },
 
   methods:{
      register(){
+       if (!this.form.network) {
+    this.errorname = true;
+    this.loadingState = false;
+    return false;
+  } else if (!this.form.email) {
+    this.erroremail = true;
+    this.loadingState = false;
+    return false;
+  } else if (!emailPattern.test(this.form.email)) {
+    this.erroremail1 = true;
+    this.loadingState = false;
+    return false;
+  } else if (!this.form.phone ||  this.form.phone.length < 10 || regex.test(this.form.phone)) {
+    this.errorphone = true;
+    this.loadingState = false;
+    return false;
+  } else if (!this.form.password || this.form.password.length <= 6) {
+    this.errorpassword = true;
+    this.loadingState = false;
+    return false;
+  } else
       this.loadingState = true
-      setTimeout(() => {
-        this.$router.push({path: '/preview'})
-      }, 1000);
+    console.log(this.form.network, this.form.amount, this.form.recipients);
     }
   }
 }

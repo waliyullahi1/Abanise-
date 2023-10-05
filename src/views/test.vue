@@ -220,28 +220,3 @@ tr:nth-child(even) {
   -moz-box-shadow: -1px 3px 49px -10px rgba(0, 0, 0, 0.29);
 }
 </style>
-.container {
-  position: relative;
-  flex: 1;
-  display: flex;
-}
-
-.fixed {
-  position: absolute;
-}
-
-.scroll {
-  overflow-y: scroll;
-  height: 100%;
-}
-
-.scroll-enter-active,
-.scroll-leave-active {
-  transition: all 0.5s ease-in-out;
-}
-
-.scroll-enter,
-.scroll-leave-to {
-  opacity: 0;
-}
-</style>
