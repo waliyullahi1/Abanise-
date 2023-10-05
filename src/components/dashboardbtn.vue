@@ -154,7 +154,7 @@
           </div>
 
           <div>
-            <router-link to="/datapage">
+            <router-link to="/transactionreport">
               <div class="px-3">
                 <div class="flex gap-5 items-center">
                   <div class="lg:text-primary w-5 md:text-wite text-wite">

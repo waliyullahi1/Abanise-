@@ -88,10 +88,16 @@ const routes = [
       component: () => import("../views/test.vue"),
   },
   {
-      path:"/pagesucess/",
+      path:"/pagesucess",
       name:"pagesucess", 
       component : ()=>import ("../views/thankspage.vue")
-   }
+   },
+
+   {
+    path:"/transactionreport",
+    name:"transaction", 
+    component : ()=>import ("../views/TransactionReport.vue")
+ }
 ];
 
 const router = createRouter({
