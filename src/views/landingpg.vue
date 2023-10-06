@@ -4,7 +4,7 @@
   
    <Header @transaction="transact()" :headertext="headerChange" class="fixed z-40 top-0"></Header>
     
-    <div class="w-full h"></div>
+    <div class="w-full https://www.youtube.com/watch?v=La1BdF_sunw&list=PLdo5W4Nhv31bZSiqiOL5ta39vSnBxpOPT&index=5"></div>
     <section  class=" j" >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
     <div  class="container pt-8  flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
@@ -201,7 +201,7 @@
          name: 'Autoplay',
 
           setup() {
-    const headerChange=ref()
+    const headerChange=ref(true)
     window.addEventListener('scroll', () => {
       if (window.scrollY > 70) {
        headerChange.value =false  

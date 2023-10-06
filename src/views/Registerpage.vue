@@ -151,7 +151,7 @@ export default {
   },
   
 async submit() {
-  this.loadingState = false;
+  this.loadingState = true;
   let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regex = /[a-zA-Z]/
   if (!this.form.username) {

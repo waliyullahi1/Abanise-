@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div class="bg-gray-100 h-screen">
     <div>
       <dashbord class="w-full"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>

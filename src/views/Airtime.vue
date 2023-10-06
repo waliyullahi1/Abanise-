@@ -121,7 +121,7 @@
                 <p
                   class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
                 >
-                  <span class="col-span-4">Amount</span>
+                  <span class="col-span-4">Service</span>
                   <span class="col-span-2">{{ form.serviceID }}</span>
                 </p>
                 <p
@@ -198,6 +198,7 @@ export default {
       this.resetErrors();
     },
     register() {
+       this.loadingState = true;
       console.log(this.form.amount);
       const phone = String(this.form.recipients);
       if (!this.form.network || this.form.network === "network") {

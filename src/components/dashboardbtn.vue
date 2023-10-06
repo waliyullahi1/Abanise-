@@ -18,7 +18,7 @@
           class="w-[30px] border rounded-full"
           alt=""
         />
-        <p class="font-semibold flex text-sm">{{ accountname }} Account</p>
+        <p class="font-semibold flex text-sm"> Account</p>
       </div>
       <div></div>
     </div>
@@ -101,7 +101,7 @@
             <div>
               <div>
                 <div class="px-3  justify-between flex">
-                  <router-link to="/found" class="flex items-center gap-5">
+                  <div to="/found" class="flex items-center gap-5">
                     <div class="lg:text-primary w-5 md:text-wite text-wite">
                       <img
                         src="../assets/image/wallet.svg"
@@ -116,7 +116,7 @@
                       <p class="font-semibold">Wallet</p>
                      <!-- <img src="../assets/image/down.svg" class="w-" alt="" /> <span @click="showFound">jjjj</span> -->
                     </div>
-                  </router-link>
+                  </div>
                    <img :class="changebtn?' rotate-0':' rotate-180'"  @click="showFound()" src="../assets/image/down.svg" class="w-4 duration-700" alt="" /> 
                     
                 </div>
@@ -125,7 +125,7 @@
 
           <div :class="foundpage ? ' h-0  duration-700 transform ':'h-[45px]  duration-700 transform'" class="flex w-full duration-700  ease-in-out overflow-hidden flex-col gap-1">
               <div>
-              <router-link to="/found">
+              <router-link to="/fund">
                 <div class="px-3">
                   <div class="flex gap-5 items-center">
                     <div
@@ -138,7 +138,7 @@
             </div>
 
             <div>
-              <router-link to="/datapage">
+              <router-link to="/fundHistory">
                 <div class="px-3">
                   <div class="flex gap-5 items-center">
                     <div

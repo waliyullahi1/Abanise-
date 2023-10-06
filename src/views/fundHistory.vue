@@ -10,8 +10,8 @@
         
         </div>
         <div class="mt-10">
-          <h1 class="flex text-2xl font-semibold">Transaction History</h1>
-        <div class="w bg-slate-400 h-96  lg:w-[800px] md:w-[600px] mr-[3rem] border-x-primary mb-20  overflow-scroll  mt-  border-2">
+          <h1 class="flex text-2xl font-semibold">Fund History</h1>
+        <div class="w bg-slate-400 h-96  lg:w-[800px] w-full sm:w-[400px] md:w-[600px]  md:mr-[3rem] border-x-primary mb-20  overflow-scroll  mt-  border-2">
        <table class="font-normal bg-white  text-sm">
                 <tr>
                   <th>SN</th>

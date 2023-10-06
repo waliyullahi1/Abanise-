@@ -49,9 +49,9 @@ const routes = [
   
   },
   {
-    path: "/fund",
-    name: "fund",
-    component: () => import("../views/fund.vue"),
+    path: "/fundHistory",
+    name: "fundHistory",
+    component: () => import("../views/fundHistory.vue"),
    
   },
   {
@@ -97,7 +97,13 @@ const routes = [
     path:"/transactionreport",
     name:"transaction", 
     component : ()=>import ("../views/TransactionReport.vue")
- }
+ },
+
+ {
+  path:"/fund",
+  name:"found", 
+  component : ()=>import ("../views/fund.vue")
+}
 ];
 
 const router = createRouter({

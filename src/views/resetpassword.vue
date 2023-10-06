@@ -110,7 +110,7 @@ export default {
   },
   
 async submit() {
- 
+  this.loadingState = true;
    if (!this.form.password || this.form.password.length <= 6) {
     this.errorpassword = true;
     this.loadingState = false;
