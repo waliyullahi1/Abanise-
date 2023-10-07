@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen     w-full overflow-x-hidden ">
+  <div class="h-screen   text-[poppins]  w-full overflow-x-hidden ">
 
     <div class=" w-fit pt-20 drop-shadow-md  h-screen shadow  ">
 

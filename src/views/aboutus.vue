@@ -1,5 +1,5 @@
 <template>
-  <div class="font-[Poppins]">
+  <div class="text-[poppins]">
     <Header :headertext="false" class="fixed z-40 top-0"></Header>
     <section class="w-full  flex justify-center ">
         <div class="pt-32 w-full md:w-2/3  mb-5">

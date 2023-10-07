@@ -1,6 +1,6 @@
 <template>
   <div>
-     <dashbord class="w-full hiddn"></dashbord>
+     <dashbord class="w-full text-[poppins]"></dashbord>
     <div class=" flex bg-gray-200 gap-5">
       <div class=" w-1/4 hidden md:block border-4"></div>
       <div class="w-full mt-28  border-4">

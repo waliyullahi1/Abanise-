@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 h-fit ">
+  <div class="bg-gray-100 text-[poppins] h-fit ">
     <div>
       <dashbord class="w-full hiden"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
@@ -11,6 +11,11 @@
         </div>
         <div class="mt-10">
           <h1 class="flex text-2xl font-semibold">Transaction History</h1>
+         <div class=" bg-green-100 w-fit  py-2 mt-5 h-fit px-4">
+          <h1 class="text-[poppins] text-green-900 mb-6 font-medium text-[15px] ">Notification</h1>
+          <p class="text-[14px] mb-4 text-green-900 font-normal  ">Welcome to our  website, We are 100%, Also we are selling  (WAEC, NABTEB, <br class="md:block hidden">and NECO Result Checker) with other epin for o'level Registration </p>
+        </div>
+      
         <div class="w bg-slate-400 h-96  lg:w-[800px] md:w-[600px] mr-[3rem] border-x-primary mb-20  overflow-scroll  mt-  border-2">
        <table class="font-normal bg-white  text-sm">
                 <tr>

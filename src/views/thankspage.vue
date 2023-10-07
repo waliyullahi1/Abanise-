@@ -1,4 +1,4 @@
-<template class="">
+<template class=" text-[poppins]">
     <div class="  bg-blak text-[puppins] ">
        <Header :headertext="true"  class="fixed z-40 top-0"></Header> 
        <section class="container h-screen mx-auto ">

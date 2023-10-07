@@ -103,6 +103,12 @@ const routes = [
   path:"/fund",
   name:"found", 
   component : ()=>import ("../views/fund.vue")
+},
+
+{
+  path:"/profile",
+  name:"profile", 
+  component : ()=>import ("../views/profile.vue")
 }
 ];
 

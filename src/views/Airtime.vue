@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div class="bg-gray-100 text-[poppins]">
     <div>
       <dashbord class="w-full"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
@@ -7,17 +7,25 @@
         <div
           class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
         ></div>
-        <div
-          class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
+
+       <div class="w-full 0 py- mb-20 px-5">
+         <h1 class=" text-[19px]  text-gray-600  font-medium">Airtime Vend</h1>
+         <div class=" bg-green-100 w-fit  py-2 mt-5 h-fit px-4">
+          <h1 class="text-[poppins] text-green-900 mb-6 font-medium text-[15px] ">Notification</h1>
+          <p class="text-[14px] mb-4 text-green-900 font-normal  ">Welcome to our  website, We are 100%, Also we are selling  (WAEC, NABTEB, <br class="md:block hidden">and NECO Result Checker) with other epin for o'level Registration </p>
+      
+         </div>
+         <div
+          class="w-full md: md:w-1/2 sm:w-2/3 mt-10 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
         >
-          <form action="" class="flex flex-col gap-5 h-fit p-8 text-xl">
+            <form action="" class="flex flex-col gap-5 h-fit p-8 text-xl">
             <div class="flex bg-white flex-col">
-              <label for="" class="text-primary mb- px-4 text-[17px]"
+              <label for="" class="text-primary mb- px-4 text-[15px]"
                 >Network</label
               >
               <select
                 v-model="form.network"
-                class="w-full rounded-[.2rem] px-3 ml-2 py-[.5rem] text-[17px] outline-none focus:border-primary border-gray-100 border"
+                class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[15px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
                 placeholder="Password"
                   @input="onInput"
               >
@@ -36,13 +44,13 @@
             </div>
 
             <div class="flex bg-white flex-col">
-              <label for="" class="text-primary mb- px-4 text-[17px]"
+              <label for="" class="text-primary mb- px-4 text-[15px]"
                 >Amount</label
               >
               <input
                 v-model="form.amount"
-                type="number"
-                class="w-full font-seibold rounded-[.2rem] px-4 ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]"
+                type="number " 
+                class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[15px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
                 placeholder="Amount"
                   @input="onInput"
               />
@@ -55,13 +63,13 @@
             </div>
 
             <div class="flex bg-white flex-col">
-              <label for="" class="text-primary px-4 text-[17px]"
+              <label for="" class="text-primary px-4 text-[15px]"
                 >Recipients</label
               >
               <input
                 v-model="form.recipients"
-                type="number"
-                class="w-full font-seibold rounded-[.2rem] px-4 ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]"
+                type="text" pattern="[0-9]*"
+                class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[15px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
                 placeholder="phone number "
                   @input="onInput"
               />
@@ -74,7 +82,7 @@
             </div>
 
             <Button
-              class="mt-"
+              class="mt- text-[13px] "
               :loading="loadingState"
               @click="register()"
               loadingText="Authenticating"
@@ -82,7 +90,6 @@
               Previews
             </Button>
           </form>
-
           <div class="flex gap-1">
             <img src="../assets/image/copy.svg" alt="" class="w-3" />
             <small class="font-semibold text- text-sm gap-1 flex text-gray-800"
@@ -91,6 +98,7 @@
             </small>
           </div>
         </div>
+       </div>
       </div>
 
       <div class="mx-">
@@ -198,10 +206,11 @@ export default {
       this.resetErrors();
     },
     register() {
+      const regex = /[a-zA-Z]/
        this.loadingState = true;
       console.log(this.form.amount);
       const phone = String(this.form.recipients);
-      if (!this.form.network || this.form.network === "network") {
+      if (!this.form.network || this.form.network === "network" ) {
         this.errornetwork = true;
       
         this.loadingState = false;
@@ -212,7 +221,7 @@ export default {
         this.loadingState = false;
         return false;
       }
-      if (!phone || phone.length < 10 || phone.length > 11) {
+      if (!phone || phone.length < 10 || phone.length > 11 || regex.test(phone)) {
         this.errorphone = true;
         
         this.loadingState = false;

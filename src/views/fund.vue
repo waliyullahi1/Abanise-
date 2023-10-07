@@ -1,7 +1,7 @@
 
 <template>
   <div>
-     <dashbord class="  w-full hiddn "></dashbord>
+     <dashbord class=" text-[poppins] w-full hiddn "></dashbord>
      <div class="w-full h-[5.5rem] bg-secondary"></div>
     <div  class="flex mt-10 gap-10 ">
         <div class=" h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5  ml-[2rem] "></div>

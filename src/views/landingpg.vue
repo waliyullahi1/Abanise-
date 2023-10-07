@@ -1,6 +1,6 @@
 <template>
    
- <div class="overflow-y-hidden font-[Poppins]">
+ <div class="overflow-y-hidden text-[poppins]">
   
    <Header @transaction="transact()" :headertext="headerChange" class="fixed z-40 top-0"></Header>
     

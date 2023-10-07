@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="text-[poppins]">
     <dashbord class="t"></dashbord>
     <div class="h-[7rem] w-full"></div>
     <div class="flex  gap-10">
       <div
-        class="h-fit lg:w-1/3 sm:w-[2rem]  hidden lg:block md:block md:w-[5rem] ml-[2rem]"
+        class="h-fit lg:w-1/3 sm:w-[2rem] md:w-1/4  hidden lg:block md:block  ml-[2rem]"
       ></div>
-      <div class="w-full h-screen  shadows rounded-[1rem] py-5 px-5 text-semibold text-2xl shadow bg-white">
-        <div class="grid md:grid-cols-2 sm:grid-cols-2 grid-cols-1 md:gap-10 lg:gap-32 gap-10 px-10">
+      <div class="w-full h-fit  shadows rounded-[1rem] py-5  text-semibold text-2xl shadow bg-white">
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 md:gap-3 lg:gap-6 gap-10 px-8  lg:px-5">
           <div v-for="(item, index) in item" :key="item.id" class="group shadows border-primary w-full overflow-hidden h-fit flex flex-col gap-3 rounded-[2rem]"
           >
             <div class="w-full rounded-[2rem] pt-3 px-3 overflow-hidden">
@@ -59,7 +59,11 @@
             </div>
 
            <div class="flex gap-5">
-                 <Input label="Enter Quantity" type="number" placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" :inputValue="input"  :min=Number(1) ></Input>
+                <div class="w-full">
+                   <Input label="Enter Quantity" type="number" placeholder="Enter Quantity" :error="false" v-model:inputValue="form.quantity" :inputValue="input"  :min=Number(1) ></Input>
+                  <p :class="errorquantity? 'flex':'hidden '" class=" absolu pl-5 text-red-700 text-[13px]">please enter correct quantity</p>
+       
+                </div>
                      <div class="w-full">
                 <h1 class=" mt-1 font-semibold text-[15px]"> Total</h1>
                <div class="-2 w-full h-8 px-5  bg-gray-300 mt-1 text-[15px] rounded-lg ">{{ this.form.quantity * this.form.price }}</div>
@@ -229,6 +233,10 @@ export default {
     submit() {
       
        this.loadingState2 = true;
+       if (!this.form.quantity) {
+        this.errorquantity = true;
+        this.loadingState2 = false;
+       } else 
       if (!this.form.email) {
         this.erroremail1 = true;
         this.loadingState2 = false;

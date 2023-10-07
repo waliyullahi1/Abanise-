@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 h-screen">
+  <div class="bg-gray-100 text-[poppins]">
     <div>
       <dashbord class="w-full"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
@@ -7,73 +7,45 @@
         <div
           class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
         ></div>
-        <div
-          class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
-        >
-          <form
-            @submit.prevent="prevTrans"
-            action=""
-            class="flex flex-col gap-5 h-fit p-8 text-xl font-semild"
-          >
+
+       <div class="w-full 0 py- mb-20 px-5">
+         <h1 class=" text-[19px]  text-gray-600  font-medium">Data Bundle Vend</h1>
+         <div class=" bg-green-100 w-fit  py-2 mt-5 h-fit px-4">
+          <h1 class="text-[poppins] text-green-900 mb-6 font-medium text-[15px] ">Notification</h1>
+          <p class="text-[14px] mb-4 text-green-900 font-normal  ">Welcome to our  website, We are 100%, Also we are selling  (WAEC, NABTEB, <br class="md:block hidden">and NECO Result Checker) with other epin for o'level Registration </p>
+      
+         </div>
+         <div class="w-full md: md:w-1/2 sm:w-2/3 mt-10 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white">
+            <form @submit.prevent="prevTrans" action="" class="flex flex-col gap-5 h-fit p-8 text-xl font-semild">
             <div v-for="(field, index) in formFields" :key="index">
               <div class="flex bg-white flex-col">
-                <label
-                  :for="field.name"
-                  class="text-primary mb- ml-2 text-[17px]"
-                  >{{ field.label }}</label
-                >
-                <select
-                  :id="field.name"
-                  v-model="formValues[field.name]"
-                  @input="onInput"
-                  :class="
-                    field.errorselection
-                      ? ' border-secondary'
-                      : '  border-gray-500 '
-                  "
-                  class="w-full font-seibold rounded-[.2rem] ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]"
-                >
-                  <option
-                    v-for="(option, index) in getOptions(field)"
-                    :key="index"
-                    :value="option.value"
-                  >
+                <label :for="field.name" class="text-primary mb- ml-4 text-[15px]">{{ field.label }}</label>
+                <select :id="field.name" v-model="formValues[field.name]" @input="onInput" :class="field.errorselection ? ' border-secondary' : '  border-gray-300 '" class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[15px] outline-none focus:border-primary border py-[.3rem]">
+                  <option v-for="(option, index) in getOptions(field)" :key="index" :value="option.value">
                     {{ option.text }}
                   </option>
                 </select>
-                <p
-                  :class="field.errorselection ? 'flex' : 'hidden '"
-                  class="pl-5 text-red-700 text-[14px]"
-                >
-                  {{ field.message }}
-                </p>
+                <p :class="field.errorselection ? 'flex' : 'hidden '" class="pl-5 text-red-700 text-[14px]" > {{ field.message }}</p>
               </div>
             </div>
 
-            <div class="flex bg-white flex-col">
-              <label for="" class="text-primary text-[17px]">Recipients</label>
+            <div class="flex bg-white  flex-col">
+              <label for="" class="text-primary ml-4 text-[15px]">Recipients</label>
 
-              <div class="drop-shadow-md mt-2">
-                <input
-                  type="number"
-                  v-model="form.phone"
-                  :class="
-                    errorphone ? ' border-secondary' : '  border-primary '
-                  "
-                  @input="onInput"
-                  class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border-2 py-[.5rem]"
-                  placeholder="Recipients"
-                />
-                <p
-                  :class="errorphone ? 'flex' : 'hidden '"
-                  class="e pl-5 text-red-700 text-[13px]"
-                >
-                  please enter correct phone
-                </p>
+              <div class="drop-shadow-md mt-">
+                <input type="text" v-model="form.phone" :class=" errorphone ? ' border-secondary' : ' border-gray-300 '" @input="onInput" class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border py-[.2rem]" placeholder="Recipients"/>
+                <p :class="errorphone ? 'flex' : 'hidden '" class="e pl-5 text-red-700 text-[13px]"> please enter correct phone</p>
+
+              </div>
+              <div class="flex mt-2 ml-3 gap-2 text-gray-700 font-medium items-center">
+                <input type="checkbox" name="Ported_number" id="">
+                <label for="Ported_number" class=" leading-5 text-[14px]">
+                    Bypass number validator 
+                </label>
               </div>
             </div>
             <Button
-              class="mt-"
+              class="mt- text-[13px]"
               :loading="loadingState"
               @click="prevTrans()"
               loadingText="Authenticating"
@@ -89,6 +61,7 @@
             </small>
           </div>
         </div>
+       </div>
       </div>
 
       <div class="mx-">
@@ -119,7 +92,7 @@
                 <p
                   class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
                 >
-                  <span class="col-span-4">Data Plan</span>
+                  <span class="col-span-4">Service</span>
                   <span class="col-span-2">{{ form.serviceID }}</span>
                 </p>
                 <p
@@ -132,7 +105,7 @@
                   class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Total</span>
-                  <span class="col-span-">{{ form.amount }}NGN</span>
+                  <span class="col-span-">{{ form.amount }}</span>
                 </p>
               </div>
 
@@ -165,7 +138,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -282,8 +254,9 @@ export default {
     },
     prevTrans() {
       this.loadingState = true;
+        const regex = /[a-zA-Z]/
       // Get the selected option text
-      const phone = String(this.form.phone);
+      const phone = this.form.phone;
       const selectedOptionText = this.getSelectedOptionText(this.formFields[1]);
       const selectedOptionText1 = this.getSelectedOptionText(
         this.formFields[0]
@@ -302,7 +275,7 @@ export default {
         this.loadingState = false;
         console.log(selectedOptionText, selectedOptionText2);
         return false;
-      } else if (!this.form.phone || phone.length < 10 || phone.length > 11) {
+      } else if (!this.form.phone || phone.length < 10 || phone.length > 11 || regex.test(phone)) {
         this.errorphone = true;
         this.loadingState = false;
         console.log(selectedOptionText, selectedOptionText2);
@@ -321,7 +294,7 @@ export default {
         setTimeout(() => {
           this.transacPrev = true;
           this.loadingState = false;
-        }, 7000);
+        }, 1000);
       }
 
       // Convert form values and selected option text to JSON

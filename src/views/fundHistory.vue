@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 h-fit ">
+  <div class="bg-gray-100 h-fit text-[poppins]">
     <div>
       <dashbord class="w-full hiden"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>

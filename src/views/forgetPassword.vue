@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen     w-full overflow-x-hidden ">
+  <div class="h-screen  text-[poppins]   w-full overflow-x-hidden ">
 
     <div class=" md:max-w-1/3  lg:max-w-md sm:max-w-md mx-4 sm:mx-10">
       <h1 class="font-semibold text-xl font-sans py-11 text-center ">Reset Password.</h1>

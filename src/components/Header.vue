@@ -1,5 +1,5 @@
 <template>
-<div  :class="headertext?' md:bg-transparent':' bg-primary shodow'" class=" w-full lg:top-0 top-[4rem]  place-contnt-center fixed    ">
+<div  :class="headertext?' md:bg-transparent':' bg-primary shodow'" class="text-[poppins]  w-full lg:top-0 top-[4rem]  place-contnt-center fixed    ">
   <div class=" contains pl-5 mx-auto bg-gray-100 font-sembold">
     <div class="text-[15px] gap-3 flex">
       

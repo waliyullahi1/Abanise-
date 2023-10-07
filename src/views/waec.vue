@@ -1,5 +1,5 @@
 <template>
-  <div class="  ">
+  <div class="  text-[poppins] ">
     <div class="overflow-hidden font-[Poppins]">
     <Header :headertext="false" class="fixed top-0  z-0 h-20"></Header>
      
