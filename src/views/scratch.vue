@@ -193,7 +193,7 @@
                     :enable-download="true"
                     :preview-modal="true"
                     :paginate-elements-by-height="1400"
-                    filename="Hello My friend"
+                    filename="Recelpt"
                     :pdf-quality="2"
                     :manual-pagination="true"
                     pdf-format="a4"
@@ -214,8 +214,8 @@
                <div class="text-[16px] bg-white  ">
               
               <div class="mt-10 w-full border  mb-3">
-               <ul class=" text-[13px]  font-medium" v-for="item, in recelpt" :key="item.id" >
-                <li class="flex justify-center   border-b-0  py-0   px-3 gap-6  ">
+               <ul class=" text-[13px]  font-medium" v-for="item in recelpt" :key="item.id" >
+                <li class="flex justify-center   border-b-0     px-3 gap-6  ">
                   <div class=" p-0 sm:p-3 w-1/3">
                       <h1 class=" text-gray-600">{{item.headers}}</h1>
                   </div>
@@ -509,70 +509,76 @@ export default {
       this.resetErrors();
     },
     async submit() {
-      console.log(this.form.quantity * this.form.price);
-      this.loadingState2 = true;
-      if (!this.form.quantity) {
-        this.errorquantity = true;
-        this.loadingState2 = false;
-      } else if (!this.form.email) {
-        this.erroremail1 = true;
-        this.loadingState2 = false;
-        return false;
-      } else if (!this.form.transactionpin) {
-        this.errortransactionCode = true;
-        this.loadingState2 = false;
-        return false;
-      } else {
-        this.loadingState2 = false;
-        try {
-          this.loadingState = false;
-          const response = await fetch("http://localhost:3500/card/sell", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({
-              examType: this.form.name,
-              numCodes: this.form.quantity,
-              amount: this.form.quantity * this.form.price,
-              TransactionCode: this.form.transactionpin,
-              email: this.form.email,
-            }),
-          });
 
-          if (!response.ok) {
-            this.loadingState = false;
-            const errorData = await response.json();
-            console.log(errorData.message);
-            this.erromessage = errorData.message;
-            throw new Error(errorData.message);
-          }
-          this.loadingState = false;
-          const data = await response.json();
-          this.message = data.success;
-          console.log("Success:", data);
-
-          //information  to receipt 
-          this.recelpt[0].details = this.form.name,
-           this.recelpt[1].details = this.form.quantity,
+      this.recelpt[0].details = this.form.name,
+       this.recelpt[1].details = this.form.quantity,
             this.recelpt[2].details = this.form.amount,
              this.recelpt[4].details = 'rrrrrrrrrrr',
-              this.pin = data,
-              this.$refs.html2Pdf.submit()
+      console.log(this.form.quantity * this.form.price);
+            this.$refs.html2Pdf.generatePdf();
+
+      // if (!this.form.quantity) {
+      //   this.errorquantity = true;
+      //   this.loadingState2 = false;
+      // } else if (!this.form.email) {
+      //   this.erroremail1 = true;
+      //   this.loadingState2 = false;
+      //   return false;
+      // } else if (!this.form.transactionpin) {
+      //   this.errortransactionCode = true;
+      //   this.loadingState2 = false;
+      //   return false;
+      // } else {
+      //   this.loadingState2 = false;
+      //   try {
+      //     this.loadingState = false;
+      //     const response = await fetch ("http://localhost:3500/card/sell", {
+      //       method: "POST",
+      //       headers: { "Content-Type": "application/json" },
+      //       credentials: "include",
+      //       body: JSON.stringify({
+      //         examType: this.form.name,
+      //         numCodes: this.form.quantity,
+      //         amount: this.form.quantity * this.form.price,
+      //         TransactionCode: this.form.transactionpin,
+      //         email: this.form.email,
+      //       }),
+      //     });
+
+      //     if (!response.ok) {
+      //       this.loadingState = false;
+      //       const errorData = await response.json();
+      //       console.log(errorData.message);
+      //       this.erromessage = errorData.message;
+      //       throw new Error(errorData.message);
+      //     }
+      //     this.loadingState = false;
+      //     const data = await response.json();
+      //     this.message = data.success;
+      //     console.log("Success:", data);
+
+      //     //information  to receipt 
+      //     this.recelpt[0].details = this.form.name,
+      //      this.recelpt[1].details = this.form.quantity,
+      //       this.recelpt[2].details = this.form.amount,
+      //        this.recelpt[4].details = 'rrrrrrrrrrr',
+      //         this.pin = data,
               
-          localStorage.setItem("newArray", JSON.stringify(data));
-          setTimeout(() => {
-            this.$router.push({ name: "pagesucess" });
-            this.loadingState = false;
-          }, 50);
+              
+      //     localStorage.setItem("newArray", JSON.stringify(data));
+      //     setTimeout(() => {
+      //       this.$router.push({ name: "pagesucess" });
+      //       this.loadingState = false;
+      //     }, 50);
           
 
 
 
-        } catch (error) {
-          console.log(error);
-          this.loadingState = false;
-        }
-      }
+      //   } catch (error) {
+      //     console.log(error);
+      //     this.loadingState = false;
+      //   }
+      // }
     },
 
     generateReport() {
