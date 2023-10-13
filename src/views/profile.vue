@@ -9,7 +9,7 @@
                 <section class=" mx-5 flex gap-4 pt-4 items-center">
                     <img src="../assets/image/account.svg" class="w-[100px] border rounded-full" alt="" />
                     <div>
-                        <h1 class="text-2xl font-medium  text-gray-900">Waheed Ambali</h1>
+                        <h1 class="text-2xl font-medium  text-gray-900">{{user.accountName}}Waheed Ambali</h1>
                         <div>
                             <p> <span class=" text-green-700 sm:text-[15px] text-[14px] font-medium tracking-[1px]">Update Password</span> | <span class=" text-green-700 sm:text-[15px] text-[14px] font-medium tracking-[1px]">Update Transaction pin</span></p>
                         </div>
@@ -17,20 +17,20 @@
                 </section>
 
                 <section class=" mt-10 w-full   ">
-                    <div class="grid grid-cols-3 text-center  justify-between">
+                    <div class="grid grid-cols-3 text-center items-center   justify-between">
                         <div class="border-r px-2 border-r-slate-400">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Wallet Balance</h1>
-                            <h2 class="text-[23px] text-gray-600  font-light  tracking-[1px]">16.40</h2>
+                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">{{user.wallet}}</h2>
                         </div>
 
                         <div class=" border-r px-2  border-r-slate-400">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Funding</h1>
-                            <h2 class="text-[23px] font-light text-gray-600  tracking-[1px]">206,403.60</h2>
+                            <h2 class="sm:text-[23px] text-[19px] font-light text-gray-600  tracking-[1px]">206,403.60</h2>
                         </div>
 
                         <div class="  px-2 ">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Transactions</h1>
-                            <h2 class="text-[23px] text-gray-600  font-light  tracking-[1px]">206,403.60</h2>
+                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">206,403.60</h2>
                         </div>
 
 
@@ -43,21 +43,21 @@
                         <ul>
                             <li class=" flex gap-3 py-6 border-t-2 px-3 "> 
                                 <img src="../assets/image/phoneairtime.svg" class="w-4" alt=""/>
-                               <p> <span class="font-semibold text-gray-700">Phone Number:</span> 07068393706</p>
+                               <p> <span class="font-semibold text-gray-700">Phone Number:</span> {{user.phone}}</p>
                             </li>
 
                              <li class=" flex gap-3 py-6 border-t-2 px-3 "> 
-                                <img src="../assets/image/phoneairtime.svg" class="w-4" alt=""/>
-                               <p> <span class="font-semibold text-gray-700">Email</span> alfaabaise@gmail.com</p>
+                                <img src="../assets/image/mail.svg" class="w-4" alt=""/>
+                               <p> <span class="font-semibold text-gray-700">Email</span> {{user.email}}</p>
                             </li>
 
                             <li class=" flex gap-3 py-6 border-t-2 px-3 "> 
-                                <img src="../assets/image/phoneairtime.svg" class="w-4" alt=""/>
+                                <img src="../assets/image/link.svg" class="w-4" alt=""/>
                                <p> <span class="font-semibold text-gray-700">Referral Link:</span> </p>
                             </li>
 
                              <li class=" flex gap-3 py-6 border-t-2 px-3 "> 
-                                <img src="../assets/image/phoneairtime.svg" class="w-4" alt=""/>
+                                <img src="../assets/image/dashboard_layouts.svg" class="w-5" alt=""/>
                                <p> <span class="font-semibold text-gray-700">Account Status:</span> <span class=" font-medium text-green-400">Active</span></p>
                             </li>
                         </ul>
@@ -69,7 +69,7 @@
                   <div>
                     <img src="@/assets/abanisee.png" alt="" class="w-[4rem] py-4 h-[2rem]">
                       <div class="font-semibold">
-                        <p class="py-2 ">Account Number : <span>477898753344</span></p>
+                        <p class="py-2 ">Account Number : <span>{{account_number}}</span></p>
                         <p>Account Name : <span class=" ">Abaniseedu waliu</span></p>
                         <p>Bank Name : <span class=" ">Wema Bank</span></p>
                         <div class=" mt-6 text-gray-300 text-[12px] font-normal">
@@ -105,70 +105,60 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      erromessage:'',
-      transacPrev: false,
-      errornetwork: false,
-      erroramount: false,
-      errorphone: false,
-      loadingState: false,
-      form: {
-        network: "",
-        amount: "",
-        recipients: "",
-        TransactionCode: "",
-         serviceID: "Airtime",
-      },
-    };
+
+    data(){
+    return{
+     
+      user:'',
+
+     
+    }
+  },
+ 
+   methods: {
+
+
+
   },
 
-  methods: {
-    cancelTrans() {
-      this.transacPrev = false;
-    },
-    resetErrors() {
-     this.errornetwork = false, this.erroramount = false, this.errorphone = false;
-    },
-    onInput() {
-      this.resetErrors();
-    },
-    register() {
-       this.loadingState = true;
-      console.log(this.form.amount);
-      const phone = String(this.form.recipients);
-      if (!this.form.network || this.form.network === "network") {
-        this.errornetwork = true;
+ created: async function(){
+  
+ 
+    const response = await fetch('http://localhost:3500/dashboard',{
+      method : "GET",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
       
-        this.loadingState = false;
-        return false;
-      } else if (!this.form.amount || this.form.amount < 50) {
-        this.erroramount = true;
-      
-        this.loadingState = false;
-        return false;
-      }
-      if (!phone || phone.length < 10 || phone.length > 11) {
-        this.errorphone = true;
-        
-        this.loadingState = false;
-        return false;
-      } else {
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+   this.erromessage = errorData.message;
+    throw new Error(errorData.message);
+    
+  }
+ 
+  const data = await response.json();
+  console.log('Success:', data);
+   this.user= data.foundUser
+   this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
+   this.user.wallet =data.foundUser.walletBalance
+   this.user.bankName =data.foundUser.preferred_bank
 
-         setTimeout(() => {
-          this.transacPrev = true;
-          this.loadingState = false;
-        }, 1000);
-      }
-    },
-  },
+ 
+ 
 
-  watch: {
-    email(value) {
-      this.submit();
-    },
-  },
-};
+
+},
+
+ watch: {
+  email(value) {
+    this.submit();
+  }
+ }
+
+ }
+  
 </script>
 
 <style>

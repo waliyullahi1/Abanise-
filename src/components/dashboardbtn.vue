@@ -23,7 +23,7 @@
       <div></div>
     </div>
       <div @click="hiddenashbtn2()" :class="hidden?'translate-x-0':'-translate-x-[1000px]'" class="w-full duration-200 h-screen fixed z-30 bg-slate-600  opacity-40 md:hidden block"></div>
-    <div :class="hidden?'translate-x-0':'-translate-x-80'" class="lg:w-fit md:w-1/4 fixed  z-30 bg-white md:translate-x-0 duration-700  shadows text-[14px] h-screen">
+    <div :class="hidden?'translate-x-0':'-translate-x-80'" class="lg:w-fit md:w-fit  fixed  z-30 bg-white md:translate-x-0 duration-700  shadows text-[14px] h-screen">
       <div class="h-28 w-8"></div>
 
       <router-link to="/Dashboard">
@@ -64,7 +64,7 @@
                 <div class="flex gap-5 items-center">
                   <div class="lg:text-primary w-5 md:text-wite text-wite">
                     <img
-                      src="../assets/image/phonedata.svg"
+                      src="../assets/image/total_sales.svg"
                       class="w-6"
                       alt=""
                     />

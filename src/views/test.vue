@@ -1,178 +1,124 @@
 <template>
-  <div class="bg-gray-100  h-screen">
-    <div>
-      <dashbord class="w-full"></dashbord>
-      <div class="w-full h-[5.5rem] bg-secondary"></div>
-      <div class="flex mt-10 gap-10">
-        <div
-          class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
-        ></div>
+  <img alt="Vue logo" src="./assets/logo.png" />
 
-       <div class="w-full">
-         <h1 class=" text-[19px] mb-10 text-gray-600  font-medium">Data bundle Vend</h1>
-        <div
-          class="w-full md: md:w-1/2 sm:w-2/3 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
-        >
-          <form
-            @submit.prevent="prevTrans"
-            action=""
-            class="flex flex-col gap-5 h-fit p-8 text-xl font-semild"
-          >
-            <div v-for="(field, index) in formFields" :key="index">
-              <div class="flex bg-white flex-col">
-                <label
-                  :for="field.name"
-                  class="text-primary mb- ml-4 text-[17px]"
-                  >{{ field.label }}</label
-                >
-                <select
-                  :id="field.name"
-                  v-model="formValues[field.name]"
-                  @input="onInput"
-                  :class="
-                    field.errorselection
-                      ? ' border-secondary'
-                      : '  border-gray-500 '
-                  "
-                  class="w-full font-seibold rounded-[.2rem] ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
-                >
-                  <option
-                    v-for="(option, index) in getOptions(field)"
-                    :key="index"
-                    :value="option.value"
-                  >
-                    {{ option.text }}
-                  </option>
-                </select>
-                <p
-                  :class="field.errorselection ? 'flex' : 'hidden '"
-                  class="pl-5 text-red-700 text-[14px]"
-                >
-                  {{ field.message }}
-                </p>
+  <vue3-html2pdf
+    :show-layout="false"
+    :float-layout="true"
+    :enable-download="true"
+    :preview-modal="true"
+    :paginate-elements-by-height="1400"
+    filename="Hello My friend"
+    :pdf-quality="2"
+    :manual-pagination="true"
+    pdf-format="a4"
+    pdf-orientation="portrait"
+    pdf-content-width="800px"
+    @progress="onProgress($event)"
+    @hasStartedGeneration="hasStartedGeneration()"
+    @hasGenerated="hasGenerated($event)"
+    ref="html2Pdf"
+  >
+    <template #pdf-content>
+     <section slot="pdf-content" class=" container mx-auto">
+         <div >
+            <div class=" mx-10">
+               <h1 class=" font-semibold text-2xl text-center">abaniseedu.com</h1>
+               <p class="text-[14px] font-medium py-1">YOUR TRANSACTION DETAILS ARE AS FOLLOWS:</p>
+               <p class=" text-green-500 py-5 rounded-md text-center bg-green-100">Your Successful purchased {{}}
+               </p>
+               <div class="text-[16px] bg-white  ">
+              
+              <div class="mt-10 w-full border  mb-3">
+               <ul class=" text-[13px]  font-medium" v-for="item in itemss" :key="item.id" >
+                <li class="sm:flex justify-center   block sm:border-b-0 border-b  sm:py-0  py-3 px-3 sm:gap-6 gap-2 ">
+                  <div class=" p-0 sm:p-3 w-1/3">
+                      <h1 class=" text-gray-600">{{item.headers}}</h1>
+                  </div>
+
+                  <div class="w-full p-0 sm:p-3 border-l-0 sm:border-l border-b-0 sm:border-b">
+                    <h1>{{item.details}}</h1>
+                  </div>
+                </li>
+               </ul>
               </div>
+               <div class="flex gap-5 justify-center mb-9 mt-9">
+
+                 <button @click="printDownload">Print Download</button>
+                <Download v-show="false" ref="DownloadComp" />
+                   <Button @click="generatePdf()"  :loading="loadingState" class=" hidden w-fit h-fit px-10" loadingText="please wait...."> print</Button>
+                   <Button :loading="loadingState" class=" w-fit px-10" loadingText="please wait...."> save</Button>
+
+                 </div>
+              
             </div>
-
-            <div class="flex bg-white  flex-col">
-              <label for="" class="text-primary ml-4 text-[17px]">Recipients</label>
-
-              <div class="drop-shadow-md mt-">
-                <input
-                  type="number"
-                  v-model="form.phone"
-                  :class="
-                    errorphone ? ' border-secondary' : '  border-primary '
-                  "
-                  @input="onInput"
-                  class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[17px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
-                  placeholder="Recipients"
-                />
-                <p
-                  :class="errorphone ? 'flex' : 'hidden '"
-                  class="e pl-5 text-red-700 text-[13px]"
-                >
-                  please enter correct phone
-                </p>
-
-              </div>
-              <div class="flex mt-2 ml-3 text-gray-700 font-medium items-center">
-                <input type="checkbox" name="Ported_number" id="">
-                <label for="Ported_number" class=" leading-5 text-[14px]">
-                    Bypass number validator 
-                </label>
-              </div>
             </div>
-            <Button
-              class="mt-"
-              :loading="loadingState"
-              @click="prevTrans()"
-              loadingText="Authenticating"
-              >Previews</Button
-            >
-          </form>
-
-          <div class="flex gap-1">
-            <img src="../assets/image/copy.svg" alt="" class="w-3" />
-            <small class="font-semibold text- text-sm gap-1 flex text-gray-800"
-              >abaniseedu.com
-              <img src="../assets/image/copy.svg" alt="" class="w-3" />2023
-            </small>
-          </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mx-">
-        <div
-          :class="transacPrev ? 'w-full' : 'w-0'"
-          class="fixed top-0 right-0 bottom-[100rem] bg-black opacity-20 h-screen z-10"
-        ></div>
-        <div
-          :class="transacPrev ? 'bottom-0' : ' bottom-[100rem]'"
-          class="duration-700 ease-in-out z-10 bottom-[100rem] w-full h-screen flex pt-32 gap-10 fixed"
-        >
-          <div
-            class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
-          ></div>
-          <div>
-            <div class="text-[16px] bg-white mx-4 py-5 px-7">
-              <p class="text-xl">Transaction Previews</p>
-              <p class="message pl-5 text-2xl text-red-700 text-center text-">
-                {{ erromessage }}
-              </p>
-              <div class="mt-10 w-full mb-3">
-                <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 border-t-2 px-4"
-                >
-                  <span class="col-span-4">Network</span>
-                  <span class="col-span-2">{{ form.network }}</span>
-                </p>
-                <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
-                >
-                  <span class="col-span-4">Data Plan</span>
-                  <span class="col-span-2">{{ form.serviceID }}</span>
-                </p>
-                <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
-                >
-                  <span class="col-span-4">Recipients</span>
-                  <span class="col-span-">{{ form.phone }}</span>
-                </p>
-                <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
-                >
-                  <span class="col-span-4">Total</span>
-                  <span class="col-span-">{{ form.amount }}NGN</span>
-                </p>
-              </div>
-
-              <p
-                class="text-secondary cursor-pointer ml-6 mt-5"
-                @click="cancelTrans()"
-              >
-                Cancel
-              </p>
-
-              <label for="" class="">Transaction code</label><br />
-              <input
-                type="password"
-                name=""
-                class="w-full h-10 outline-none mb-3 px-3 rounded-[.5rem] border"
-                id=""
-              />
-              <Button
-                class="mt-"
-                :loading="loadingState"
-                @click="submitted()"
-                loadingText="Authenticating"
-              >
-                Submit
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+         </div>
+                </section>
+    </template>
+  </vue3-html2pdf>
+  <button @click="generateReport()">Delleor</button>
 </template>
+
+<script>
+
+import Vue3Html2pdf from "vue3-html2pdf";
+import jspdf from 'jspdf'
+export default {
+   data() {
+    return {
+
+    
+
+    
+      text:'1',
+      input:'1',
+      loadingState2:false,
+      transacPrev:false,
+      track: true,
+      erroremail1:false,
+      errortransactionCode:false,
+      cardlink:'',
+       numm:Number(1),
+      cardName : '',
+      form: {
+        name:'',
+        email:'',
+        semiprice:'',
+        quantity:  1,
+       price:Number, 
+        total: '' , 
+        transactionpin:'',
+      },
+      
+     
+    };
+
+    
+  },
+  name: "App",
+  components: {
+    
+    Vue3Html2pdf,
+  },
+  methods: {
+    /*
+            Generate Report using refs and calling the
+            refs function generatePdf()
+        */
+    generateReport() {
+      this.$refs.html2Pdf.generatePdf();
+    },
+  },
+};
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

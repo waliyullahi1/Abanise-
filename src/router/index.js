@@ -29,12 +29,13 @@ const routes = [
     path: "/Register",
     name: "register",
     component: () => import("../views/Registerpage.vue"),
+     
   },
   {
     path: "/Dashboard",
     name: "dashboard",
     component: () => import("../views/Homepage.vue"),
-    // beforeEnter: checkAuth,
+   // beforeEnter: checkAuth,
   },
   {
     path: "/datapage",

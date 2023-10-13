@@ -82,7 +82,30 @@
               Previews
             </Button>
           </form>
-
+              <table class="font-normal bg-white  text-sm">
+                <tr>
+                  <th>reference </th>
+                  <th>Date/Time</th>
+                  <th>Type</th>
+                  <th>Desc</th>
+                  <th>Recipient</th>
+                  <th>Value</th>
+                  <th>Amount</th>
+                  <th>Wallet Bal</th>
+                  <th>Status</th>
+                </tr>
+                <tr  v-for="item in data" :key="item.id">
+                  <td>{{ item.refid }}</td>
+                  <td>{{ item.transactionDate }}</td>
+                  <td>{{ item.type }}</td>
+                  <td>{{ item.description }}</td>
+                  <td>{{ item.recipient }}</td>
+                  <td>{{ item.value }}</td>
+                  <td>{{ item.amount }}</td>
+                  <td>{{ item.wallet }}</td>
+                  <td>{{ item.status }}</td>
+                </tr>
+              </table>
           <div class="flex gap-1">
             <img src="../assets/image/copy.svg" alt="" class="w-3" />
             <small class="font-semibold text- text-sm gap-1 flex text-gray-800"

@@ -19,7 +19,7 @@
 
            <div  class="my-5  gap-5">
              <div>
-               <div class="flex  b drop-shadow-md border-primary mt-2 ">  <input :type="password" @input="onInput" :class="errorpassword? ' border-secondary':'  border-gray-500 '"  class="w-full   h-[2.5rem]  px-5 outline-none font-normal    border-2 rounded-[5px] focus:border-primary" placeholder="Password " v-model="form.password"  >  
+               <div class="flex  b drop-shadow-md border-primary mt-2 ">  <input :type="paswo" @input="onInput" :class="errorpassword? ' border-secondary':'  border-gray-500 '"  class="w-full   h-[2.5rem]  px-5 outline-none font-normal    border-2 rounded-[5px] focus:border-primary" placeholder="Password " v-model="form.password"  >  
               <div class="w-0 h-1"><toggle  class="  relative top-3 right-5" @revealPassword="revealPassword" @hidePassword="hidePassword"> </toggle></div> 
                </div>
               <p :class="errorpassword ? 'flex':'hidden '" class="absolute pl-5 text-red-700 text-sm">password must be at least 6 characters.</p>
@@ -59,7 +59,7 @@ export default {
   data(){
     return{
       erromessage:'',
-      password:"password",
+      paswo:"password",
       erroremail:false,
       errorpassword:false,
       loadingState:false,
@@ -81,10 +81,10 @@ export default {
    methods: {
 
      revealPassword() {
-      this.password = 'text';
+      this.paswo = 'text';
     },
     hidePassword() {
-      this.password = 'password';
+      this.paswo = 'password';
     },
      resetErrors() {
 
@@ -132,10 +132,10 @@ async submit() {
   const data = await response.json();
   this.message = data.success
   console.log('Success:', data);
-  setTimeout(() => {
-        this.$router.push({name: 'Dashboard'})
+   setTimeout(() => {
+        this.$router.push({name: 'dashboard'})
         this.loadingState = false
-      }, 7000);
+      }, 50);
   } catch (error) {
     console.log(error)
   }

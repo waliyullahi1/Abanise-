@@ -24,7 +24,7 @@
     :class="loading ? 'bg-primary text-white': ''"
     :disabled="loading || disabled"
   >
-    <div class="flex items-center justify-center uppercase">
+    <div class="flex items-center justify-center capitalize">
       <div v-if="loading"  class="flex items-center text-white">
         <div class=" mr-2">
           <svg class="w-6 h-6"

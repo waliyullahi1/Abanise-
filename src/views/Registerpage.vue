@@ -202,11 +202,13 @@ const regex = /[a-zA-Z]/
   if (!response.ok) {
     const errorData = await response.json();
    this.erromessage = errorData.message;
+   this.loadingState = false;
     throw new Error(errorData.message);
     
   }
    this.loadingState = true
   const data = await response.json();
+  this.erromessage = ''
   this.message = data.success
   console.log('Success:', data);
   setTimeout(() => {
