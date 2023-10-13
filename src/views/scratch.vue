@@ -512,7 +512,7 @@ export default {
 
       this.recelpt[0].details = this.form.name,
        this.recelpt[1].details = this.form.quantity,
-            this.recelpt[2].details = this.form.amount,
+            this.recelpt[2].details = this.form.quantity * this.form.price,
              this.recelpt[4].details = 'rrrrrrrrrrr',
       console.log(this.form.quantity * this.form.price);
             this.$refs.html2Pdf.generatePdf();

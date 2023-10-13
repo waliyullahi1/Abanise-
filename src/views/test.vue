@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+
 
   <vue3-html2pdf
     :show-layout="false"
