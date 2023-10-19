@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100 text-[poppins] h-fit ">
     <div>
-      <dashbord class="w-full hiden "></dashbord>
+      <dashbord :Wallet="true" :fundhistory="true"  class="w-full hiden "></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
       <div class=" h-fit  w-full">
            <div
@@ -17,7 +17,7 @@
        <div>
         
          <div class="w bg-red-900  text-[15px] ul  overflow-scroll h-fit    mb-20   mt-  border-2">
-               <table class="font-normal bg-white  text-sm">
+               <table class="font-normal bg-white w-full  text-sm">
                 <tr>
                   <th class="cols">Reference </th>
                   <th>Date/Time</th>

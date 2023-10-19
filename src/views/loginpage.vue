@@ -98,7 +98,7 @@ export default {
 
 
 async submit() {
-  this.loadingState = false;
+  this.loadingState = true ;
  
      if (!this.form.email) {
     this.erroremail = true;
@@ -123,6 +123,7 @@ async submit() {
     })
   
   if (!response.ok) {
+    this.loadingState = false
     const errorData = await response.json();
    this.erromessage = errorData.message;
     throw new Error(errorData.message);

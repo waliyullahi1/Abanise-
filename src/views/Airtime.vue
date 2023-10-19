@@ -1,7 +1,9 @@
 <template>
   <div class="bg-gray-100 text-[poppins]">
     <div>
-      <dashbord class="w-full"></dashbord>
+     
+       <successfulTemplate :statusreport="statusreport" :status="status" :transacicon='transacicon'  :transacmessage="transacmessage" :messagetransaction="messagetransaction" @next="next"   class="w-full"></successfulTemplate>
+      <dashbord :airtime="true" class="w-full"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
       <div class="flex mt-10 gap-10">
         <div
@@ -23,7 +25,7 @@
             </p>
           </div>
           <div
-            class="w-full md: md:w-1/2 sm:w-2/3 mt-10 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
+            class="w-full md: md:max-w-md sm:w-2/3 mt-10 lg:max-w-md h-fit  shadows rounded-[1rem] ld text-2xl shadow bg-white"
           >
             <p class="message pl-5 text-xl text-red-700 text-center text-">
               {{ erromessage }}
@@ -64,7 +66,8 @@
                 >
                 <input
                   v-model="form.amount"
-                  type="number "
+                  
+                  type="number"
                   class="w-full px-2 font-seibold rounded-[.2rem] ml-2 text-[15px] outline-none focus:border-primary border-gray-100 border py-[.3rem]"
                   placeholder="Amount"
                   @input="onInput"
@@ -128,7 +131,7 @@
           class="duration-700 ease-in-out z-10 bottom-[100rem] w-full h-screen flex pt-32 gap-10 fixed"
         >
           <div
-            class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
+            class="h-fit lg:w-1/4 md:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block  ml-[2rem]"
           ></div>
           <div>
             <div class="text-[16px] bg-white mx-4 py-5 px-7">
@@ -205,7 +208,11 @@
 export default {
   data() {
     return {
-      message: "",
+      transacmessage:true,
+      messagetransaction:'',
+      status:'',
+        statusreport:false,
+            message: "",
       errortransactionCode: "",
       erromessage: "",
       transacPrev: false,
@@ -224,7 +231,19 @@ export default {
   },
 
   methods: {
-    cancelTrans() {
+
+    next(){
+        console.log('dddddd33');
+         this.transacmessage=true
+          setTimeout(() => {
+
+            this.$router.push({ name: "dashboard" });
+            this.loadingState = false;
+
+          }, 200);
+             },
+
+        cancelTrans() {
       this.transacPrev = false;
     },
     resetErrors() {
@@ -290,22 +309,39 @@ export default {
               billersCode: this.form.recipients,
               amount: this.form.amount,
               phone: this.form.recipients,
+             
             }),
           });
-
+         
           if (!response.ok) {
             const errorData = await response.json();
             this.erromessage = errorData.message;
             throw new Error(errorData.message);
-          }
+          } 
+          
+          console.log( this.transacmessage);
           this.loadingState = true;
           const data = await response.json();
           this.message = data.success;
           console.log("Success:", data);
-          setTimeout(() => {
-            this.$router.push({ name: "dashboard" });
-            this.loadingState = false;
-          }, 50);
+          this.status = data.response_description
+           this.transacPrev = false;
+         setTimeout(() => {
+
+             this.loadingState = false;
+        this.transacmessage = false;
+        if (this.status === 'TRANSACTION SUCCESSFUL') {
+          this.messagetransaction=`You have successfully buy ${this.form.amount} Airtime  for this number ${this.form.recipients} `
+          this.transacicon= true
+          this.statusreport=true
+        } else {
+           this.transacicon= false
+            this.statusreport=true
+           this.messagetransaction='Dear customer We are sorry, Your tansaction is not successful try it again'
+        }
+
+          }, 200);
+        
         } catch (error) {
           console.log(error);
           this.loadingState = false;

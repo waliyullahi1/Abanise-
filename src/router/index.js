@@ -61,11 +61,7 @@ const routes = [
     component: () => import("../views/scratch.vue"),
    
   },
-  {
-    path: "/preview",
-    name: "previews",
-    component: () => import("../views/preview.vue"),
-  },
+  
   {
     path: "/forgetpassword",
     name: "forgetpassword",
@@ -79,9 +75,9 @@ const routes = [
      beforeEnter: verifyJWT,
   },
   {
-      path: "/prev",
-      name: "prev",
-      component: () => import("../views/previewsd.vue"),
+      path: "/pin",
+      name: "pin",
+      component: () => import("../views/pagePin.vue"),
   },
   {
       path: "/test",

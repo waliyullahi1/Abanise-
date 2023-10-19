@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100 text-[poppins] h-fit ">
     <div>
-      <dashbord class="w-full hiden "></dashbord>
+      <dashbord :transactionreport="true"  class="w-full hiden "></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
       <div class=" h-fit  w-full">
            <div
@@ -17,7 +17,7 @@
        <div>
         
          <div class="w bg-red-900  text-[15px] ul  overflow-scroll h-fit    mb-20   mt-  border-2">
-               <table class="font-normal bg-white  text-sm">
+               <table class="font-normal bg-white  w-full text-sm">
                 <tr>
                   <th class="cols">Reference </th>
                   <th>Date/Time</th>
@@ -38,7 +38,7 @@
                   <td class="cols">{{ item.value }}</td>
                   <td class="cols">₦{{ item.amount }}</td>
                   <td class="cols">₦{{ item.wallet }}</td>
-                  <td class="cols text-center my-2 " style="color:white; "><p class=" bg-green-500 py-1">{{ item.status }}</p></td>
+                  <td class="cols text-center my-2 " style="color:white; "><p :class="{ success: item.status === 'successful' || item.status === 'TRANSACTION SUCCESSFUL', failed: item.status === 'failed'}" >{{ item.status }}</p></td>
                              </tr>
               </table>
         </div>
@@ -154,6 +154,14 @@ tr:nth-child(even) {
 .td{
    border: rgb(196, 41, 41) solid 20px;
    color: aquamarine !important;
+}
+
+.success {
+  background-color: green;
+}
+
+.failed {
+  background-color: red;
 }
 
 .scroll-hide ul::-webkit-scrollbar { 

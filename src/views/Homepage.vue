@@ -1,6 +1,6 @@
 <template>
   <div>
-     <dashbord class="w-full text-[poppins]"></dashbord>
+     <dashbord :dashboard="true" class="w-full text-[poppins]"></dashbord>
     <div class=" flex bg-gray-200 gap-5">
       <div class=" w-1/4 hidden md:block border-4"></div>
       <div class="w-full mt-28  border-4">
@@ -31,7 +31,7 @@
                 <div class=" bg-blue-900 w-fit h-fit  rounded-lg py-2 px-3"><img src="../assets/image/wallets.svg" class="w-10" alt=""> </div>
                 <div>
                   <h1 class="   text-gray-400 tracking-[2xl]">Wallet Balance</h1>
-                  <p class=" text-xl">₦ <span >{{user.wallet}}</span></p>
+                  <p class=" text-xl"> <span >{{user.wallet}}</span></p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default {
       user:{
         accountName:'',
         accountNo:'',
-        wallet:'',
+        wallet:0,
        bankName:'',
       },
 
@@ -112,7 +112,7 @@ export default {
   console.log('Success:', data);
    this.user.accountNo= data.foundUser.account_number
    this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
-   this.user.wallet =data.foundUser.walletBalance
+   this.user.wallet =data.foundUser.walletBalance.toLocaleString('en-US', {style:'currency', currency:'NGN'})
    this.user.bankName =data.foundUser.preferred_bank
 
  

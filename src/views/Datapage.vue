@@ -1,7 +1,8 @@
 <template>
   <div class="bg-gray-100 text-[poppins]">
     <div>
-      <dashbord class="w-full"></dashbord>
+      <dashbord :datapage="true" class="w-full"></dashbord>
+       <successfulTemplate :status="status"  :statusreport="statusreport" :transacicon='transacicon'  :transacmessage="transacmessage" :messagetransaction="messagetransaction" @next="next"   class="w-full"></successfulTemplate>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
       <div class="flex mt-10 gap-10">
         <div
@@ -25,8 +26,8 @@
             </p>
           </div>
           <div
-            class="w-full md: md:w-1/2 sm:w-2/3 mt-10 lg:max-w-md h-fit mx-4 shadows rounded-[1rem] ld text-2xl shadow bg-white"
-          >
+            class="w-full md: md:max-w-md sm:w-2/3 mt-10 lg:max-w-md h-fit  shadows rounded-[1rem] ld text-2xl shadow bg-white"
+                   >
             <form
               @submit.prevent="prevTrans"
               action=""
@@ -130,7 +131,7 @@
           class="duration-700 ease-in-out z-10 bottom-[100rem] w-full h-screen flex pt-32 gap-10 fixed"
         >
           <div
-            class="h-fit lg:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"
+           class="h-fit lg:w-1/4 md:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block  ml-[2rem]"
           ></div>
           <div>
             <div class="text-[16px] bg-white mx-4 py-5 px-7">
@@ -207,6 +208,10 @@
 export default {
   data() {
     return {
+      transacmessage:true,
+      messagetransaction:'',
+      status:'',
+      statusreport:false,
       errortransactionCode: "",
       transacPrev: "",
       erromessage: "",
@@ -221,6 +226,7 @@ export default {
         variation_code: "",
         network: "",
         TransactionCode: "",
+        datatype:"",
       },
       formFields: [
         {
@@ -244,9 +250,9 @@ export default {
         },
       ],
       formValues: {
-        product: "network", // Set default network
+        product: "network", 
         amount: 2000,
-        serviceID: "", // Set default data type
+        serviceID: "", 
       },
       productOptions: {
         network: [{ value: 2000, text: "Select data Type" }],
@@ -293,6 +299,17 @@ export default {
     };
   },
   methods: {
+
+      next(){
+        console.log('dddddd33');
+         this.transacmessage=true
+          setTimeout(() => {
+
+            this.$router.push({ name: "dashboard" });
+            this.loadingState = false;
+
+          }, 200);
+          },
     getOptions(field) {
       if (field.name === "amount") {
         return this.productOptions[this.formValues.product] || [];
@@ -335,6 +352,7 @@ export default {
       const phone = this.form.phone;
       const regex = /[a-zA-Z]/;
       const amountoption = selectedOption.text.split(" - ")[1]; //amount to pay
+      const datatype = selectedOption.text.split(" - ")[0];
       const serviceIDoption = selectedOption.serviceID;
       const variation_code = selectedOption.variation_code; //service id
       const networkoption = selectedProduct.text; //network he/she that choose
@@ -374,6 +392,7 @@ export default {
         this.form.serviceID1 = serviceIDoption1;
         this.form.serviceID = serviceIDoption;
         this.form.variation_code = variation_code;
+       this.form.datatype = datatype;
         console.log(this.form.serviceID, this.form.variation_code);
         setTimeout(() => {
           this.transacPrev = true;
@@ -407,6 +426,7 @@ export default {
                amount: this.form.amount, 
                 phone:   `0${this.form.phone}`,
               TransactionCode:this.form.TransactionCode,
+          datatype: this.form.datatype 
               
             }),
           });
@@ -420,10 +440,19 @@ export default {
           const data = await response.json();
           this.message = data.success;
           console.log("Success:", data);
-          setTimeout(() => {
-            
+            this.status = data.response_description
+             this.transacPrev = false;
+          this.transacmessage = false;
             this.loadingState = false;
-          }, 50);
+          if (this.status === 'TRANSACTION SUCCESSFUL') {
+          this.messagetransaction=`You have successfully shared ${ this.form.datatype } data  for this number ${this.form.phone} `
+          this.transacicon= true
+                 this.statusreport=true
+        } else {
+           this.transacicon= false
+           this.messagetransaction='Dear customer we are sorry, your tansaction is not successful try it again.'
+        }
+    
         } catch (error) {
           console.log(error);
           this.loadingState = false;

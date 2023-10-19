@@ -16,7 +16,7 @@ import Footer from './components/Navigation/footer.vue'
 import Input from "./components/Input.vue";
 import toggle from './components/toggle.vue';
 import Button from "./components/Button.vue";
-
+import successfulTemplate from "./components/sucessTemplate.vue";
 
 import './assets/tailwind.css'
 
@@ -36,5 +36,5 @@ app.component("Input", Input);
 app.component("Button", Button);
 app.component("toggle", toggle);
 app.component("dashbord", dashbord);
-
+app.component("successfulTemplate", successfulTemplate);
 

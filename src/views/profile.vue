@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100 text-[poppins]">
     <div>
-      <dashbord class="w-full"></dashbord>
+      <dashbord      :Setting="true" class="w-full"></dashbord>
       <div class="w-full h-[5.5rem] bg-secondary"></div>
       <div class="flex mt-10 gap-10">
         <div class="h-fit lg:w-1/5 sm:w-0 sm:block hidden lg:block md:block md:w-1/5 ml-[2rem]"></div>
@@ -25,12 +25,12 @@
 
                         <div class=" border-r px-2  border-r-slate-400">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Funding</h1>
-                            <h2 class="sm:text-[23px] text-[19px] font-light text-gray-600  tracking-[1px]">206,403.60</h2>
+                            <h2 class="sm:text-[23px] text-[19px] font-light text-gray-600  tracking-[1px]">206,403.00</h2>
                         </div>
 
                         <div class="  px-2 ">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Transactions</h1>
-                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">206,403.60</h2>
+                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">{{totalspent}}.00</h2>
                         </div>
 
 
@@ -69,7 +69,7 @@
                   <div>
                     <img src="@/assets/abanisee.png" alt="" class="w-[4rem] py-4 h-[2rem]">
                       <div class="font-semibold">
-                        <p class="py-2 ">Account Number : <span>{{account_number}}</span></p>
+                        <p class="py-2 ">Account Number : <span>{{user.account_number}}</span></p>
                         <p>Account Name : <span class=" ">Abaniseedu waliu</span></p>
                         <p>Bank Name : <span class=" ">Wema Bank</span></p>
                         <div class=" mt-6 text-gray-300 text-[12px] font-normal">
@@ -110,6 +110,7 @@ export default {
     return{
      
       user:'',
+      totalspent:''
 
      
     }
@@ -141,8 +142,9 @@ export default {
   const data = await response.json();
   console.log('Success:', data);
    this.user= data.foundUser
+   this.totalspent = data.totalAmountSpent.toLocaleString('en-US', {style:'currency', currency:'NGN'})
    this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
-   this.user.wallet =data.foundUser.walletBalance
+   this.user.wallet =data.foundUser.walletBalance.toLocaleString('en-US', {style:'currency', currency:'NGN'})
    this.user.bankName =data.foundUser.preferred_bank
 
  
