@@ -90,4 +90,40 @@ export const useProductStore = defineStore({
       },
     ],
   }),
+
+  actions: {
+    setUser(user) {
+      this.user = user
+    },
+   async logout() {
+      try {
+        const response = await fetch('http://localhost:3500/GET',{
+          method : "GET",
+          headers: {'Content-Type':'application/json'},
+          credentials:'include',
+          body:JSON.stringify({
+          })
+          
+        })
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+       this.erromessage = errorData.message;
+       this.loadingState = false;
+        throw new Error(errorData.message);
+        
+      }
+       this.loadingState = true
+      const data = await response.json();
+      this.erromessage = ''
+      this.message = data.success
+      console.log('Success:', data);
+      setTimeout(() => {
+            this.$router.push({name: 'login'})
+            this.loadingState = false
+          }, 7000);
+      } catch (error) {
+        console.log(error)
+      }
+    }}
 });

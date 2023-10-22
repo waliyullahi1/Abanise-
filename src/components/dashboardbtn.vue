@@ -248,6 +248,8 @@
 
 <script>
 import Button from './Button.vue';
+import { useProductStore } from "../stores/counter.js"
+
 export default {
   components: { Button },
   data() {
@@ -281,13 +283,8 @@ export default {
     },
 
    async logout(){
-      const response = await fetch("http://localhost:3500/logout", {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({
-            }),
-          });
+      const myStore = useProductStore()
+        myStore.logout()
     },
 
     showSetting() {

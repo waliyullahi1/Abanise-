@@ -25,11 +25,11 @@
                  
                   <th>Status</th>
                 </tr>
-                <tr  v-for="item in transaction" :key="item.id">
-                  <td class="cols" >{{ item.refid }}</td>
-                  <td class="cols">{{ item.transactionDate }}</td>
+                <tr  v-for="item in fund" :key="item.id" >
+                  <td class="cols" >MFY|{{ item.transactionId }}</td>
+                  <td class="cols">{{ item.dateShow }}</td>
                   
-                  <td class="cols">₦{{ item.amount }}</td>
+                  <td class="cols">₦ {{ item.amount }}</td>
                   <td class="cols text-center my-2 " style="color:white; "><p class=" bg-green-500 py-1">{{ item.status }}</p></td>
                 </tr>
               </table>
@@ -47,190 +47,41 @@
 export default {
   data() {
     return {
-      transaction: [
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 2,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-          {
-          id: 4,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-        {
-          id: 4,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 1,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-        {
-          id: 2,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-          {
-          id: 4,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-        {
-          id: 4,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-
-        {
-          id: 4,
-          date: "23-03-2023",
-          type: "Mtn Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Mtn Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-
-
-        {
-          id: 3,
-          date: "23-03-2023",
-          type: "Glo Airtime  ",
-          des: "buy 70 airtime ",
-          Recipient: "09134678754",
-          value: "Glo Airtime",
-          amount: "3000",
-          walletBal: "1244",
-          status: "success ",
-        },
-      ],
+      fund:[],
+   
     };
   },
   methods: {},
 
-  created() {
-    console.log(this.transaction);
-  },
+created: async function(){
+  
+ 
+    const response = await fetch('http://localhost:3500/fund',{
+      method : "GET",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
+      
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+   this.erromessage = errorData.message;
+    throw new Error(errorData.message);
+    
+  }
+ 
+  const data = await response.json();
+  console.log('Success:', data);
+   this.fund = data
+  //  this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
+  //  this.user.wallet =data.foundUser.walletBalance
+  //  this.user.bankName =data.foundUser.preferred_bank
+
+ 
+ 
+
+
+},
 };
 </script>
 

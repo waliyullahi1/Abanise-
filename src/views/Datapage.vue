@@ -349,7 +349,7 @@ export default {
       this.loadingState = true;
       const selectedOption = this.getSelectedOption(this.formFields[1]);
       const selectedProduct = this.getSelectedOption(this.formFields[0]);
-      const phone = this.form.phone;
+      const phone = String(this.form.phone) ;
       const regex = /[a-zA-Z]/;
       const amountoption = selectedOption.text.split(" - ")[1]; //amount to pay
       const datatype = selectedOption.text.split(" - ")[0];
@@ -359,7 +359,7 @@ export default {
       const serviceIDoptionArray = selectedOption.text.split(" - ");
       const serviceIDoption1 = `${serviceIDoptionArray[0]} `;
       console.log(serviceIDoption1);
-
+       
       console.log(selectedProduct, selectedProduct.text);
 
       if (networkoption === "network") {
@@ -371,20 +371,10 @@ export default {
         this.loadingState = false;
         console.log("yyyyyyy");
         return false;
-      } else if (
-        !this.form.phone ||
-        phone.length < 10 ||
-        phone.length > 11 ||
-        regex.test(phone)
-      ) {
+      } else if ( !phone || phone.length < 10 || phone.length > 11 ||regex.test(phone)) {
         this.errorphone = true;
         this.loadingState = false;
-
-        return false;
-      } else if (this.form.phone.length < 10) {
-        this.errorphone = true;
-        this.loadingState = false;
-        console.log(selectedOptionText, selectedOptionText2);
+        console.log(selectedOptionText, selectedOptionText2, 'gggggg');
         return false;
       } else {
         this.form.amount = amountoption.replace("₦", "");

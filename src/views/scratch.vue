@@ -396,7 +396,7 @@ export default {
           });
         this.form.time =  format(new Date(), 'MMM ddd yyyy hh:mm aaa')
           if (!response.ok) {
-            this.loadingState = false;
+             this.loadingState2 = false;
            
             const errorData = await response.json();
             console.log(errorData.message);

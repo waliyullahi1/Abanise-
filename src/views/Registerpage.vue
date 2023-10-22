@@ -3,16 +3,26 @@
 
     <div class=" md:w-fit w-full md:pt-10 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
       <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-10 md:px-20 sm:w-full ">
-        <h1 class="font-semibold text-xl font-sans  text-center pt-5">Create an Account.</h1>
+      <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
+        <h1 class="font-semibold text-xl font-sans  text-center ">Create an Account.</h1>
        <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
              <p  class=" message pl-5 text-2xl text-green-700 pb-9 text-center text-">{{message}}</p>
           
       <form class="mx-"  @submit.prevent="submit" action="">
          
-            <div  >
-              <div  class="flex   drop-shadow-md  mt-2 ">  <input type="username" :class="errorname ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="username" v-model="form.username"  ></div>
-              <p :class="errorname ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']">please enter your  username</p>
-                           
+           
+
+             <div  class="my-5 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 justify-between">
+              <div>
+                <div  class="flex   drop-shadow-md  mt-2 ">  <input type="username" :class="errorFirstname ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="First name " v-model="form.firstname"  ></div>
+              <p :class="errorFirstname ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']">please enter your  username</p>
+              </div>
+
+             <div>
+                <div  class="flex   drop-shadow-md  mt-2 ">  <input type="username" :class="errorLastname ? ' border-secondary':'  border-primary '" @input="onInput" class="w-full focus:border-primary  h-[2.5rem]  px-5   outline-none font-normal    border-2 rounded-[5px] focus:border-primry" placeholder="Last name " v-model="form.lastname"  ></div>
+              <p :class="errorLastname ? 'flex':'hidden '" class=" absolute pl-5 text-red-700 text-['13rem']">please enter your  last name properly</p>
+              </div>
+              
             </div>
 
              <div  class="my-5 w-full grid grid-cols-1 sm:grid-cols-2 gap-5 justify-between">
@@ -91,19 +101,22 @@ export default {
       passwordConfirm:'password',
       erroremail1:false,
       errorname: false,
-      errorphone:false,
+      errorFirstname:false,
+      errorLastname:false,
       erroremail:false,
       errorpassword:false,
       errorconfirmpassword:false,
       errortransactionCode:false,
       loadingState:false,
       form:{
-        username:'',
+        firstname:'',
+        lastname:'',
         email:'',
         password:'',
         comfirmpassword:'',
         phone:"",
         transactionCode:"",
+
       },
 
       user: [
@@ -143,6 +156,8 @@ export default {
     this.errorphone = false;
     this.erroremail = false;
     this.errorpassword = false;
+    this.errorLastname=false;
+    this.errorFirstname=false;
     this.errorconfirmpassword = false;
     this.errortransactionCode = false;
   },
@@ -154,10 +169,14 @@ async submit() {
   this.loadingState = true;
   let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regex = /[a-zA-Z]/
-  if (!this.form.username) {
-    this.errorname = true;
+  if (!this.form.firstname) {
+    this.errorFirstname = true;
     this.loadingState = false;
     return false;
+  } if (!this.form.lastname ||this.form.lastname === this.form.firstname) {
+    this.errorLastname= true;
+     this.loadingState = false;
+      return false;
   } else if (!this.form.email) {
     this.erroremail = true;
     this.loadingState = false;
@@ -190,7 +209,8 @@ const regex = /[a-zA-Z]/
       headers: {'Content-Type':'application/json'},
       credentials:'include',
       body:JSON.stringify({
-          username:this.form.username,
+          firstname:this.form.firstname,
+          firstname:this.form.lastname,
         transaction:this.form.transactionCode,
         email:this.form.email,
         pwd:this.form.password,
