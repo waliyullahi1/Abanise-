@@ -2,7 +2,7 @@
   <div class="h-screen     w-full overflow-x-hidden text-[poppins]">
 
     <div class=" md:w-fit w-full md:pt-10 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
-      <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-10 md:px-20 sm:w-full ">
+      <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-2 md:px-20 sm:w-full ">
       <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
         <h1 class="font-semibold text-xl font-sans  text-center ">Create an Account.</h1>
        <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
@@ -72,7 +72,7 @@
               
       </form>
 
-      <p class=" font-semibold">Already have an account yet? <router-link class=" text-primary" to="/login">Home</router-link></p>
+      <p class=" font-semibold mb-40">Already have an account yet? <router-link class=" text-primary" to="/login">Home</router-link></p>
   
       </div>
     </div>
