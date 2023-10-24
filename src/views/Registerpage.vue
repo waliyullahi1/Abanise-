@@ -204,7 +204,7 @@ const regex = /[a-zA-Z]/
   } else {
     console.log('yyyyyy');
       try {
-    const response = await fetch('http://localhost:3500/register',{
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/register',{
       method : "POST",
       headers: {'Content-Type':'application/json'},
       credentials:'include',

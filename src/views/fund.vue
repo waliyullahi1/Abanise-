@@ -54,7 +54,7 @@ export default {
  created: async function(){
   
  
-    const response = await fetch('http://localhost:3500/dashboard',{
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/dashboard',{
       method : "GET",
       headers: {'Content-Type':'application/json'},
       credentials:'include',

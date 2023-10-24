@@ -25,12 +25,12 @@
 
                         <div class=" border-r px-2  border-r-slate-400">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Funding</h1>
-                            <h2 class="sm:text-[23px] text-[19px] font-light text-gray-600  tracking-[1px]">206,403.00</h2>
+                            <h2 class="sm:text-[23px] text-[19px] font-light text-gray-600  tracking-[1px]">{{totalfund}}</h2>
                         </div>
 
                         <div class="  px-2 ">
                             <h1 class="text-[14px] text-gray-600 font-medium tracking-[1px]"> Total Lifetime Transactions</h1>
-                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">{{totalspent}}.00</h2>
+                            <h2 class="sm:text-[23px] text-[19px] text-gray-600  font-light  tracking-[1px]">{{totalspent}}</h2>
                         </div>
 
 
@@ -110,8 +110,8 @@ export default {
     return{
      
       user:'',
-      totalspent:''
-
+      totalspent:'',
+      totalfund:''
      
     }
   },
@@ -125,7 +125,7 @@ export default {
  created: async function(){
   
  
-    const response = await fetch('http://localhost:3500/dashboard',{
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/dashboard',{
       method : "GET",
       headers: {'Content-Type':'application/json'},
       credentials:'include',
@@ -146,7 +146,8 @@ export default {
    this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
    this.user.wallet =data.foundUser.walletBalance.toLocaleString('en-US', {style:'currency', currency:'NGN'})
    this.user.bankName =data.foundUser.preferred_bank
-
+    this.totalfund = data.totalAmountfund.toLocaleString('en-US', {style:'currency', currency:'NGN'})
+    totalfund
  
  
 

@@ -299,7 +299,7 @@ export default {
       } else {
         try {
           this.loadingState = true;
-          const response = await fetch("http://localhost:3500/sub/airtime", {
+          const response = await fetch("https://api-abanise-5a3s.vercel.app/sub/airtime", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

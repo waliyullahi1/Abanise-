@@ -70,7 +70,7 @@ async submit() {
   } else {
     console.log('fffffffff')
          try {
-    const response = await fetch('http://localhost:3500/resetpassword/requestPasswordReset',{
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/resetpassword/requestPasswordReset',{
       method : "POST",
       headers: {'Content-Type':'application/json'},
       credentials:'include',

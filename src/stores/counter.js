@@ -97,7 +97,7 @@ export const useProductStore = defineStore({
     },
    async logout() {
       try {
-        const response = await fetch('http://localhost:3500/GET',{
+        const response = await fetch('https://api-abanise-5a3s.vercel.app/logout',{
           method : "GET",
           headers: {'Content-Type':'application/json'},
           credentials:'include',

@@ -382,7 +382,7 @@ export default {
         this.loadingState2 = true;
         try {
          this.loadingState2 = true
-          const response = await fetch("http://localhost:3500/card/sell", {
+          const response = await fetch("https://api-abanise-5a3s.vercel.app/card/sell", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
