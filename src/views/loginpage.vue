@@ -110,7 +110,7 @@ async submit() {
     this.loadingState = false;
     return false;
   } else {
-    console.log('yyyyyy');
+    console.log('yyy');
       try {
     const response = await fetch('https://api-abanise-5a3s.vercel.app/login',{
       method : "POST",
