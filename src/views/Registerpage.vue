@@ -210,7 +210,7 @@ const regex = /[a-zA-Z]/
       credentials:'include',
       body:JSON.stringify({
           firstname:this.form.firstname,
-          firstname:this.form.lastname,
+          lastName:this.form.lastname,
         transaction:this.form.transactionCode,
         email:this.form.email,
         pwd:this.form.password,
