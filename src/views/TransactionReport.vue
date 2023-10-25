@@ -48,6 +48,8 @@
 
       </div>
     </div>
+
+     <loadingJs :isJsFinishedRun="isJsFinishedRun" > </loadingJs>
   </div>
 </template>
 
@@ -56,6 +58,7 @@ export default {
   data() {
     return {
       data:[],
+      isJsFinishedRun:false,
       transaction: [
         
         {
@@ -109,10 +112,10 @@ created: async function(){
   const data = await response.json();
   console.log('Success:', data);
    this.data = data
-   this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
-   this.user.wallet =data.foundUser.walletBalance
-   this.user.bankName =data.foundUser.preferred_bank
-
+ 
+  //  this.user.wallet =data.foundUser.walletBalance
+  //  this.user.bankName =data.foundUser.preferred_bank
+this.isJsFinishedRun=true
  
  
 

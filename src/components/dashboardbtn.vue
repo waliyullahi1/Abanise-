@@ -248,7 +248,6 @@
 
 <script>
 import Button from './Button.vue';
-import { useProductStore } from "../stores/counter.js"
 
 export default {
   components: { Button },
@@ -283,8 +282,32 @@ export default {
     },
 
    async logout(){
-      const myStore = useProductStore()
-        myStore.logout()
+       this.$emit("logout")
+         try {
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/logout',{
+      method : "GET",
+      headers: {'Content-Type':'application/json'},
+      credentials:'include',
+    
+      
+    })
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+  
+    throw new Error(errorData.message);
+    
+  }
+   
+  
+  
+
+ 
+        this.$router.push({name: 'login'})
+   
+  } catch (error) {
+    console.log(error)
+  }
     },
 
     showSetting() {

@@ -54,6 +54,7 @@
             </div>
           </div>
         </div>
+        <loadingJs :isJsFinishedRun="isJsFinishedRun" > </loadingJs>
       </div>
     </div>
   </div>
@@ -71,7 +72,7 @@ export default {
 
   data(){
     return{
-     
+     isJsFinishedRun:false,
       user:{
         accountName:'',
         accountNo:'',
@@ -111,11 +112,11 @@ export default {
   const data = await response.json();
   console.log('Success:', data);
    this.user.accountNo= data.foundUser.account_number
-   this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
+   this.user.accountName= data.foundUser.account_name
    this.user.wallet =data.foundUser.walletBalance.toLocaleString('en-US', {style:'currency', currency:'NGN'})
    this.user.bankName =data.foundUser.preferred_bank
 
- 
+ this.isJsFinishedRun=true
  
 
 

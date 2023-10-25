@@ -59,6 +59,7 @@ export default {
 
   data(){
     return{
+      errorphone:'',
       erromessage:'',
       paswo:"password",
       erroremail:false,

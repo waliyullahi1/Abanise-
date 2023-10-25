@@ -4,15 +4,15 @@
   
    <Header @transaction="transact()" :headertext="headerChange" class="fixed z-40 top-0"></Header>
     
-    <div class="w-full https://www.youtube.com/watch?v=La1BdF_sunw&list=PLdo5W4Nhv31bZSiqiOL5ta39vSnBxpOPT&index=5"></div>
+    <div class="w-full "></div>
     <section  class=" j" >
     <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
     <div  class="container pt-8  flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
         <p class= "  font- text-4xl px-1  md:text-[5rem] text-white font-[roboto] ">Buy scratch <span class="text-secondary">Card</span></p>
         <a class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for  WAEC,<br class="md:flex hidden">  NECO  and NABTEB</a>
         <div class="flex gap-5 mt-8 items-center">
-            <router-link  to="/"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
-            <p><router-link  to="/" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
+            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
+            <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
             
         </div>
          <p class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</p>
@@ -49,7 +49,7 @@
         <p class="text-3xl font-bold text">CARDS PRODUCT</p>
         <p class="md:text-xl text-sm  font-normal ">CLICK ON ANY CARD BELOW TO BUY THE CARD PIN INSTANTLY </p>
         <div class="grid md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 ">
-            <div  v-for="item in item" :key="item.id" v-motion-pop-visible class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
+            <div  v-for="item in item" :key="item.id" class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
                 <div class="w-full rounded-[2rem] group-hover:drop-shadow-xl  duration-700  pt-3 px-3 overflow-hidden ">
                    <div class="overflow-hidden duration-700   rounded-[2rem] "> <img v-bind:src="item.image" class="w-[20rem]" /></div>
                    
@@ -69,30 +69,30 @@
         </div>
       </div>
     </section>
-    <section class="container hidden mx-auto my-20 py-5">
+    <section class="container  mx-auto my-20 py-5">
        <div class="">
         <h1 class="md:text-4xl text-xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
         <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable Price for card</p>
         <div class="grid md:grid-cols-4 grid-cols-2  md:gap-10 gap-3 justify-center "> 
-            <div  v-motion-pop-visible class="flex flex-col justify-center items-center">
+            <div  isJsFinishedRun class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center   text-[1rem]">MTN Airtime VTU And Data</h1>
-                      <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
+                      <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem] font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/airtel.png" alt="mtn logo" class="md:w-[13rem] w-[10rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
-                    <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem]  font-semibold">Buy now</PrimaryBtn>
+                    <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem]  font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/9mobile.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
-                      <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
+                      <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
 
@@ -100,7 +100,7 @@
                 <div class="shadows  rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/glo.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
                     <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
-                      <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold">Buy now</PrimaryBtn>
+                      <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold"> <router-link  to="/login"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
 
@@ -176,10 +176,10 @@
 
         </div>
     </section>
-   
+    <loadingJs :isJsFinishedRun="isJsFinishedRun" > </loadingJs>
     <Footer></Footer>
     
-  
+ 
  </div>
  </template>
 
@@ -188,7 +188,7 @@
     import 'vue3-carousel/dist/carousel.css'
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
     import hero3 from '@/assets/image/fill.jpg';
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
      import hero1 from '@/assets/image/fi1.jpg';
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
@@ -202,6 +202,10 @@
 
           setup() {
     const headerChange=ref(true)
+    const isJsFinishedRun=ref(true)
+    onMounted(async()=>{
+        isJsFinishedRun.value=true
+    })
     window.addEventListener('scroll', () => {
       if (window.scrollY > 70) {
        headerChange.value =false  
@@ -209,7 +213,7 @@
         headerChange.value = true
       }
     });
-    return { headerChange};
+    return { headerChange, isJsFinishedRun};
   },
          components: {
     Carousel,
@@ -218,6 +222,7 @@
   },
         data(){
             return{
+                
                  scrollPosition: null,
                 track: false,
                 item:[
@@ -329,6 +334,10 @@
                 this.track = !this.track
             }
         },
+
+        created(){
+      
+        }
        
     }
 </script>

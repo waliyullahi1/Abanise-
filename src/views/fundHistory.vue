@@ -40,6 +40,7 @@
 
       </div>
     </div>
+     <loadingJs :isJsFinishedRun="isJsFinishedRun" > </loadingJs>
   </div>
 </template>
 
@@ -48,7 +49,7 @@ export default {
   data() {
     return {
       fund:[],
-   
+        isJsFinishedRun:false,
     };
   },
   methods: {},
@@ -76,7 +77,7 @@ created: async function(){
   //  this.user.accountName= `${data.foundUser.first_name } ${data.foundUser.last_name } `
   //  this.user.wallet =data.foundUser.walletBalance
   //  this.user.bankName =data.foundUser.preferred_bank
-
+this.isJsFinishedRun=true
  
  
 

@@ -17,7 +17,7 @@ import Input from "./components/Input.vue";
 import toggle from './components/toggle.vue';
 import Button from "./components/Button.vue";
 import successfulTemplate from "./components/sucessTemplate.vue";
-
+import loadingJs from "./components/Navigation//loadingJs.vue";
 import './assets/tailwind.css'
 
 const app = createApp(App)
@@ -37,4 +37,5 @@ app.component("Button", Button);
 app.component("toggle", toggle);
 app.component("dashbord", dashbord);
 app.component("successfulTemplate", successfulTemplate);
-
+app.component("loadingJs", loadingJs);
+loadingJs
