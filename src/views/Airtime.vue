@@ -134,32 +134,32 @@
             class="h-fit lg:w-1/4 md:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block  ml-[2rem]"
           ></div>
           <div>
-            <div class="text-[16px] bg-white mx-4 py-5 px-7">
+            <div class="text-[16px] bg-white mx-4 py-5 px-0">
               <p class="text-xl text-center">Transaction Previews</p>
               <p class="message text-xl text-red-700 text-center text-">
                 {{ erromessage }}
               </p>
               <div class="mt-10 w-full mb-3">
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 border-t-2 px-4"
+                  class="grid grid-cols-6 justify-between ml-0 py-1 border-b-2 border-t-2 px-4"
                 >
                   <span class="col-span-4">Network</span>
                   <span class="col-span-2">{{ form.network }}</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between ml-0 py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Service</span>
                   <span class="col-span-2">{{ form.serviceID }}</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between ml-0 py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Recipients</span>
                   <span class="col-span-">{{ form.recipients }}</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between ml-0 py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Total</span>
                   <span class="col-span-">{{ form.amount }}</span>
