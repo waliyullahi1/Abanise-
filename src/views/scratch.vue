@@ -59,17 +59,17 @@
             :class="transacPrev ? 'w-full' : 'w-0'"
             class="fixed overflow-auto top-0 right-0 w-full bottom-[100rem] bg-black opacity-50 h-screen z-10"
           ></div>
-          <div class="w-full h-fit">
-            <div class="mx-">
+          <div class="w-full  h-fit">
+            <div class=" flex justify-center w-full">
               <div
-                :class="transacPrev ? 'bottom-[3rem]' : 'bottom-[60rem]'"
+                :class="transacPrev ? 'bottom-[1rem]' : 'bottom-[60rem]'"
                 class="duration-700 fixed ease-in-out z-10 w-full h-screen flex pt-32 md:gap-10 gap-0 fixd"
               >
                 <div
                   class="h-fit lg:w-0 sm:w-0 sm:hidden md:block md:w-0 md:ml-[5rem] ml-0"
                 ></div>
                 <div
-                  class="md: md:w-1/2 sm:w-2/3 lg:max-w-md w-full ul mr-10 shadows rounded-[1rem] ld text-2xl shadow bg-white py-5 px-5  h-[35rem] overflow-y-auto"
+                  class="md: md:w-1/2 sm:w-2/3 lg:max-w-md w-full ul mx-5 shadows rounded-[1rem] ld text-2xl shadow bg-white py-5 px-5  h-[35rem] overflow-y-auto"
                 >
                   <h1
                     class="text-[13px] text-center uppercase font-medium leading-tight text-primary"
