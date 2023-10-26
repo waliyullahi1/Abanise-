@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen     w-full overflow-x-hidden text-[poppins]">
+  <div class="h-screen  bg2   w-full overflow-x-hidden text-[poppins]">
 
-    <div class=" md:w-fit w-full md:pt-10 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
+    <div class=" md:w-fit w-full bg md:pt-10 pt-5 drop-shadow-md h-fit  md:h-screen shadow     ">
       <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-2 md:px-20 sm:w-full ">
       <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
         <h1 class="font-semibold text-xl font-sans  text-center ">Create an Account.</h1>
@@ -262,5 +262,18 @@ const regex = /[a-zA-Z]/
     -webkit-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
 -moz-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
 box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
+  }
+
+    .bg{
+    background-image: url(../assets/image/aminatebg.gif);
+    background-position: center;
+    background-size:cover;
+    background-repeat: repeat;
+  }
+  .bg2{
+     background-image: url(../assets/image/animatebg2.gif);
+    background-position: center;
+    background-size:cover;
+    background-repeat: repeat;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen   text-[poppins]  w-full overflow-x-hidden ">
+  <div class="h-screen   text-[poppins] bg2 w-full overflow-x-hidden ">
 
-    <div class=" w-fit pt-20 drop-shadow-md  h-screen shadow  ">
+    <div class=" w-fit pt-20 drop-shadow-md bg h-screen shadow  ">
 
       <div class="md:max-w-1/2   lg:max-w-1/2 sm:max-w-md md:px-20 px-2  sm:w-full">
        <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
@@ -161,6 +161,18 @@ async submit() {
 <style>
   .image{
     background-image: url(../assets/image/dash.jpg);
+  }
+  .bg{
+    background-image: url(../assets/image/aminatebg.gif);
+    background-position: center;
+    background-size:cover;
+    background-repeat: repeat;
+  }
+  .bg2{
+     background-image: url(../assets/image/animatebg2.gif);
+    background-position: center;
+    background-size:cover;
+    background-repeat: repeat;
   }
 
   .shadow{
