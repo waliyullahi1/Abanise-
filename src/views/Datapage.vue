@@ -134,32 +134,32 @@
            class="h-fit lg:w-1/4 md:w-1/3 sm:w-[2rem] sm:block hidden lg:block md:block  ml-[2rem]"
           ></div>
           <div>
-            <div class="text-[16px] bg-white mx-4 py-5 px-7">
+            <div class="text-[16px] bg-white mx-4 py-5 px-0">
               <p class="text-xl">Transaction Previews</p>
               <p class="message pl-5 text-2xl text-red-700 text-center text-">
                 {{ erromessage }}
               </p>
               <div class="mt-10 w-full mb-3">
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 border-t-2 px-4"
+                  class="grid grid-cols-6 justify-between py-1 border-b-2 border-t-2 px-4"
                 >
                   <span class="col-span-4">Network</span>
                   <span class="col-span-2">{{ form.network }}</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">serviceID</span>
                   <span class="col-span-2"> {{ form.serviceID1 }} Data</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between  py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Recipients</span>
                   <span class="col-span-">234{{ form.phone }}</span>
                 </p>
                 <p
-                  class="grid grid-cols-6 justify-between ml-6 py-1 border-b-2 px-4"
+                  class="grid grid-cols-6 justify-between  py-1 border-b-2 px-4"
                 >
                   <span class="col-span-4">Amount</span>
                   <span class="col-span-">₦{{ form.amount }}</span>
@@ -167,7 +167,7 @@
               </div>
 
               <p
-                class="text-secondary cursor-pointer ml-6 mt-5"
+                class="text-secondary cursor-pointer  mt-5"
                 @click="cancelTrans()"
               >
                 Cancel
