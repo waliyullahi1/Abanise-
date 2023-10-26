@@ -173,13 +173,14 @@
                 Cancel
               </p>
 
-              <label for="" class="">Transaction code</label><br />
+             <div class="mx-4">
+               <label for="" class="">Transaction code</label><br />
               <input
                 type="password"
                 @input="onInput"
                 v-model="form.TransactionCode"
                 name=""
-                class="w-full h-10 outline-none mb-3 px-3 rounded-[.5rem] border"
+                class="w-full h-10 outline-none mb-3  px-3 rounded-[.5rem] border"
                 id=""
               />
 
@@ -190,13 +191,14 @@
                 Amount must not less than 50₦
               </p>
               <Button
-                class="mt-"
+                class="m"
                 :loading="loadingState"
                 @click="submitted()"
                 loadingText="please wait"
               >
                 Submit
               </Button>
+             </div>
             </div>
           </div>
         </div>
