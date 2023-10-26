@@ -411,7 +411,6 @@ export default {
           console.log("Success:", data);
          
           //information  to receipt
-           localStorage.setItem("card", JSON.stringify(data))
 
             localStorage.setItem("recelpt", JSON.stringify(this.form))
         
@@ -421,7 +420,7 @@ export default {
            
            
             
-            localStorage.setItem("newArray", JSON.stringify(data));
+   
           setTimeout(() => {
             this.$router.push({ name: "pin" });
             this.loadingState = false;

@@ -5,8 +5,8 @@
       <div class="md:max-w-1/2   lg:max-w-1/2sm:max-w-md px-2 md:px-20 sm:w-full ">
       <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
         <h1 class="font-semibold text-xl font-sans  text-center ">Create an Account.</h1>
-       <p  class=" message pl-5 text-2xl text-red-700  text-center text-">{{erromessage}}</p>
-             <p  class=" message pl-5 text-2xl text-green-700 pb-9 text-center text-">{{message}}</p>
+       <p  class=" message pl-5 text-2xl text-red-700 uppercase  text-center text-">{{erromessage}}</p>
+             <p  class=" message pl-5 text-2xl text-green-700  pb-9 text-center text-">{{message}}</p>
           
       <form class="mx-"  @submit.prevent="submit" action="">
          
