@@ -6,7 +6,30 @@
     
     <div class="w-full "></div>
     <section  class=" j" >
-    <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
+          <Carousel  :autoplay="9000" :transition="2000"  :wrap-around="true" :items-to-show="1">
+        <slide v-for="slide in hero" :key="slide.id" class="w-full  ">
+            <div :style="{backgroundImage:'url('+ slide.image +')'}" class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
+         <div  class="container pt-8  flex flex-col md:gap-4 gap-0 px-4 justify-center h-full mx-auto "> 
+            <div class=" overflow-hidden  h-fit"> <p class= " heropa   text-5xl px-1 text-[1.5rem] sm:text-[2rem]  md:text-[3rem] text-white  ">{{slide.heroSection}}</p></div>
+            <div class=" w-full flex justify-center items-center overflow-hidden">
+                   <div class="md:w-1/2 herop w-full flex justify-center mx-2 items-center"> <a class="sm:text-2xl text-xl text-[white] pt-0 ">{{slide.heroParagraph}}</a></div>
+
+            </div>
+                          <div class="flex gap-5 mt-2 sm:mt-8 justify-center items-center">
+            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg" class="w-10 md:w-10 " alt=""> login in</p></router-link>
+            <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
+            
+        </div>
+         <p class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</p>
+    </div>j
+    </div>
+           <template #addons>
+      <navigation />
+      <pagination />
+    </template>
+        </slide>
+         </Carousel>
+    <!-- <div class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
     <div  class="container pt-8  flex flex-col gap-2 px-4 justify-center h-full mx-auto "> 
         <p class= "  font- text-4xl px-1  md:text-[5rem] text-white font-[roboto] ">Buy scratch <span class="text-secondary">Card</span></p>
         <a class="md:text-2xl text-xl text-[white] pt-4 ">Get instant accesss to scratch card PINs for  WAEC,<br class="md:flex hidden">  NECO  and NABTEB</a>
@@ -17,7 +40,7 @@
         </div>
          <p class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</p>
     </div>j
-    </div>
+    </div> -->
     <div class="w-full bg-primary ">
         <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-1 gap-10 py-10 w-full h-fit">
         <div class=" text-white  border-l-2 pl-3 ">
@@ -143,22 +166,7 @@
      <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
      </div>
     </section>
-    <carousel :autoplay="8000"  :wrap-around="true" class=" " :items-to-show="1">
-        <slide v-for="slide in hero" :key="slide.id" class="w-full  ">
-           <div>
-             <div class="w-full h-fit  px-3"><img class=" h-ull" v-bind:src="slide.image" ></div>
-            <div class="text-left  flex-col hidden  relative left-20 lg:bottom-[4rem] md:bottom-[7rem]">
-                <p class=" font- text-4xl text-[white]  md:text-[3rem] text-whte font-[Poppins]"></p>
-                <p class="md:text-xl text-xl  text-[white] pt-2  m"></p>
-                <a href="" class=" bg-secondary text-[white] mt-4 py-2 px-2 w-fit rounded-lg  text-"></a>
-            </div>
-           </div>
-           <template #addons>
-      <navigation />
-      <pagination />
-    </template>
-        </slide>
-    </carousel>
+   
     <section>
         <div :class=" track ? 'translate-x-0 ' : 'translate-x-[250rem]'" class=" duration-700 ease-in-out w-full transform top-0 fixed z-50  blurr h-[50rem]">
             <div class="w-[30rem]  transl duration-700 ease-in-out transform mx-auto shadows bg-white h-[10rem] mt-[20rem]  "   :class=" track ? '' : 'translate-x-[1rem]'" >
@@ -187,9 +195,10 @@
 <script>
     import 'vue3-carousel/dist/carousel.css'
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-    import hero3 from '@/assets/image/fill.jpg';
+    import hero2 from '@/assets/image/hero.jpg';
+     import hero3 from '@/assets/image/her.jpg';
     import { onMounted, ref } from 'vue';
-     import hero1 from '@/assets/image/fi1.jpg';
+     import hero1 from '@/assets/image/dash.jpg';
     import waecImg from '@/assets/image/waeccard.jpg';
     import neco from '@/assets/image/neco.jpg';
      import vwaec from '../assets/image/vgce.jpg'
@@ -302,10 +311,8 @@
                         id: 1,
                        
                         image:hero1 ,
-                        price:'3500',
-                        card:'Waec',
-                        header:'Scratch card ',
-                        condition:'result checker'
+                        heroSection:'Buy scratch Card and Exam pin',
+                        heroParagraph:'Get instant accesss to scratch card for resultchecker and Exam PINs for  WAEC, NECO  and NABTEB'
                     },
 
                     
@@ -313,14 +320,27 @@
 
                     {
                         id: 2,
-                        image: hero3,
-                        price:'1000',
-                        card:'Nabteb',
-                        header:'Scratch card ',
-                        condition:'result checker'
+                        image: hero2,
+                         heroSection:'Buy & Sell  Airtime, Data, &',
+                        heroParagraph:'We are a major player in distribution & selling affordable and discounted cheapest data ',
+                       
                     },
                     
-   
+                   {
+                        id: 2,
+                        image: hero3,
+                         heroSection:`Get Your Admission Instantly `,
+                        heroParagraph:'Get your Admission to any university or Polytechnic Without jamb ',
+                       
+                    },
+
+                      {
+                        id: 2,
+                        image: hero3,
+                         heroSection:`Register Your Olevel's `,
+                        heroParagraph:'You can register your GCEWAEC, GCENABTEB, NABTEB and NECO, and get a good grade ',
+                       
+                    },
                 ]
             }
         },
@@ -347,8 +367,35 @@
    width: 200%;
   
 }
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
+ 
+}
+.carousel__slide--active .heropa{
+   animation: p 3s ;
+   animation-iteration-count: 1;  
+}
 
 
+.carousel__slide--active .herop{
+   animation: pa 3s ;
+   animation-iteration-count: 1;  
+}
+
+
+@keyframes p {
+  from {
+     transform: translateY(-100px);
+      }
+  to { transform: scale(0px); }
+}
+@keyframes pa {
+  from {
+     transform: translateY(100px);
+      }
+  to { transform: scale(0px); }
+}
 
 
 
@@ -388,7 +435,7 @@
         background-size:cover;
     }
     .image{
-        background-image: url(../assets/image/dash.jpg);
+       
         background-color: #164b3b;
         background-position:right;
         background-repeat: no-repeat;

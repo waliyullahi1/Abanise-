@@ -9,7 +9,15 @@
     </div>
   </div>
  <div  :class="headertext?'bg-transparent ':' bg-primary'" class=" container w-full duration-1000  my-auto mx-auto  mb-5  flex justify-between items-center ">
-     <router-link to="/">  <logo1  class="ml-3" ></logo1></router-link>
+     <router-link to="/" class="flex gap-5 w-full  items-center">  
+        <div>
+           <logo1  class="ml-3" ></logo1>
+          </div>
+        <div class=" text-white h-fit">
+           <p class=" leading-[20px] sm:text-4xl text-xl  font-medium">Abaniseedu</p>
+         <p class=" leading-[20px] sm:text-[16px] text-[13px] font-medium">Educatinal consultant</p>
+        </div>
+     </router-link>
     <div @click="emitclick" class="w-full   h-fit flex justify-end" >
       <nav   class=" lg:anination translate- lg:translate-x-0 duration-700 ease-in-out transform  lg:top-0 top-[4rem]  place-contnt-center fixed  lg:static justify-center px-3  lg:h-7 lg:w-full w-[15rem] lg:justify-end text-[13px] justify-ed items-center lg:flex" :class="rotate ? 'translate-x-32' : 'translate-x-[30rem]'">
      <ul  @click=" this.rotate =true" class=" lg:bg-transparent bg-primary px-5 lg:px-0  h-screen lg:h-4 justify-start  lg:justify-center lg:flex-row flex-col flex klg:mt-5 mt-0 lg:gap-5 gap-4">

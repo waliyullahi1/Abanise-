@@ -135,7 +135,7 @@
           ></div>
           <div>
             <div class="text-[16px] bg-white mx-4 py-5 px-0">
-              <p class="text-xl">Transaction Previews</p>
+              <p class="text-xl text-center">Transaction Previews</p>
               <p class="message pl-5 text-2xl text-red-700 text-center text-">
                 {{ erromessage }}
               </p>
@@ -166,13 +166,16 @@
                 </p>
               </div>
 
-              <p
+             
+
+
+            <div class="mx-3">
+               <p
                 class="text-secondary cursor-pointer  mt-5"
                 @click="cancelTrans()"
               >
                 Cancel
               </p>
-
               <label for="" class="">Transaction code</label><br />
               <input
                 @input="onInput"
@@ -183,7 +186,7 @@
                 id=""
               />
 
-              <p
+                <p
                 :class="errortransactionCode ? 'flex' : 'hidden '"
                 class="e pl-5 text-red-700 text-[13px]"
               >
@@ -197,6 +200,7 @@
               >
                 Submit
               </Button>
+            </div>
             </div>
           </div>
         </div>

@@ -35,31 +35,31 @@ const routes = [
     path: "/Dashboard",
     name: "dashboard",
     component: () => import("../views/Homepage.vue"),
-   // beforeEnter: checkAuth,
+   beforeEnter: checkAuth,
   },
   {
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
-   
+    // beforeEnter: checkAuth,
   },
   {
     path: "/airtime",
     name: "airtime",
     component: () => import("../views/Airtime.vue"),
-  
+    // beforeEnter: checkAuth,
   },
   {
     path: "/fundHistory",
     name: "fundHistory",
     component: () => import("../views/fundHistory.vue"),
-   
+    beforeEnter: checkAuth,
   },
   {
     path: "/scratchcards",
     name: "scratch",
     component: () => import("../views/scratch.vue"),
-   
+    beforeEnter: checkAuth,
   },
   
   {
@@ -78,6 +78,7 @@ const routes = [
       path: "/pin",
       name: "pin",
       component: () => import("../views/pagePin.vue"),
+      beforeEnter: checkAuth,
   },
   {
       path: "/test",
@@ -93,19 +94,22 @@ const routes = [
    {
     path:"/transactionreport",
     name:"transaction", 
-    component : ()=>import ("../views/TransactionReport.vue")
+    component : ()=>import ("../views/TransactionReport.vue"),
+    beforeEnter: checkAuth,
  },
 
  {
   path:"/fund",
   name:"found", 
-  component : ()=>import ("../views/fund.vue")
+  component : ()=>import ("../views/fund.vue"),
+  beforeEnter: checkAuth,
 },
 
 {
   path:"/profile",
   name:"profile", 
-  component : ()=>import ("../views/profile.vue")
+  component : ()=>import ("../views/profile.vue"),
+  beforeEnter: checkAuth,
 }
 ];
 
@@ -116,7 +120,7 @@ const router = createRouter({
 async function checkAuth(to, from, next) {
   try {
     // Send a request to your backend to check if the user is authenticated
-    await axios.get('http://localhost:3500/refreshtoken', { withCredentials: true });
+    await axios.get('https://api-abanise-5a3s.vercel.app/refreshtoken', { withCredentials: true });
     next();
   } catch (error) {
     next('/login'); 
@@ -129,7 +133,7 @@ async function verifyJWT(to, from, next) {
    const token = to.params.token;
 
    try {
-    const response = await fetch('http://localhost:3500/valid', {
+    const response = await fetch('https://api-abanise-5a3s.vercel.app/valid', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
