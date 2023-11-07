@@ -41,13 +41,13 @@ const routes = [
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
-    // beforeEnter: checkAuth,
+    beforeEnter: checkAuth,
   },
   {
     path: "/airtime",
     name: "airtime",
     component: () => import("../views/Airtime.vue"),
-    // beforeEnter: checkAuth,
+    beforeEnter: checkAuth,
   },
   {
     path: "/fundHistory",
