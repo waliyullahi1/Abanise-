@@ -512,7 +512,7 @@ export default {
          const myArray = useProductStore();
          const pin = myArray.items
          const newArray = pin.filter((item) => item.name ===  this.cardName).slice(0, this.form.quantity)
-          localStorage.setItem('result', JSON.stringify(newArray))
+          localStorage.setItem('recelpt', JSON.stringify(newArray))
          console.log(this.cardName);
          console.log(newArray);
          window.location.href = '/pagesucess'

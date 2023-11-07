@@ -94,8 +94,8 @@
     </section>
     <section class="container  mx-auto my-20 py-5">
        <div class="">
-        <h1 class="md:text-4xl text-xl font-semibold text-center">PHONE ARTIME AND DATA </h1>
-        <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable Price for card</p>
+        <h1 class="md:text-3xl text-xl text-primary font-bold text-center">PHONE AIRTIME AND DATA BUNDLE  </h1>
+        <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable price for Airtime and Data bundle </p>
         <div class="grid md:grid-cols-4 grid-cols-2  md:gap-10 gap-3 justify-center "> 
             <div  isJsFinishedRun class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>

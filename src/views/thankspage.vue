@@ -29,78 +29,7 @@
        </section>
 
 
-       <section class=" container mx-auto">
-         <div >
-            <div class=" mx-10">
-               <h1 class=" font-semibold text-2xl text-center">abaniseedu.com</h1>
-               <p class="text-[14px] font-medium py-1">YOUR TRANSACTION DETAILS ARE AS FOLLOWS:</p>
-               <p class=" text-green-500 py-5 rounded-md text-center bg-green-100">Your Successful purchased MTN 3.0 to 08166988815</p>
-               <div class="text-[16px] bg-white  ">
-              
-              <div class="mt-10 w-full border  mb-3">
-               <ul class=" text-[13px]  font-medium" v-for="item, in item" :key="item.id" >
-                <li class="sm:flex justify-center   block sm:border-b-0 border-b  sm:py-0  py-3 px-3 sm:gap-6 gap-2 ">
-                  <div class=" p-0 sm:p-3 w-1/3">
-                      <h1 class=" text-gray-600">{{item.headers}}</h1>
-                  </div>
-
-                  <div class="w-full p-0 sm:p-3 border-l-0 sm:border-l border-b-0 sm:border-b">
-                    <h1>{{item.details}}</h1>
-                  </div>
-                </li>
-               </ul>
-              </div>
-               <div class="flex gap-5 justify-center mb-9 mt-9">
-                   <Button :loading="loadingState" class=" w-fit h-fit px-10" loadingText="please wait...."> print</Button>
-                   <Button :loading="loadingState" class=" w-fit px-10" loadingText="please wait...."> save</Button>
-
-                 </div>
-              
-            </div>
-            </div>
-         </div>
-       </section>
-
-        <section class=" container mx-auto">
-         <div >
-            <div ref="content" class=" mx-10">
-               <h1 class=" font-semibold text-2xl text-center">abaniseedu.com</h1>
-               <p class="text-[14px] font-medium py-1">YOUR TRANSACTION DETAILS ARE AS FOLLOWS:</p>
-               <p class=" text-green-500 py-5 rounded-md text-center bg-green-100">Your Successful purchased Pin</p>
-               <div class="text-[16px] bg-white  ">
-              
-              <div class="mt-10 w-full border  mb-3">
-               <ul class=" text-[13px]  font-medium" v-for="item, in item" :key="item.id" >
-                <li class="flex justify-center   border-b-0  py-0   px-3 gap-6  ">
-                  <div class=" p-0 sm:p-3 w-1/3">
-                      <h1 class=" text-gray-600">{{item.headers}}</h1>
-                  </div>
-
-                  <div class="w-full  p-3  border-l  border-b">
-                    <h1>{{item.details}}</h1>
-                  </div>
-                </li>
-               </ul>
-                  <div class="w-full border h-fit">
-                    <div   v-for="item in items" :key="item.id"  class=" gap-10 items-center px-5  border-b tracking-  backdrop-opacity-100  font-semibold bg- text-[13px]  placehold-center justify-between flex ">
-                
-                        <p class=" border-r py-3 pr-2 ">{{item.name}}</p>
-                        <p class=" border-r py-3 pr-2  text-left">{{item.pin}}</p>
-                        <p class="  py-3 ">{{ item.seriaNo}} </p>
-                    
-                </div>
-                  </div>
-              </div>
-               <div class="flex gap-5 justify-center mb-9 mt-9">
-                   <Button @click="generatePdf" :loading="loadingState" class=" w-fit h-fit px-10" loadingText="please wait...."> print</Button>
-                   <Button :loading="loadingState" class=" w-fit px-10" loadingText="please wait...."> save</Button>
-
-                 </div>
-              
-            </div>
-            </div>
-         </div>
-       </section>
+     
     </div>
 </template>
 
