@@ -419,7 +419,7 @@ export default {
     this.full_name='Western Afriacan Examination Councell'
   } else {
       if (splitloc[4]== 2) {
-      this.form.semiprice = Number(1300)
+      this.form.semiprice = Number(1200)
       this.form.price = this.form.quantity * this.form.semiprice
       this.form.total = this.form.quantity * this.form.semiprice
        this.amount= (parseInt(this.form.price)*100) + 100,
@@ -466,7 +466,7 @@ export default {
          this.waecImg=neco
         } else  {
           if (splitloc[4]== 6) {
-          this.form.semiprice = Number(19000)
+          this.form.semiprice = Number(16500)
           this.form.price = this.form.semiprice
            this.amount= parseInt(this.form.price)*100,
             this.vcard=true
@@ -478,7 +478,7 @@ export default {
             this.descrption='NABTEB GCE O LEVEL card is a product of National Business and Technical Examinations Board. It is used to register candidates for NABTEB Private Examination.'
           } else {
             if (splitloc[4]== 7) {
-              this.form.semiprice = Number(19000)
+              this.form.semiprice = Number(15000)
           this.form.price = this.form.semiprice
            this.amount= (parseInt(this.form.price)*100) + 100,
                this.nysecard= true

@@ -87,7 +87,7 @@
                     <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
                 </div>
                  <router-link :class="item.itIsAvalable? 'block':'hidden'" target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
-                 <router-link :class="item.itIsAvalable? 'hidden':'block'" target="_blank" :to="`/`"><PrimaryBtn class="w-full text-center font-[14px] bg-red-700 font-sembold">Not Available</PrimaryBtn></router-link>
+                 <router-link :class="item.itIsAvalable? 'hidden':'block'" target="_blank" :to="`/`"><PrimaryBtn class="w-full text-center font-[14px]  font-sembold">Not Available</PrimaryBtn></router-link>
 
             </div>
             
@@ -303,7 +303,7 @@
                     {
                         id:7,
                         image: vwaec,
-                        price:'1500',
+                        price:'15000',
                         card:'Waec',
                         header:'Result Verification ',
                         condition:'Correction of date of birth in NYSE',
