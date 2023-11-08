@@ -162,7 +162,7 @@ async submit() {
   .image{
     background-image: url(../assets/image/dash.jpg);
   }
-  .bg{
+  /* .bg{
     background-image: url(../assets/image/aminatebg.gif);
     background-position: center;
     background-size:cover;
@@ -173,7 +173,7 @@ async submit() {
     background-position: center;
     background-size:cover;
     background-repeat: repeat;
-  }
+  } */
 
   .shadow{
     -webkit-box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
