@@ -53,7 +53,9 @@
            <div class="mt-5">
              <p class="w-fit text-[15px] mb-5 font-sed  ">CONTACT</p>
                  <div class="flex flex-col text-[14px] gap-2">
-                    <a href="" class=" w-fit  hover:text-secondary flex  "><img src="@/assets/image/Location.svg" class="w-5"/> Ibadan Road, Arround Total FIlling Station, Iwo </a>
+                    <a href="" class=" w-fit  hover:text-secondary flex  "> 
+                     <img src="@/assets/image/Location.svg" class="w-5"/> 
+                      Ibadan Road, Arround Total FIlling Station, Iwo </a>
                     <a href=""  class="  w-fit flex hover:text-secondary   "><img src="@/assets/image/phone.svg" class="w-7"/>07068393706, 08134105599 </a>
                      
                 </div>
@@ -62,14 +64,18 @@
            
          </div>
        </div>
-       <div class="flex text-white justify-center gap-1">
-            <img src="../assets/image/copy.svg" alt="" class="w-3" />
-            <small class="font-semibold text- text-sm gap-1 flex"
-              >abaniseedu.com
-              <img src="../assets/image/copy.svg" alt="" class="w-3" />2023
-            </small>
-          </div>
+      
       </div>
+      <div class="flex text-white justify-center items-center gap-1"> Copyright
+        <div class=" w-4 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                      <path d="M24 4C12.972066 4 4 12.972074 4 24C4 35.027926 12.972066 44 24 44C35.027934 44 44 35.027926 44 24C44 12.972074 35.027934 4 24 4 z M 24 7C33.406615 7 41 14.593391 41 24C41 33.406609 33.406615 41 24 41C14.593385 41 7 33.406609 7 24C7 14.593391 14.593385 7 24 7 z M 24.5 12C18.328169 12 13.5 17.50434 13.5 24C13.5 30.49566 18.328169 36 24.5 36C28.1558 36 31.376101 34.025262 33.34375 31.121094 A 2.0002 2.0002 0 1 0 30.033203 28.878906C28.714852 30.824738 26.7282 32 24.5 32C20.729831 32 17.5 28.55034 17.5 24C17.5 19.44966 20.729831 16 24.5 16C26.406567 16 28.126085 16.856239 29.421875 18.324219 A 2.0008888 2.0008888 0 1 0 32.421875 15.675781C30.451665 13.443761 27.625433 12 24.5 12 z" fill="currentColor" />
+                          </svg>
+                      </div>
+           2023 abaniseedu.com All Rights Reserved
+            
+           
+          </div>
     </section>
   </div>
 </template>

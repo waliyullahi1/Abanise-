@@ -164,6 +164,19 @@
                     <li>WAEC Online Registration 2023 - First Series for private candidate registration period may be extended</li>
                   </ul>
               </div>
+
+              <div :class="gceneco? 'hidden' : 'block'">               
+                   <h1 class="text-xl font-semibold mb-2  text-primary">How to Register for{{cardName}}  Online </h1>
+                  <p  class="text-[14px] font-semibold ">firstly All you have to do is  logon to NECO Registration Portal </p>
+                  <p class="font-semibold text-[15px]"> Carefully follow the Registration Instruction.</p>
+                 
+                   <ul class=" font-semibold text-sm tracking-normal list-decimal">
+                    <li>Firstly All you have to do is  logon to NECO Registration Portal </li>
+                    <li>Carefully follow the Registration Instruction.</li>
+                    <li> Fill the form carefully.</li>
+                    <li> Provide the token as required.</li>
+                     </ul>
+              </div>
             </div>
             <p class="text-xl">NOW CLICK ON THE 'PROCEED TO PAYMENT'</p>
 
@@ -334,6 +347,7 @@ export default {
  data(){
     return {
       Nabtebre: "",
+      gceneco:"",
       gceWaec:"",
         publicKey:'pk_live_98f0335f99f7a0e2b1399a55ad5903b3f88a92af',
         amount:"",
@@ -392,7 +406,7 @@ export default {
   this.form.email  
    
   if (splitloc[4]== 1 ) {
-    this.form.semiprice = Number(3200)*this.form.quantity
+    this.form.semiprice = Number(4000)*this.form.quantity
     console.log(this.form.semiprice);
     this.form.price = this.form.quantity * this.form.semiprice
     console.log(this.form.price)
@@ -405,19 +419,19 @@ export default {
     this.full_name='Western Afriacan Examination Councell'
   } else {
       if (splitloc[4]== 2) {
-      this.form.semiprice = Number(1000)
+      this.form.semiprice = Number(1300)
       this.form.price = this.form.quantity * this.form.semiprice
       this.form.total = this.form.quantity * this.form.semiprice
        this.amount= (parseInt(this.form.price)*100) + 100,
       this.cardName='Neco',
       this.waecImg=waec,
       this.card=true
-      this.full_name='National Examination cancil'
+      this.full_name='National Examination Councell'
       this.neco = !this.neco
       this.waecImg=neco
       } else {
        if (splitloc[4]== 3) {
-        this.form.semiprice = Number(1500)
+        this.form.semiprice = Number(1000)
         this.form.price = this.form.semiprice
          this.amount= parseInt(this.form.price)*100,
         this.cardName='Nabteb',
@@ -436,9 +450,22 @@ export default {
           this.Nabtebre =true
           this.descrption=' This card is a product of The West African Examinations Council. It is used for the registration of candidates for GCE Private examinations. A Pin can only be used only once for a candidate.'
           this.cardName='GCEWaec'
+          this.gceneco=true
          this.waecImg=gcewaec
-        } else {
-          if (splitloc[4]== 5) {
+        } else  
+        if (splitloc[4]== 5) {
+          this.form.semiprice = Number(18000)
+        this.form.price = this.form.semiprice*this.form.quantity
+         this.amount= (parseInt(this.form.price)*100) + 100,
+          this.vcard=true
+          this.card=false
+          this.gceneco=false
+           this.gceWaec =true
+          this.descrption=' This card is a product of The National Examination Council of Nigeria. It is used for the registration of candidates for GCE Private examinations. A Pin can only be used only once for a candidate.'
+          this.cardName='GCENECO'
+         this.waecImg=neco
+        } else  {
+          if (splitloc[4]== 6) {
           this.form.semiprice = Number(19000)
           this.form.price = this.form.semiprice
            this.amount= parseInt(this.form.price)*100,
@@ -450,7 +477,7 @@ export default {
             this.cardName='Nabteb'
             this.descrption='NABTEB GCE O LEVEL card is a product of National Business and Technical Examinations Board. It is used to register candidates for NABTEB Private Examination.'
           } else {
-            if (splitloc[4]== 6) {
+            if (splitloc[4]== 7) {
               this.form.semiprice = Number(19000)
           this.form.price = this.form.semiprice
            this.amount= (parseInt(this.form.price)*100) + 100,
