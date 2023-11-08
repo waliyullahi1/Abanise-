@@ -84,7 +84,7 @@
                     <p class="text-[17px]">Price</p> 
                     <p class="font-semibold font-lg ">₦{{item.price}}</p>
                     </div>
-                    <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">Yes</span></p>
+                    <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">{{ item.status }}</span></p>
                 </div>
                  <router-link :class="item.itIsAvalable? 'block':'hidden'" target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
                  <router-link :class="item.itIsAvalable? 'hidden':'block'" target="_blank" :to="`/`"><PrimaryBtn class="w-full text-center font-[14px]  font-sembold">Not Available</PrimaryBtn></router-link>
@@ -245,7 +245,8 @@
                         card:'Waec',
                         header:'Scratch card ',
                         condition:'result checker',
-                        itIsAvalable:true
+                        itIsAvalable:true,
+                        status:'Yes'
                     },
 
                     {
@@ -256,6 +257,7 @@
                         header:'Scratch card ',
                         condition:'result checker',
                         itIsAvalable:true,
+                        status:'Yes'
                     },
 
                     {
@@ -265,7 +267,8 @@
                         card:'Nabteb',
                         header:'Scratch card ',
                         condition:'result checker',
-                        itIsAvalable:true
+                        itIsAvalable:true,
+                        status:'Yes'
                     },
 
 
@@ -276,7 +279,8 @@
                         card:'GCEWaec',
                         header:'Pin card ',
                         condition:'For registration',
-                        itIsAvalable:true,
+                        itIsAvalable:false,
+                        status:'No'
                     },
 
                     {
@@ -286,7 +290,8 @@
                         card:'GCENeco',
                         header:'Pin card ',
                         condition:'For registration',
-                        itIsAvalable:true,
+                        itIsAvalable:false,
+                        status:'No'
                     },
 
                    
@@ -297,7 +302,8 @@
                         card:'GCENabteb',
                         header:'pin ',
                         condition:'For registration',
-                        itIsAvalable:false
+                        itIsAvalable:false,
+                        status:'No'
                     },
 
                     {
@@ -307,7 +313,8 @@
                         card:'Waec',
                         header:'Result Verification ',
                         condition:'Correction of date of birth in NYSE',
-                        itIsAvalable:false
+                        itIsAvalable:false,
+                        status:'No'
                     },
 
                     
