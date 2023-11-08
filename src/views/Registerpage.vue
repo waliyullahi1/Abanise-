@@ -264,7 +264,7 @@ const regex = /[a-zA-Z]/
 box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
   }
 
-    .bg{
+    /* .bg{
     background-image: url(../assets/image/aminatebg.gif);
     background-position: center;
     background-size:cover;
@@ -275,5 +275,5 @@ box-shadow: 4px 7px 37px 3px rgba(0,0,0,0.2);
     background-position: center;
     background-size:cover;
     background-repeat: repeat;
-  }
+  } */
 </style>

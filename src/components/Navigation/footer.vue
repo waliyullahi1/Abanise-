@@ -61,7 +61,15 @@
 
            
          </div>
-       </div></div>
+       </div>
+       <div class="flex text-white justify-center gap-1">
+            <img src="../assets/image/copy.svg" alt="" class="w-3" />
+            <small class="font-semibold text- text-sm gap-1 flex"
+              >abaniseedu.com
+              <img src="../assets/image/copy.svg" alt="" class="w-3" />2023
+            </small>
+          </div>
+      </div>
     </section>
   </div>
 </template>
