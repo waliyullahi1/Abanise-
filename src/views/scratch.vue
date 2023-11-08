@@ -40,11 +40,12 @@
               </div>
               <p class="flex justify-between font-semibold text-[15px]">
                 Availability(status)
-                <span class="tex text-green-600 text-[15px]">Yes</span>
+                <span class="tex text-green-600 text-[15px]">{{ item.status }}</span>
               </p>
             </div>
+              <router-link :class="item.itIsAvalable? 'hidden':'block'" target="_blank" :to="`/`"><PrimaryBtn class="w-full text-center font-[14px]  font-sembold">Not Available</PrimaryBtn></router-link>
 
-            <Button
+            <Button :class="item.itIsAvalable? 'block':'hidden'"
               @click="updateNextItemName(index)"
               :loading="item.loadingState1"
               loadingText="Authenticating"
@@ -273,66 +274,101 @@ export default {
         transactionpin: "",
       },
 
-      item: [
-        {
-          id: 1,
-          image: waecImg,
-          price: "3500",
-          card: "WAEC",
-          header: "Scratch card ",
-          condition: "result checker",
-          loadingState1: false,
-        },
+      item:[
+                    {
+                        id: 1,
+                       
+                        image:waecImg ,
+                        price:'4000.00',
+                        card:'Waec',
+                        header:'Scratch card ',
+                        condition:'result checker',
+                        itIsAvalable:true,
+                        status:'Yes'
+                    },
 
-        {
-          id: 2,
-          image: neco,
-          price: "1000",
-          card: "Neco",
-          header: "Scratch card ",
-          condition: "result checker",
-          loadingState1: false,
-        },
+                    {
+                        id: 2,
+                        image: neco,
+                        price:'1200.00',
+                        card:'Neco',
+                        header:'Scratch card ',
+                        condition:'result checker',
+                        itIsAvalable:true,
+                        status:'Yes'
+                    },
 
-        {
-          id: 3,
-          image: nabteb,
-          price: "1000",
-          card: "Nabteb",
-          header: "Scratch card ",
-          condition: "result checker",
-          loadingState1: false,
-        },
+                    {
+                        id: 3,
+                        image: nabteb,
+                        price:'1000.00',
+                        card:'Nabteb',
+                        header:'Scratch card ',
+                        condition:'result checker',
+                        itIsAvalable:true,
+                        status:'Yes'
+                    },
 
-        {
-          id: 4,
-          image: gcewaec,
-          price: "1500",
-          card: "GCEWaec",
-          header: "Pin card ",
-          condition: "For registration",
-          loadingState1: false,
-        },
 
-        {
-          id: 5,
-          image: nabtebgce,
-          price: "1500",
-          card: "GCENabteb",
-          header: "pin ",
-          condition: "For registration",
-          loadingState1: false,
-        },
+                      {
+                        id: 4,
+                        image: gcewaec,
+                        price:'19,000.00',
+                        card:'GCEWaec',
+                        header:'Pin card ',
+                        condition:'For registration',
+                        itIsAvalable:false,
+                        status:'No'
+                    },
 
-        {
-          id: 6,
-          image: vwaec,
-          price: "1500",
-          card: "Waec",
-          header: "Result Verification ",
-          condition: "",
-        },
-      ],
+                    {
+                        id: 5,
+                        image: neco,
+                        price:'12,500.00',
+                        card:'GCENeco',
+                        header:'Pin card ',
+                        condition:'For registration',
+                        itIsAvalable:false,
+                        status:'No'
+                    },
+
+                   
+                    {
+                        id: 6,
+                        image: nabtebgce,
+                        price:'16,500.00',
+                        card:'GCENabteb',
+                        header:'pin ',
+                        condition:'For registration',
+                        itIsAvalable:false,
+                        status:'No'
+                    },
+
+                    {
+                        id:7,
+                        image: vwaec,
+                        price:'15000',
+                        card:'Waec',
+                        header:'Result Verification ',
+                        condition:'Correction of date of birth in NYSE',
+                        itIsAvalable:false,
+                        status:'No'
+                    },
+
+                    
+
+                  
+
+
+                   
+
+
+
+               
+
+
+                    
+                ],
     };
   },
 
