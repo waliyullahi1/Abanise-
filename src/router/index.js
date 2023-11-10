@@ -6,8 +6,8 @@ const route = useRoute()
 const routes = [
   {
     path: "/",
-    name: "landingpage",
-    component: () => import("../views/landingpg.vue"),
+    name: "index.vue",
+    component: () => import("../views/index.vue"),
   },
   {
     path: "/aboutus",
