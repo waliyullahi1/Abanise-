@@ -50,7 +50,7 @@
 
          <div class=" text-white  border-l-2 pl-3 ">
             <h1 class=" text-[20px] mb-2  text-white">Instant Delivery</h1>
-            <p class="text-[14px] font leading-relaxed ">Users receive Product atmost 3 minutes after Purchase</p>
+            <p class="text-[14px] font leading-relaxed ">Users receive Product at most 1 minutes after Purchase</p>
         </div>
 
          <div class=" text-white border-l-2 pl-3  ">
@@ -86,7 +86,7 @@
                     </div>
                     <p class="flex justify-between font-font-[17px] ">Availability(status) <span class="tex text-green-600 ">{{ item.status }}</span></p>
                 </div>
-                 <router-link :class="item.itIsAvalable? 'block':'hidden'" target="_blank" :to="`/card/${item.id}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
+                 <router-link :class="item.itIsAvalable? 'block':'hidden'" target="_blank" :to="`/card/${item.id}/${item.card}/${item.condition}`"><PrimaryBtn class="w-full text-center font-[14px] font-sembold">Buy now</PrimaryBtn></router-link>
                  <router-link :class="item.itIsAvalable? 'hidden':'block'" target="_blank" :to="`/`"><PrimaryBtn class="w-full text-center font-[14px]  font-sembold">Not Available</PrimaryBtn></router-link>
 
             </div>

@@ -1,24 +1,54 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import axios from 'axios';
+import App from '../App.vue'
+import { createApp } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
+import VueMeta from 'vue-meta'
+
+
 
 const routes = [
   {
     path: "/",
     name: "index.vue",
     component: () => import("../views/index.vue"),
+    meta: {
+      title: 'Buy Scratch card WAEC, NECO, NABTEB) | BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY | ',
+      metaTags: [
+        { charset: 'UTF-8' },
+        { name: 'description', content: 'Abanise, alfaabanise, buy online registration card pin , values, and commitment to delivering high-quality shoes.' },
+        { name: 'keywords', content: 'You can now purchase major Nigeria Examinations scratch cards online instantly at the comfort of your home or office. Airtime Top-up TopUp your phone and those of your loved ones easily and so conveniently., Click on the tab that states "Waec Pin", and you can enter the number of pin that you want. After that, simply click "buy", and your pin(s) will be generated for you. Note: Each Waec pin cost N750 only. After buying the pin, the ' },
+        { name: 'author', content: 'Abaniseedu' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+      ]
+    }
   },
   {
     path: "/aboutus",
     name: "aboutus",
     component: () => import("../views/aboutus.vue"),
+    meta: {
+      title: 'About us',
+    }
   },
   {
-    path: "/card/:id",
+    path: "/card/:id/:card/:condition",
     props: true,
     name: "landingpadw",
     component: () => import("../views/waec.vue"),
+   
+    meta: {
+      title: route => `BUY WAEC RESULT CHECKER PIN AND SCRATCH CARD ONLINE IN NIGERIA ${id}`,
+      metaTags: [
+        { charset: 'UTF-8' },
+        { name: 'description', content: route => `This page provides detailed information about the card with ID ${route.params.id}.` },
+        { name: 'keywords', content: 'Card, Details' },
+        { name: 'author', content: 'John Doe' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+      ]
+    }
+    
   },
   {
     path: "/login",
@@ -29,25 +59,36 @@ const routes = [
     path: "/Register",
     name: "register",
     component: () => import("../views/Registerpage.vue"),
-     
+    meta: {
+      title: 'Register page '
+    }
   },
   {
     path: "/Dashboard",
     name: "dashboard",
     component: () => import("../views/Homepage.vue"),
    beforeEnter: checkAuth,
+   meta: {
+    title: 'Dashboard'
+  }
   },
   {
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
     beforeEnter: checkAuth,
+    meta: {
+      title: 'Buy Data Bundle  '
+    }
   },
   {
     path: "/airtime",
     name: "airtime",
     component: () => import("../views/Airtime.vue"),
     beforeEnter: checkAuth,
+    meta: {
+      title: 'Airtime for All Network '
+    }
   },
   {
     path: "/fundHistory",
@@ -60,6 +101,9 @@ const routes = [
     name: "scratch",
     component: () => import("../views/scratch.vue"),
     beforeEnter: checkAuth,
+    meta: {
+      title: 'Buy Scratch card WAEC, NECO, NABTEB) || Result  Checker (WAEC, NECO, NABTEB) || pin Exam (GCEWAEC, GCENECO, GCENABTEB) '
+    }
   },
   
   {
@@ -117,6 +161,16 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  
+  next()
+})
+
+
+
+
+
 async function checkAuth(to, from, next) {
   try {
     // Send a request to your backend to check if the user is authenticated
