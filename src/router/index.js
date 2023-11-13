@@ -4,7 +4,7 @@ import App from '../App.vue'
 import { createApp } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-import VueMeta from 'vue-meta'
+// import VueMeta from 'vue-meta'
 
 
 
@@ -76,7 +76,7 @@ const routes = [
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
-    beforeEnter: checkAuth,
+    // beforeEnter: checkAuth,
     meta: {
       title: 'Buy Data Bundle  '
     }
@@ -85,7 +85,7 @@ const routes = [
     path: "/airtime",
     name: "airtime",
     component: () => import("../views/Airtime.vue"),
-    beforeEnter: checkAuth,
+    // beforeEnter: checkAuth,
     meta: {
       title: 'Airtime for All Network '
     }

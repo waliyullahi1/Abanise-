@@ -47,10 +47,10 @@
                   placeholder="Password"
                   @input="onInput"
                 >
-                  <option value="mtn">MTN</option>
-                  <option value="glo">GLO</option>
-                  <option value="9mobile">9mobile</option>
-                  <option value="airtime">Airtime</option>
+                  <option value="MTN">MTN</option>
+                  <option value="GLO">GLO</option>
+                  <option value="9MOBILE">9MOBILE</option>
+                  <option value="AIRTEL">AIRTEL</option>
                 </select>
                 <p
                   :class="errornetwork ? 'flex' : 'hidden '"
@@ -307,10 +307,10 @@ export default {
             credentials: "include",
             body: JSON.stringify({
               TransactionCode: this.form.TransactionCode,
-              serviceID: this.form.network,
-              billersCode: this.form.recipients,
+              networkName: this.form.network,
               amount: this.form.amount,
               phone: this.form.recipients,
+              
              
             }),
           });
