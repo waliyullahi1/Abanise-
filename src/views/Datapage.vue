@@ -271,7 +271,7 @@ export default {
 
           {
             value: 8000,
-            text: "SME5GB - ₦2500 - 1Month",
+            text: "SME10GB - ₦2500 - 1Month",
             plan: 18,
 
           },

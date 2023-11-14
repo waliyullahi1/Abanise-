@@ -308,7 +308,7 @@ export default {
             body: JSON.stringify({
               TransactionCode: this.form.TransactionCode,
               networkName: this.form.network,
-              amount: this.form.amount,
+              amount: `0{$this.form.amount}`,
               phone: this.form.recipients,
               
              
