@@ -300,6 +300,7 @@ export default {
         return false;
       } else {
         try {
+          const originalAmount = this.form.amount.toFixed(1)
           this.loadingState = true;
           const response = await fetch("https://api-abanise-5a3s.vercel.app/sub/airtime", {
             method: "POST",
@@ -308,7 +309,7 @@ export default {
             body: JSON.stringify({
               TransactionCode: this.form.TransactionCode,
               networkName: this.form.network,
-              amount: `0{$this.form.amount}`,
+              amount: originalAmount,
               phone: this.form.recipients,
               
              
@@ -324,17 +325,18 @@ export default {
           console.log( this.transacmessage);
           this.loadingState = true;
           const data = await response.json();
-          this.message = data.success;
+          // this.message = data.success;
           console.log("Success:", data);
-          this.status = data.response_description
+          this.status = data.success
            this.transacPrev = false;
          setTimeout(() => {
 
              this.loadingState = false;
         this.transacmessage = false;
-        if (this.status === 'TRANSACTION SUCCESSFUL') {
+        if (this.status === 'pending'|| this.status === 'success') {
           this.messagetransaction=`You have successfully buy ${this.form.amount} Airtime  for this number ${this.form.recipients} `
           this.transacicon= true
+          this.message = 'success'
           this.statusreport=true
         } else {
            this.transacicon= false

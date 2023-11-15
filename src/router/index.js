@@ -76,7 +76,7 @@ const routes = [
     path: "/datapage",
     name: "datapge",
     component: () => import("../views/Datapage.vue"),
-    // beforeEnter: checkAuth,
+    beforeEnter: checkAuth,
     meta: {
       title: 'Buy Data Bundle  '
     }
