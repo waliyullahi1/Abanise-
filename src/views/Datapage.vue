@@ -565,7 +565,7 @@ export default {
         try {
           console.log();
           this.loadingState = true;
-          const response = await fetch("https://api-abanise-5a3s.vercel.app/sub/data", {
+          const response = await fetch("https://api-abanise-five.vercel.app/sub/data", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

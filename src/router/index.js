@@ -174,7 +174,7 @@ router.beforeEach((to, from, next) => {
 async function checkAuth(to, from, next) {
   try {
     // Send a request to your backend to check if the user is authenticated
-    await axios.get('https://api-abanise-5a3s.vercel.app/refreshtoken', { withCredentials: true });
+    await axios.get('https://api-abanise-five.vercel.app/refreshtoken', { withCredentials: true });
     next();
   } catch (error) {
     next('/login'); 
@@ -187,7 +187,7 @@ async function verifyJWT(to, from, next) {
    const token = to.params.token;
 
    try {
-    const response = await fetch('https://api-abanise-5a3s.vercel.app/valid', {
+    const response = await fetch('https://api-abanise-five.vercel.app/valid', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

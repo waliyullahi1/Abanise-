@@ -27,14 +27,6 @@
           <div
             class="w-full md: md:max-w-md sm:w-2/3 mt-10 lg:max-w-md h-fit  shadows rounded-[1rem] ld text-2xl shadow bg-white"
           >
-            <p class="message pl-5 text-xl text-red-700 text-center text-">
-              {{ erromessage }}
-            </p>
-            <p
-              class="message pl-5 text-xl text-green-700 pb-9 text-center text-"
-            >
-              {{ message }}
-            </p>
 
             <form action="" class="flex flex-col gap-5 h-fit p-8 text-xl">
               <div class="flex bg-white flex-col">
@@ -302,7 +294,7 @@ export default {
         try {
           const originalAmount = this.form.amount.toFixed(1)
           this.loadingState = true;
-          const response = await fetch("https://api-abanise-5a3s.vercel.app/sub/airtime", {
+          const response = await fetch("https://api-abanise-five.vercel.app/sub/airtime", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -327,7 +319,7 @@ export default {
           const data = await response.json();
           // this.message = data.success;
           console.log("Success:", data);
-          this.status = data.success
+         
            this.transacPrev = false;
          setTimeout(() => {
 
@@ -336,11 +328,13 @@ export default {
         if (this.status === 'pending'|| this.status === 'success') {
           this.messagetransaction=`You have successfully buy ${this.form.amount} Airtime  for this number ${this.form.recipients} `
           this.transacicon= true
+          this.status = 'success'
           this.message = 'success'
           this.statusreport=true
         } else {
            this.transacicon= false
             this.statusreport=true
+            this.status = 'Failed'
            this.messagetransaction='Dear customer We are sorry, Your tansaction is not successful try it again'
         }
 

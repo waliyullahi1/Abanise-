@@ -95,7 +95,7 @@ export default {
 created: async function(){
   
  
-    const response = await fetch('https://api-abanise-5a3s.vercel.app/transaction',{
+    const response = await fetch('https://api-abanise-five.vercel.app/transaction',{
       method : "GET",
       headers: {'Content-Type':'application/json'},
       credentials:'include',
