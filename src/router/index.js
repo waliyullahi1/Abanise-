@@ -14,14 +14,15 @@ const routes = [
     name: "index.vue",
     component: () => import("../views/index.vue"),
     meta: {
-      title: 'Buy Scratch card WAEC, NECO, NABTEB) | BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY | ',
-      metaTags: [
-        { charset: 'UTF-8' },
-        { name: 'description', content: 'Abanise, alfaabanise, buy online registration card pin , values, and commitment to delivering high-quality shoes.' },
-        { name: 'keywords', content: 'You can now purchase major Nigeria Examinations scratch cards online instantly at the comfort of your home or office. Airtime Top-up TopUp your phone and those of your loved ones easily and so conveniently., Click on the tab that states "Waec Pin", and you can enter the number of pin that you want. After that, simply click "buy", and your pin(s) will be generated for you. Note: Each Waec pin cost N750 only. After buying the pin, the ' },
-        { name: 'author', content: 'Abaniseedu' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
-      ]
+      summary:'',
+      'copyright': 'abanise',
+      'subject': 'Your Subject',
+      title: 'www.abaniseedu.com - Buy WAEC, NECO, JAMB, NABTEB scratch cards, PINs, TOKEN and result checker online, Buy all exam scratch cards ',
+      keywords:'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins ',
+      description:'Buy WAEC scratch cards online at WWW.E-PINMALL.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.E-PINMALL.COM and get it delivered to you instantly using your prefered method.'  ,
+      'application-name':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+     ' summary':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins'
+   
     }
   },
   {
@@ -40,14 +41,8 @@ const routes = [
    
     meta: {
       title: route => `BUY WAEC RESULT CHECKER PIN AND SCRATCH CARD ONLINE IN NIGERIA ${id}`,
-      metaTags: [
-        { charset: 'UTF-8' },
-        { name: 'description', content: route => `This page provides detailed information about the card with ID ${route.params.id}.` },
-        { name: 'keywords', content: 'Card, Details' },
-        { name: 'author', content: 'John Doe' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
-      ]
-    }
+     
+    
     
   },
   {
