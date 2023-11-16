@@ -124,7 +124,7 @@
                 <p :class="errortransactionCode ? 'flex' : 'hidden '" class="e pl-5 text-red-700 text-[13px]">
                   transaction Code is required
                 </p>
-                <Button class="mt-" :loading="loadingState" @click="submitted()" loadingText="please wait ">
+                <Button class="mt-" :loading="loadingState1" @click="submitted()" loadingText="please wait ">
                   Submit
                 </Button>
               </div>
@@ -141,6 +141,7 @@ export default {
     return {
       transacicon: '',
       loadingState: '',
+      loadingState1:false,
       transacmessage: true,
       messagetransaction: '',
       status: '',
@@ -238,7 +239,7 @@ export default {
           { value: 2000, text: "Select data Type", plan: "" },
           {
             value: 3000,
-            text: "SME100mb - ₦130 - 1Month",
+            text: "SME500mb - ₦130 - 1Month",
             plan: 13,
 
           },
@@ -328,7 +329,7 @@ export default {
           },
           {
             value: 5000,
-            text: "corporate300mb - ₦500 - 1Month",
+            text: "corporate300mb - ₦100 - 1Month",
             plan: 158,
 
           },
@@ -552,27 +553,29 @@ export default {
     },
 
     async submitted() {
-      this.loadingState = true;
-      console.log(
-        this.form.plan,
-
-      );
+      this.loadingState1 = true;
+      console.log(this.form.network,'this.form.network');
       if (!this.form.TransactionCode) {
         this.errortransactionCode = true;
         this.loadingState = false;
         return false;
       } else {
-        try {
-          console.log();
-          this.loadingState = true;
+        try { 
+          console.log(this.form.planoption,'this.form.planoption,');
+          console.log(this.networkoption,'this.networkoption');
+          console.log(this.form.amount,'this.form.amount');
+          console.log(this.form.datatype,'this.form.datatype');
+          console.log(this.form.TransactionCode,'this.form.TransactionCode');
+          console.log(`0${this.form.phone}`,'`0${this.form.phone}`');
+          this.loadingState1 = true;
           const response = await fetch("https://api-abanise-five.vercel.app/sub/data", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
-
+           
             body: JSON.stringify({
               "plan": this.form.planoption,
-              "networkName": this.networkoption,
+              "networkName": this.form.network,
               "phone": `0${this.form.phone}`,
               "TransactionCode": this.form.TransactionCode,
               "datatype": this.form.datatype,
@@ -584,22 +587,29 @@ export default {
           if (!response.ok) {
             const errorData = await response.json();
             this.erromessage = errorData.message;
+            this.loadingState1 = false;
             throw new Error(errorData.message);
+            
           }
           this.loadingState = true;
           const data = await response.json();
           this.message = data.success;
           console.log("Success:", data);
-          this.status = data.response_description
+          this.status = data.success
           this.transacPrev = false;
           this.transacmessage = false;
-          this.loadingState = false;
-          if (this.status === 'TRANSACTION SUCCESSFUL') {
+          this.loadingState1 = true;
+ 
+          if (this.status === 'pending'|| this.status === 'success') {
             this.messagetransaction = `You have successfully shared ${this.form.datatype} data  for this number ${this.form.phone} `
-            this.transacicon = true
-            this.statusreport = true
+            this.transacicon= true
+          this.status = 'success'
+          this.message = 'success'
+          this.statusreport=true
           } else {
-            this.transacicon = false
+            this.transacicon= false
+            this.statusreport=false
+            this.status = 'Failed'
             this.messagetransaction = 'Dear customer we are sorry, your tansaction is not successful try it again.'
           }
 

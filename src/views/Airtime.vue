@@ -186,7 +186,7 @@
                 class="m"
                 :loading="loadingState"
                 @click="submitted()"
-                loadingText="please wait"
+                loadingText1="please wait"
               >
                 Submit
               </Button>
@@ -318,6 +318,9 @@ export default {
           this.loadingState = true;
           const data = await response.json();
           // this.message = data.success;
+          this.status = data.success
+          
+
           console.log("Success:", data);
          
            this.transacPrev = false;
@@ -326,14 +329,14 @@ export default {
              this.loadingState = false;
         this.transacmessage = false;
         if (this.status === 'pending'|| this.status === 'success') {
-          this.messagetransaction=`You have successfully buy ${this.form.amount} Airtime  for this number ${this.form.recipients} `
+          this.messagetransaction=`You have successfully buy ${this.form.amount}₦ Airtime  for this number ${this.form.recipients} `
           this.transacicon= true
           this.status = 'success'
           this.message = 'success'
           this.statusreport=true
         } else {
            this.transacicon= false
-            this.statusreport=true
+            this.statusreport=false
             this.status = 'Failed'
            this.messagetransaction='Dear customer We are sorry, Your tansaction is not successful try it again'
         }

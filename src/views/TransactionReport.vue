@@ -26,7 +26,8 @@
                   <th>Recipient</th>
                   <th>Value</th>
                   <th>Amount</th>
-                  <th>Wallet Bal</th>
+                  <th>New Wallet Bal</th>
+                  <th>old Wallet Bal</th>
                   <th>Status</th>
                 </tr>
                 <tr  v-for="item in data" :key="item.id">
@@ -37,8 +38,9 @@
                   <td class="cols">{{ item.recipient }}</td>
                   <td class="cols">{{ item.value }}</td>
                   <td class="cols">₦{{ item.amount }}</td>
-                  <td class="cols">₦{{ item.wallet }}</td>
-                  <td class="cols text-center my-2 " style="color:white; "><p :class="{ success: item.status === 'successful' || item.status === 'TRANSACTION SUCCESSFUL', failed: item.status === 'failed'}" >{{ item.status }}</p></td>
+                  <td class="cols">₦{{ item.newwallet }}</td>
+                  <td class="cols">₦{{ item.oldwallet }}</td>
+                  <td class="cols text-center my-2 " style="color:white; "><p :class="{ success: item.status === 'success' || item.status === 'success', failed: item.status === 'failed'}" >{{ item.status }}</p></td>
                              </tr>
               </table>
         </div>
