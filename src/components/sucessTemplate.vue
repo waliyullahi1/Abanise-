@@ -20,7 +20,7 @@
               </div>
               <div class="mt- w-full mb-3">
                 <h1   class=" text-2xl font-medium text-center " :class="statusreport ?' text-green-800' : ' text-red-700'">{{status}}</h1>
-                <h1 class="text-[15px] text-center lower text-gray-800 font-medium ">{{messagetransaction}}</h1>
+                <h1 class="text-[13px] text-center lower text-gray-800 font-medium ">{{messagetransaction}}</h1>
               </div>
 
              
