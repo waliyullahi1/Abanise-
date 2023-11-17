@@ -136,7 +136,52 @@
   </div>
 </template>
 <script>
+  import { useHead } from '@vueuse/head'
 export default {
+
+  setup() {
+    
+  
+
+    useHead({
+      // Can be static or computed
+      title: 'Data Bundle - Cheapest Data Bundle Plan in 2023 – MTN | Airtel | Glo | 9Mobile | NairaData Nigeria',
+      meta: [
+        {
+          name: `description`,
+          content: 'Cheapest Data Plans: Are you in need of cheap data plans you can use? This article will provide you with the cheapest data plans you can use for MTN, Airtel, Glo, and 9Mobile.',
+        },
+        // {
+        //   itemprop: `name,
+        //   content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Cheap Internet Data Plan and Airtime Recharge for Airtel, 9mobile, GLO, MTN. at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        // },
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+
+        {
+          name: 'url',
+          content: 'abaniseedu.com',
+        },
+      
+        ],
+     
+    })
+    return { };
+  },
   data() {
     return {
       transacicon: '',

@@ -322,7 +322,8 @@ import { ref } from 'vue';
   import gcewaec from  '../assets/image/gce.jpg'
   import paystack from "vue3-paystack"
   import { useProductStore } from "../stores/counter.js"
-    
+  import {computed, reactive } from 'vue'
+import { useHead } from '@vueuse/head'
    
     
       
@@ -338,6 +339,35 @@ const pin = useProductStore()
  
 export default {
    name: 'Vue3Paystack',
+
+   setup() {
+    const siteData = reactive({
+      title: `My websiteww`,
+      // description: `My beautiful website111111111111111111111`,
+      waecDescription: `Description for WAEC page`,
+      necoDescription: `Description for NECO page`,
+    })
+    useHead({
+      // Can be static or computed
+      title: `Buy ${splitloc[5]} Scratch Cards online – Buy ${splitloc[5]} Result Checker Online ABANISEEDU.COM` ,
+      meta: [
+        {
+          name: `description`,
+          content: computed(() => {
+            // You can replace this condition with your own logic
+            if (splitloc[4]== 1) {
+              return siteData.waecDescription
+            } else if (splitloc[4]== 2) {
+              return siteData.necoDescription
+            } else {
+              return siteData.description
+            }
+          }),
+        },
+        ],
+     
+    })
+  },
    props:{
      reference: {
       type: String,

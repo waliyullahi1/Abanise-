@@ -6,7 +6,7 @@
             <p class="text-3xl text-center mb-5 font-semibold text-primary  ">ABOUT US</p>
             <p class="text-center ">We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage.</p>
             <p class="mt-5 text-center ">We are a Unique Technology firm and the best services on IT such as branding, web design and development development, data management and statistics.</p>
-            <div class="flex gap-3  items-start justify-between  mt-10 ">
+            <div class="block sm:flex  mx-4 gap-3  items-start justify-between  mt-10 ">
            <div class="flex shadow-lg py-4 px-4 border w- w-96 flex-col justify-center items-center gap-3">
                 <img src="../assets/image/receive.svg" class="w-20 bg-primary rounded-full p-3" alt="">
                 <p class="font-semibold text-center">SCRATCH CARD PRODUCTS</p>
@@ -28,8 +28,48 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
 export default {
+  setup() {
+    
+  
 
+    useHead({
+      // Can be static or computed
+      title: 'About us - abanise.com | Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Data, Airtime to cash,',
+      meta: [
+        {
+          name: `description`,
+          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Cheap Internet Data Plan and Airtime Recharge for Airtel, 9mobile, GLO, MTN. at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        },
+       
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+
+        {
+          name: 'url',
+          content: 'abaniseedu.com',
+        },
+      
+        ],
+     
+    })
+    return { };
+  },
 }
 </script>
 

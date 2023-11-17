@@ -1,8 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-
+import { createHead } from '@vueuse/head';
 import { MotionPlugin } from "@vueuse/motion";
-
 
 import App from './App.vue'
 import router from './router'
@@ -19,13 +18,16 @@ import Button from "./components/Button.vue";
 import successfulTemplate from "./components/sucessTemplate.vue";
 import loadingJs from "./components/Navigation//loadingJs.vue";
 import './assets/tailwind.css'
-
+const head = createHead()
 const app = createApp(App)
 app.use(MotionPlugin);
 app.use(createPinia())
 app.use(router)
+app.use(head)
 app.component('logo', logo)
 app.component("logo1", logo1);
+
+
 
 app.component('Header', Header)
 app.component('PrimaryBtn', PrimaryBtn)
@@ -38,4 +40,4 @@ app.component("toggle", toggle);
 app.component("dashbord", dashbord);
 app.component("successfulTemplate", successfulTemplate);
 app.component("loadingJs", loadingJs);
-loadingJs
+

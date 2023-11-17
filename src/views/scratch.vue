@@ -211,8 +211,54 @@ import nabteb from "@/assets/image/nabteb1.jpg";
 import gcewaec from "../assets/image/gce.jpg";
 import nabtebgce from "../assets/image/pinnabteb.jpg";
 import {format} from 'date-fns'
+import { useHead } from '@vueuse/head'
+
 
 export default {
+  setup() {
+    
+  
+
+    useHead({
+      // Can be static or computed
+      title: 'Login - abanise.com | Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Data, Airtime to cash,',
+      meta: [
+        {
+          name: `description`,
+          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Cheap Internet Data Plan and Airtime Recharge for Airtel, 9mobile, GLO, MTN. at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        },
+        // {
+        //   itemprop: `name,
+        //   content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online, Buy Cheap Internet Data Plan and Airtime Recharge for Airtel, 9mobile, GLO, MTN. at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        // },
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+        {
+          name: 'site_name',
+          content: 'abaniseedu.com',
+        },
+        {
+          name: 'type',
+          content: 'website ',
+        },
+
+        {
+          name: 'url',
+          content: 'abaniseedu.com',
+        },
+      
+        ],
+     
+    })
+    return { };
+  },
+
   props: {
     reference: {
       type: String,
