@@ -24,8 +24,9 @@
 
             <div class="flex justify-center">
                 <Button class=" w-fit">Back to Home page </Button>
-            </div>
-            
+                           </div>
+             <p class="text-[20px] font-semibold text-primary text-center">If you encounter any issue while using this PIN, please send a mail or messages this phone number on WHATSAPP 07068393706 to  within 7 days from now.</p>
+
        </section>
 
 
@@ -112,16 +113,9 @@ import html2pdf from 'html2pdf.js'
             this.form = JSON.parse(localStorage.getItem('recelpt'));
        this.form = JSON.parse(localStorage.getItem('recelpt'));
 
-// Convert price to a number
-this.form.price = Number(this.form.price);
 
-// Update details
-this.item[0].details = this.form.name;
-this.item[1].details = this.form.quantity;
-this.item[2].details = `₦${this.form.quantity * this.form.price}`;
-     this.item[3].details = this.form.time;    
-      console.log(this.form.price);
-        
+
+     
         
      },
 

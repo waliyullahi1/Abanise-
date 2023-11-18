@@ -65,7 +65,7 @@
                   </label>
                 </div>
               </div>
-              <Button class="mt- text-[13px]" :loading="loadingState" @click="prevTrans()"
+              <Button class="mt- text-[13px]" :loading="loadingState1" @click="prevTrans()"
                 loadingText="please wait...">Previews</Button>
             </form>
 
@@ -124,7 +124,7 @@
                 <p :class="errortransactionCode ? 'flex' : 'hidden '" class="e pl-5 text-red-700 text-[13px]">
                   transaction Code is required
                 </p>
-                <Button class="mt-" :loading="loadingState1" @click="submitted()" loadingText="please wait ">
+                <Button class="mt-" :loading="loadingState2" @click="submitted()" loadingText="please wait ">
                   Submit
                 </Button>
               </div>
@@ -185,7 +185,7 @@ export default {
   data() {
     return {
       transacicon: '',
-      loadingState: '',
+      loadingState2:false,
       loadingState1:false,
       transacmessage: true,
       messagetransaction: '',
@@ -549,7 +549,7 @@ export default {
       this.resetErrors();
     },
     prevTrans() {
-      this.loadingState = true;
+      this.loadingState1 = true;
       const selectedOption = this.getSelectedOption(this.formFields[1]);
       const selectedProduct = this.getSelectedOption(this.formFields[0]);
       const phone = String(this.form.phone);
@@ -570,16 +570,16 @@ export default {
 
       if (networkoption === "network") {
         this.formFields[0].errorselection = true;
-        this.loadingState = false;
+        this.loadingState1 = false;
         return false;
       } else if (serviceIDoption1 === "Select data Type ") {
         this.formFields[1].errorselection = true;
-        this.loadingState = false;
+        this.loadingState1 = false;
         console.log("yyyyyyy");
         return false;
       } else if (!phone || phone.length < 10 || phone.length > 11 || regex.test(phone)) {
         this.errorphone = true;
-        this.loadingState = false;
+        this.loadingState1 = false;
 
         return false;
       } else {
@@ -592,27 +592,28 @@ export default {
         console.log(this.form.planoption, this.form.variation_code);
         setTimeout(() => {
           this.transacPrev = true;
-          this.loadingState = false;
+          this.loadingState1 = false;
         }, 1000);
       }
     },
 
     async submitted() {
-      this.loadingState1 = true;
+      this.loadingState2= true;
       console.log(this.form.network,'this.form.network');
       if (!this.form.TransactionCode) {
         this.errortransactionCode = true;
-        this.loadingState = false;
+        this.loadingState2 = false;
+        console.log( this.loadingState2);
         return false;
       } else {
         try { 
-          console.log(this.form.planoption,'this.form.planoption,');
-          console.log(this.networkoption,'this.networkoption');
-          console.log(this.form.amount,'this.form.amount');
-          console.log(this.form.datatype,'this.form.datatype');
-          console.log(this.form.TransactionCode,'this.form.TransactionCode');
-          console.log(`0${this.form.phone}`,'`0${this.form.phone}`');
-          this.loadingState1 = true;
+          // console.log(this.form.planoption,'this.form.planoption,');
+          // console.log(this.networkoption,'this.networkoption');
+          // console.log(this.form.amount,'this.form.amount');
+          // console.log(this.form.datatype,'this.form.datatype');
+          // console.log(this.form.TransactionCode,'this.form.TransactionCode');
+          // console.log(`0${this.form.phone}`,'`0${this.form.phone}`');
+          this.loadingState2 = true;
           const response = await fetch("https://api-abanise-five.vercel.app/sub/data", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -629,21 +630,21 @@ export default {
             }),
           });
 
-          if (!response.ok) {
+          if (!response.ok || response.status == 500) {
             const errorData = await response.json();
             this.erromessage = errorData.message;
-            this.loadingState1 = false;
+            this.loadingState2 = false;
             throw new Error(errorData.message);
             
           }
-          this.loadingState = true;
+          this.loadingState2 = true;
           const data = await response.json();
           this.message = data.success;
           console.log("Success:", data);
           this.status = data.success
           this.transacPrev = false;
           this.transacmessage = false;
-          this.loadingState1 = true;
+          this.loadingState2 = true;
  
           if (this.status === 'pending'|| this.status === 'success') {
             this.messagetransaction = `You have successfully shared ${this.form.datatype} data  for this number ${this.form.phone} `
@@ -651,16 +652,18 @@ export default {
           this.status = 'success'
           this.message = 'success'
           this.statusreport=true
+          this.loadingState2 = false;
           } else {
             this.transacicon= false
             this.statusreport=false
             this.status = 'Failed'
+            this.loadingState2 = false;
             this.messagetransaction = 'Dear customer we are sorry, your tansaction is not successful try it again.'
           }
 
         } catch (error) {
           console.log(error);
-          this.loadingState = false;
+          this.loadingState2 = false;
         }
       }
     },

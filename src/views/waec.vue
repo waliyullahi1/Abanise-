@@ -343,7 +343,7 @@ export default {
    setup() {
     const siteData = reactive({
       title: `My websiteww`,
-      // description: `My beautiful website111111111111111111111`,
+   
       waecDescription: `Description for WAEC page`,
       necoDescription: `Description for NECO page`,
     })
@@ -351,18 +351,76 @@ export default {
       // Can be static or computed
       title: `Buy ${splitloc[5]} Scratch Cards online – Buy ${splitloc[5]} Result Checker Online ABANISEEDU.COM` ,
       meta: [
+        // {
+        //   name: `description`,
+        //   content: computed(() => {
+        //     // You can replace this condition with your own logic
+        //     if (splitloc[4]== 1) {
+        //       return siteData.waecDescription
+        //     } else if (splitloc[4]== 2) {
+        //       return siteData.necoDescription
+        //     } else {
+        //       return siteData.description
+        //     }
+        //   }),
+        // },
+
         {
           name: `description`,
-          content: computed(() => {
-            // You can replace this condition with your own logic
-            if (splitloc[4]== 1) {
-              return siteData.waecDescription
-            } else if (splitloc[4]== 2) {
-              return siteData.necoDescription
-            } else {
-              return siteData.description
-            }
-          }),
+          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        },
+
+        {
+          name: `image`,
+          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+        },
+        {
+          name: 'summary',
+          content: 'ABANISE EDUCATIONAL INSTITUTE || ICT',
+        },
+        {
+          name: 'abstract',
+          content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+        },
+        {
+          name: 'keywords',
+          content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+        },
+
+        {
+          name: 'document-classification',
+          content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+        },
+        {
+          name: 'url',
+          content: 'https://abaniseedu.com',
+        },
+        {
+          name: 'subtitle',
+          content: 'https://abaniseedu.com',
+        },
+        {
+          name: 'category',
+          content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+        },
+        {
+          name: 'application-name',
+          content: 'Where to Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+        },
+        ],
+
+        link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: '@/src/assets/abanisee.png',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '16x16',
+          href: '@/src/assets/abanisee.png',
         },
         ],
      
@@ -379,7 +437,7 @@ export default {
       Nabtebre: "",
       gceneco:"",
       gceWaec:"",
-        publicKey:'pk_live_98f0335f99f7a0e2b1399a55ad5903b3f88a92af',
+        publicKey:process.env.PAYSTACK_SECRETY_CODE,
         amount:"",
         email: "",
       nysecard:'',

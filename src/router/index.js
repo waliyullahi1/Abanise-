@@ -13,29 +13,13 @@ const routes = [
     path: "/",
     name: "index.vue",
     component: () => import("../views/index.vue"),
-    meta: {
-      'solutions':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins', 
-      'pagename':'abaniseedu.com', 
-      owner:'ABANISE EDUCATIONAL INSTITUTE || ICT',
-      summary:'',
-    '  og:type':'',
-      'copyright': 'abanise',
-      'subject': 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-      title: 'www.abaniseedu.com - Buy WAEC, NECO, JAMB, NABTEB scratch cards, PINs, TOKEN and result checker online, Buy all exam scratch cards ',
-      keywords:'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins ',
-      description:'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.'  ,
-      'application-name':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-     ' summary':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-      'abstract':'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins'
-    }
+    
   },
   {
     path: "/aboutus",
     name: "aboutus",
     component: () => import("../views/aboutus.vue"),
-    meta: {
-      title: 'About us',
-    }
+   
   },
   {
     path: "/card/:id/:card/:condition",
@@ -43,10 +27,7 @@ const routes = [
     name: "landingpadw",
     component: () => import("../views/waec.vue"),
    
-    meta: {
-      title: route => `BUY WAEC RESULT CHECKER PIN AND SCRATCH CARD ONLINE IN NIGERIA ${id}`,
-     
-    }
+  
     
   },
   {
@@ -58,18 +39,14 @@ const routes = [
     path: "/Register",
     name: "register",
     component: () => import("../views/Registerpage.vue"),
-    meta: {
-      title: 'Register page '
-    }
+   
   },
   {
     path: "/Dashboard",
     name: "dashboard",
     component: () => import("../views/Homepage.vue"),
    beforeEnter: checkAuth,
-   meta: {
-    title: 'Dashboard'
-  }
+ 
   },
   {
     path: "/datapage",
@@ -100,9 +77,7 @@ const routes = [
     name: "scratch",
     component: () => import("../views/scratch.vue"),
     beforeEnter: checkAuth,
-    meta: {
-      title: 'Buy Scratch card WAEC, NECO, NABTEB) || Result  Checker (WAEC, NECO, NABTEB) || pin Exam (GCEWAEC, GCENECO, GCENABTEB) '
-    }
+   
   },
   
   {
