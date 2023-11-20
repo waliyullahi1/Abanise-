@@ -284,82 +284,82 @@ export default {
           { value: 2000, text: "Select data Type", plan: "" },
           {
             value: 3000,
-            text: "SME500mb - ₦130 - 1Month",
-            plan: 13,
+            text: "SME500mb - ₦150 - 1Month",
+            plan: 1,
 
           },
           {
             value: 4000,
-            text: "SME1GB - ₦230 - 1Month",
+            text: "SME1GB - ₦285 - 1Month",
             plan: 2,
 
           },
 
           {
             value: 5000,
-            text: "SME2GB - ₦500 - 1Month",
+            text: "SME2GB - ₦570- 1Month",
             plan: 3,
 
           },
           {
             value: 6000,
-            text: "SME3GB - ₦750 - 1Month",
+            text: "SME3GB - ₦855- 1Month",
             plan: 4,
 
           },
 
           {
             value: 7000,
-            text: "SME5GB - ₦1250 - 1Month",
-            plan: 4,
+            text: "SME5GB - ₦1425- 1Month",
+            plan: 5,
 
           },
 
           {
             value: 8000,
             text: "SME10GB - ₦2500 - 1Month",
-            plan: 18,
+            plan: 168,
 
           },
           //Mtn corporate data 
 
           {
             value: 40000,
-            text: "corporate500MB - ₦150 - 1 Month",
-            plan: 18,
+            text: "corporate500MB - ₦135 - 1 Month",
+            plan: 13,
 
           },
           {
             value: 9000,
-            text: "corporate1GB - ₦250 - 1 Month",
+            text: "corporate1GB - ₦280 - 1 Month",
             plan: 14,
 
           },
 
           {
             value: 10000,
-            text: "corporate2GB - ₦500 - 1 Month",
+            text: "corporate2GB - ₦560 - 1 Month",
             plan: 15,
 
           },
 
           {
             value: 20000,
-            text: "corporate3GB - ₦750 - 1 Month",
+            text: "corporate3GB - ₦840 - 1 Month",
             plan: 16,
 
           },
 
           {
             value: 30000,
-            text: "corporate5GB - ₦1250 - 1 Month",
+            text: "corporate5GB - ₦1400 - 1 Month",
             plan: 17,
 
           },
 
           {
             value: 40000,
-            text: "corporate10GB - ₦2500 - 1 Month",
+            text: "corporate10GB - ₦2780 - 1 Month",
             plan: 18,
 
           },
