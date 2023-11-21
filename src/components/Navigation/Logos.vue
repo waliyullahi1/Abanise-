@@ -1,5 +1,5 @@
 <template>
-  <img src="@/assets/logos.png" class="w-60" alt="">
+  <img src="@/assets/logos.png" class="w-60" alt="Abanise logo">
 </template>
 
 <script>

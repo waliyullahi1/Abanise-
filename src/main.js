@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import { createHead } from '@vueuse/head';
+import { createHead } from '@unhead/vue'
 import { MotionPlugin } from "@vueuse/motion";
 
 import App from './App.vue'

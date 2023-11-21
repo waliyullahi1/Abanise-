@@ -3,8 +3,8 @@
     <Header :headertext="false" class="fixed z-40 top-0"></Header>
     <section class="w-full  flex justify-center ">
         <div class="pt-32 w-full md:w-2/3  mb-5">
-            <p class="text-3xl text-center mb-5 font-semibold text-primary  ">ABOUT US</p>
-            <p class="text-center ">We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage.</p>
+            <h1 class="text-3xl text-center mb-5 font-semibold text-primary  ">ABOUT US</h1>
+            <h2 class="text-center ">We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage.</h2>
             <p class="mt-5 text-center ">We are a Unique Technology firm and the best services on IT such as branding, web design and development development, data management and statistics.</p>
             <div class="block sm:flex  mx-4 gap-3  items-start justify-between  mt-10 ">
            <div class="flex shadow-lg py-4 px-4 border w- w-96 flex-col justify-center items-center gap-3">
