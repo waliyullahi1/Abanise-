@@ -33,14 +33,14 @@ const routes = [
   },
   {
     path: "/quiz",
-    name: "aboutus",
+    name: "Aboutus",
     component: () => import("../views/qiuz.vue"),
    
   },
   {
     path: "/card/:id/:card/:condition",
     props: true,
-    name: "landingpadw",
+    name: " Card",
     component: () => import("../views/waec.vue"),
    
   
@@ -48,25 +48,25 @@ const routes = [
   },
   {
     path: "/login",
-    name: "login",
+    name: "LoginPage",
     component: () => import("../views/loginpage.vue"),
   },
   {
     path: "/Register",
-    name: "register",
+    name: "Register Page ",
     component: () => import("../views/Registerpage.vue"),
    
   },
   {
     path: "/Dashboard",
-    name: "dashboard",
+    name: "Dashboard Page ",
     component: () => import("../views/Homepage.vue"),
    beforeEnter: checkAuth,
  
   },
   {
     path: "/datapage",
-    name: "datapge",
+    name: "DataBundle",
     component: () => import("../views/Datapage.vue"),
     beforeEnter: checkAuth,
     meta: {
@@ -75,7 +75,7 @@ const routes = [
   },
   {
     path: "/airtime",
-    name: "airtime",
+    name: "Airtime",
     component: () => import("../views/Airtime.vue"),
     // beforeEnter: checkAuth,
     meta: {
@@ -84,13 +84,13 @@ const routes = [
   },
   {
     path: "/fundHistory",
-    name: "fundHistory",
+    name: "FundHistory",
     component: () => import("../views/fundHistory.vue"),
     beforeEnter: checkAuth,
   },
   {
     path: "/scratchcards",
-    name: "scratch",
+    name: "Scratch Card",
     component: () => import("../views/scratch.vue"),
     beforeEnter: checkAuth,
    
@@ -98,7 +98,7 @@ const routes = [
   
   {
     path: "/forgetpassword",
-    name: "forgetpassword",
+    name: "Forget",
     component: () => import("../views/forgetPassword.vue"),
   },
   {
@@ -152,22 +152,10 @@ const router = createRouter({
   routes,
 });
 router.beforeEach((to, from, next) => {
-  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-  const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
-  if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
-  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
-  if(!nearestWithMeta) return next();
-  nearestWithMeta.meta.metaTags.map(tagDef => {
-    const tag = document.createElement('meta');
-    Object.keys(tagDef).forEach(key => {
-      tag.setAttribute(key, tagDef[key]);
-    });
-    tag.setAttribute('data-vue-router-controlled', '');
-    return tag;
-  }).forEach(tag => document.head.appendChild(tag));
-  next();
-});
+  document.title = to.meta.title
 
+  next()
+})
 
 
 

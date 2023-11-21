@@ -22,15 +22,15 @@
       <nav   class=" lg:anination translate- lg:translate-x-0 duration-700 ease-in-out transform  lg:top-0 top-[4rem]  place-contnt-center fixed  lg:static justify-center px-3  lg:h-7 lg:w-full w-[15rem] lg:justify-end text-[13px] justify-ed items-center lg:flex" :class="rotate ? 'translate-x-32' : 'translate-x-[30rem]'">
      <ul  @click=" this.rotate =true" class=" lg:bg-transparent bg-primary px-5 lg:px-0  h-screen lg:h-4 justify-start  lg:justify-center lg:flex-row flex-col flex klg:mt-5 mt-0 lg:gap-5 gap-4">
       <li    class=" font-semibold md:hover:border-b mt-10 lg:mt-0 boder border-transparent hover:text-secondary transform duration-200 ease-in-out  text-white"> <router-link to="/">Home</router-link></li>
-      <p   class=" font-semibold   text-white text-hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#section">Cards</a></p>
+      <p   class=" font-semibold   text-white text-hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#ScratchCards">Cards</a></p>
 
        <li @click=" transc()"  class=" font-semibold   text-white  hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><h1>Transaction tracking</h1></li>
 
-      <router-link to="/aboutus"  class=" font-semibold  text-white  hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#section">About us</a></router-link>
+     <div class=" font-semibold  text-white  hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/aboutus"  >About us</router-link></div> 
 
       <li  class=" font-semibold  text-white  hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><a href="#how">How it work</a></li>
      
-    <li  class=" font-semibold  text-white hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/login">Sign in</router-link></li>
+    <li  class=" font-semibold  text-white hover:border-b boder border-transparent hover:text-secondary transform duration-200 ease-in-out "><router-link to="/login">login</router-link></li>
      
          
      </ul>

@@ -10,17 +10,17 @@
         <slide v-for="slide in hero" :key="slide.id" class="w-full  ">
             <div :style="{backgroundImage:'url('+ slide.image +')'}" class=" image sticky top-0 w-full h-[30rem] md:h-[40rem]  overflow-hidden ">
          <div  class="container pt-8  flex flex-col md:gap-4 gap-0 px-4 justify-center h-full mx-auto "> 
-            <div class=" overflow-hidden  h-fit"> <h1 class= " heropa   text-5xl px-1 text-[1.5rem] sm:text-[2rem]  md:text-[3rem] text-white  ">{{slide.heroSection}}</h1></div>
+            <div class=" overflow-hidden  h-fit"> <h1 class= " heropa  font-medium  text-5xl px-1 text-[1.5rem] sm:text-[2rem]  md:text-[3rem] text-white  ">{{slide.heroSection}}</h1></div>
             <div class=" w-full flex justify-center items-center overflow-hidden">
-                   <div class="md:w-1/2 herop w-full flex justify-center mx-2 items-center"> <a class="sm:text-2xl text-xl text-[white] pt-0 ">{{slide.heroParagraph}}</a></div>
+                   <div class="md:w-1/2 herop w-full flex justify-center mx-2 items-center"> <h2 class="sm:text-2xl text-[15px] text-[white] pt-0 ">{{slide.heroParagraph}}</h2></div>
 
             </div>
                           <div class="flex gap-5 mt-2 sm:mt-8 justify-center items-center">
-            <router-link  to="/login"><p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg"  class="w-10 md:w-10 " alt="Login image"> login in</p></router-link>
-            <p><router-link  to="/register" class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " >sign up</router-link></p>
+            <p class="flex items-center hover:bg-primary  gap-3 border py-2 px-2 w-fit opacity-60 md:text-2xl text-xl text-white"> <img src="@/assets/image/sign.svg"  class="w-10 md:w-10 " alt="Login image"> <router-link  to="/login">login</router-link></p>
+            <p class="md:text-2xl text-xl text-white hover:text-secondary py-2 px-2 border-l-2 " ><router-link  to="/register" >Register</router-link></p>
             
         </div>
-         <h1 class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</h1>
+         <h2 class= "font-semibold text-7xl text-white hidden font-mem]"> BUY ONLINE REGISTRATION CARD PIN AUTOMATICINSTANTLY DELIVERY</h2>
     </div>j
     </div>
            <template #addons>
@@ -44,32 +44,32 @@
     <div class="w-full bg-primary ">
         <div class="grid mx-auto px-4  container md:max-w-full lg:max-w-full justify-between md:grid-cols-4 grid-cols-1 gap-10 py-10 w-full h-fit">
         <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class=" text-[20px] mb-2  text-white">Discounted Prices</h1>
+            <h2 class=" text-[20px] mb-2  text-white">Discounted Prices</h2>
             <p class="text-[14px] font leading-relaxed ">Buy Waec , Neco, Nabteb resultchecker and Waec pin, Nabteb pin at highly subsized prices</p>
         </div>
 
          <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class=" text-[20px] mb-2  text-white">Instant Delivery</h1>
+            <h2 class=" text-[20px] mb-2  text-white">Instant Delivery</h2>
             <p class="text-[14px] font leading-relaxed ">Users receive Product at most 1 minutes after Purchase</p>
         </div>
 
          <div class=" text-white border-l-2 pl-3  ">
-            <h1 class=" text-[20px] mb-2  text-white">24/7 Customer Support</h1>
+            <h2 class=" text-[20px] mb-2  text-white">24/7 Customer Support</h2>
             <p class="text-[14px] font leading-relaxed ">Our customer service agent are always available to respond to any issues that you might have</p>
         </div>
 
          <div class=" text-white  border-l-2 pl-3 ">
-            <h1 class=" text-[20px] mb-2  text-white">User-Friendly Experience</h1>
+            <h2 class=" text-[20px] mb-2  text-white">User-Friendly Experience</h2>
             <p class="text-[14px] font leading-relaxed ">Top notch user Interface that give you a smooth and satisfying experience</p>
         </div>
     </div>
     </div>
     </section>
-    <section id="section" class="container  my-10  mt-10 mx-auto">
+    <section id="ScratchCards" class="container  my-10  mt-10 mx-auto">
         <marquee behavior="scroll" direction="left" scrollamount="" class=" text-sm md:text-[13px] font-bold w-full font-bo text-primary "><span>IF YOU WANT  TO PROCESS YOUR ADDMISSION TO ANY UNIVERSITY OR POLYTECHNIC KINDLY MESSAGE  THIS WHATSAPP NUMBER 07068393706 </span></marquee>
       <div class="  flex flex-col justify-cen
       ter gap-5 items-center ">
-        <h1 class="text-3xl font-bold text">CARDS PRODUCT</h1>
+        <h2 class="text-3xl font-bold text">CARDS PRODUCT</h2>
         <h2 class="md:text-xl text-sm  font-normal ">CLICK ON ANY CARD BELOW TO BUY THE CARD PIN INSTANTLY </h2>
         <div class="grid md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2  grid-cols-1 gap-20 px-10 ">
             <div  v-for="item in item" :key="item.id" class=" group shadow border-primary w-full overflow-hidden  h-fit flex flex-col gap-3 rounded-[2rem]" >
@@ -96,27 +96,27 @@
     </section>
     <section class="container  mx-auto my-20 py-5">
        <div class="">
-        <h1 class="md:text-3xl text-xl text-primary font-bold text-center">PHONE AIRTIME AND DATA BUNDLE  </h1>
+        <h2 class="md:text-3xl text-xl text-primary font-bold text-center">PHONE AIRTIME AND DATA BUNDLE  </h2>
         <p class="font-normal md:text-2xl text-[15px] mb-20 text-center">We provide affordable price for Airtime and Data bundle </p>
         <div class="grid md:grid-cols-4 grid-cols-2  md:gap-10 gap-3 justify-center "> 
             <div  isJsFinishedRun class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/mtn.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
-                    <h1 class="font-bold text-primary text-center   text-[1rem]">MTN Airtime VTU And Data</h1>
+                    <h2 class="font-bold text-primary text-center   text-[1rem]">MTN Airtime VTU And Data</h2>
                       <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem] font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/airtel.png" alt="mtn logo" class="md:w-[13rem] w-[10rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
-                    <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
+                    <h2 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h2>
                     <PrimaryBtn @click="procced" class="w-full text-center rounded-[2rem]  font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <div class="shadows rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/9mobile.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
-                    <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
+                    <h2 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h2>
                       <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold"><router-link  to="/register"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="flex flex-col justify-center items-center">
                 <div class="shadows  rounded-[2rem] overflow-hidden w-[7rem] md:w-[10rem]"><img src="@/assets/image/glo.png" alt="mtn logo" class="w-[13rem]"></div>
                 <div class="e w-fit mt-5 py-2 px-3">
-                    <h1 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h1>
+                    <h2 class="font-bold text-primary text-center  text-[1rem]">MTN Airtime VTU And Data</h2>
                       <PrimaryBtn @click="procced" class="w-full text-center  rounded-[2rem] font-semibold"> <router-link  to="/login"> Buy now</router-link></PrimaryBtn>
                 </div>
             </div>
@@ -134,28 +134,28 @@
     </section>
     <section id="how" class="bg-gray-200">
         <div class="container  mx-auto my-20 py-20">
-            <h1 class="text-3xl text-center text-primary">How it is works</h1>
+            <h2 class="text-3xl text-center text-primary">How it is works</h2>
             <h2 class="text-xl py-6 text-center text-primary">Start purchasing cards now. It’s easy, secure and takes only a few minutes!</h2>
 
             <div class="w-full grid grid-cols-1 sm:px-5 px-11 sm:grid-cols-3 gap-6">
                 <div  v-motion-slide-visible-left class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
                     
                     <div><img class="bg w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/card1.svg" alt="Select Card type & number of pins"></div>
-                    <h1 class="text-3xl text-secondary font-mermaid">1</h1>
+                    <h2 class="text-3xl text-secondary font-mermaid">1</h2>
                     <p class=" text-xl text-center font-semibold ">Select Card type <br> & number of pins</p>
                     <p class=" text-[15px] text-center">Start by selecting the card you want to purchase from the above list, then select the number of pins in next page </p>
                 </div>
                 <div v-motion-pop-visible class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
                     
                     <div ><img class="bg-  w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/payment.svg" alt="Make Payment"></div>
-                    <h1 class="text-3xl text-secondary font-mermaid">2</h1>
+                    <h2 class="text-3xl text-secondary font-mermaid">2</h2>
                     <p class=" text-xl text-center font-semibold ">Make Payment <br> </p>
                     <p class=" text-[15px]  text-center">We partnered with Paystack to make your payment process fast and secure.   </p>
                 </div>
                 <div  v-motion-slide-visible-once-bottom class="c shadow-lg rounded-2xl py-4 px-4 flex  gap-4 justify-center items-center flex-col ">
                     
                     <div><img class="bg-  w-20 bg-primary py-4 px-4 rounded-full " src="../assets/image/token.svg" alt=""></div>
-                    <h1 class="text-3xl text-secondary font-mermaid">3</h1>
+                    <h2 class="text-3xl text-secondary font-mermaid">3</h2>
                     <p class=" text-xl text-center font-semibold ">Receive Tokens Instantly <br> </p>
                     <p class=" text-[15px]  text-center">Immediately after your payment, if successful,you will be direct to another page automatically to copy you token.   </p>
                 </div>
@@ -164,7 +164,7 @@
     </section>
     <section class="container hidden my-20 mx-auto py-5 ">
      <div class="flex flex-col gap-5 justify-center images h-96 items-center">
-     <h1 class="text-3xl justify-center font-semibold text-white  ">ABOUT US</h1>
+     <h2 class="text-3xl justify-center font-semibold text-white  ">ABOUT US</h2>
      <p class="md:w-2/3 w-full px-2  font-normal text-center text-white"> We are the best source. With a platform that is trusted by Paystack , you can shop online with complete confidence and no worries. Our pleasure is in seeing you happy. We take great pride in providing top-notch service, and we have no doubt that after utilizing our service for the first time, you'll make our website your homepage. </p>
      </div>
     </section>
@@ -441,8 +441,8 @@
                     {
                         id: 2,
                         image: hero2,
-                         heroSection:'Buy & Sell  Airtime, Data, &',
-                        heroParagraph:'We are a major player in distribution & selling affordable and discounted cheapest data ',
+                         heroSection:'Buy & Sell  Airtime, Data Bundle ',
+                        heroParagraph:'We are a major player in distribution & selling affordable and discounted cheapest data bundle for all Network e.g MTN, GLO, AIRTEL, 9Mobile ',
                        
                     },
                     

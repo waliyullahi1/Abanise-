@@ -5,7 +5,7 @@
 
       <div class="md:max-w-1/2   lg:max-w-1/2 sm:max-w-md md:px-20 px-2  sm:w-full">
        <div class="flex justify-center"> <logo  class="ml-3 pt-5" ></logo></div>
-         <h1 class="font-semibold text-xl font-sans  text-center ">Sign in to your account to continue.</h1>
+         <h1 class="font-semibold text-xl font-sans  text-center ">Login in to your account to continue.</h1>
        <p  class=" message pl-5 text-xl text-red-700 pb-9 uppercase text-center text-">{{erromessage}}</p>
       <form class=" "  @submit.prevent="submit" action="">
         
