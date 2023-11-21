@@ -225,100 +225,100 @@
       }
     });
 
-    useHead({
+    // useHead({
      
-      // Can be static or computed
-      title: 'www.abaniseedu.com - Buy WAEC, NECO, JAMB, NABTEB scratch cards, PINs, TOKEN and result checker online, Buy all exam scratch cards',
-      meta: [
-        {
-          name: `description`,
-          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
-        },
+    //   // Can be static or computed
+    //   title: 'www.abaniseedu.com - Buy WAEC, NECO, JAMB, NABTEB scratch cards, PINs, TOKEN and result checker online, Buy all exam scratch cards',
+    //   meta: [
+    //     {
+    //       name: `description`,
+    //       content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+    //     },
 
-        {
-          name: `image`,
-          content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
-        },
+    //     {
+    //       name: `image`,
+    //       content: 'Buy WAEC scratch cards online at WWW.abaniseedu.COM. Buy WAEC Scratch cards, NECO Scratch cards and NABTEB cards online at the best price in Nigeria. Order now at WWW.abaniseedu.COM and get it delivered to you instantly using your prefered method.',
+    //     },
 
-        {
-          name: 'subject',
-          content: 'Your subject here',
-        },
-        {
-          name: 'owner',
-          content: 'ABANISE EDUCATIONAL INSTITUTE || ICT',
-        },
-        {
-          name: 'location',
-          content: 'Nigeria',
-        },
-        {
-          name: 'local-government',
-          content: 'iwo',
-        },
+    //     {
+    //       name: 'subject',
+    //       content: 'Your subject here',
+    //     },
+    //     {
+    //       name: 'owner',
+    //       content: 'ABANISE EDUCATIONAL INSTITUTE || ICT',
+    //     },
+    //     {
+    //       name: 'location',
+    //       content: 'Nigeria',
+    //     },
+    //     {
+    //       name: 'local-government',
+    //       content: 'iwo',
+    //     },
 
-        {
-          name: 'state',
-          content: 'osun',
-        },
+    //     {
+    //       name: 'state',
+    //       content: 'osun',
+    //     },
 
-        {
-          name: 'summary',
-          content: 'ABANISE EDUCATIONAL INSTITUTE || ICT',
-        },
-        {
-          name: 'abstract',
-          content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-        },
-        {
-          name: 'keywords',
-          content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-        },
+    //     {
+    //       name: 'summary',
+    //       content: 'ABANISE EDUCATIONAL INSTITUTE || ICT',
+    //     },
+    //     {
+    //       name: 'abstract',
+    //       content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+    //     },
+    //     {
+    //       name: 'keywords',
+    //       content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+    //     },
 
-        {
-          name: 'document-classification',
-          content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-        },
-        {
-          name: 'url',
-          content: 'https://abaniseedu.com',
-        },
-        {
-          name: 'subtitle',
-          content: 'https://abaniseedu.com',
-        },
-        {
-          name: 'category',
-          content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-        },
-        {
-          name: 'application-name',
-          content: 'Where to Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
-        },
-        ],
+    //     {
+    //       name: 'document-classification',
+    //       content: 'Buy WAEC Scratch Cards Online, Buy NECO Scratch Cards Online, Buy NABTEB Scratch Cards Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+    //     },
+    //     {
+    //       name: 'url',
+    //       content: 'https://abaniseedu.com',
+    //     },
+    //     {
+    //       name: 'subtitle',
+    //       content: 'https://abaniseedu.com',
+    //     },
+    //     {
+    //       name: 'category',
+    //       content: 'Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+    //     },
+    //     {
+    //       name: 'application-name',
+    //       content: 'Where to Buy WAEC Result Checker Online, Buy NECO Result Checker Online, Buy NABTEB Result Checker Online, Buy WAEC GCE Registration Card Online, Buy NECO Registration Card Online, Buy NABTEB Registration Card Online, WAEC Result Checker, NECO Result Checker, NABTEB Result Checker, WAEC Result Verification Pins',
+    //     },
+    //     ],
 
-        link: [
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
-          href: '@/src/assets/abanisee.png',
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '@/src/assets/abanisee.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          sizes: '180x180',
-          href: '/path/to/apple-touch-icon.png',
-        },
-        // Add more images or logos as needed
-      ],
+    //     link: [
+    //     {
+    //       rel: 'icon',
+    //       type: 'image/png',
+    //       sizes: '32x32',
+    //       href: '@/src/assets/abanisee.png',
+    //     },
+    //     {
+    //       rel: 'icon',
+    //       type: 'image/png',
+    //       sizes: '16x16',
+    //       href: '@/src/assets/abanisee.png',
+    //     },
+    //     {
+    //       rel: 'apple-touch-icon',
+    //       sizes: '180x180',
+    //       href: '/path/to/apple-touch-icon.png',
+    //     },
+    //     // Add more images or logos as needed
+    //   ],
      
-    })
+    // })
     return { headerChange, isJsFinishedRun};
   },
          components: {
