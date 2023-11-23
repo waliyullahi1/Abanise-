@@ -13,27 +13,18 @@ const routes = [
     path: "/",
     name: "index.vue",
     component: () => import("../views/index.vue"),
-    title: 'Home Page',
-      metaTags: [
-        {
-          name: 'description',
-          content: 'The home page of our example app.'
-        },
-        {
-          property: 'og:description',
-          content: 'The home page of our example app.'
-        }
-      ]
+    
+     
   },
   {
     path: "/aboutus",
-    name: "aboutus",
-    component: () => import("../views/aboutus.vue"),
+    name: "Aboutus",
+    component: () => import("../views/AboutUs.vue"),
    
   },
   {
     path: "/quiz",
-    name: "Aboutus",
+    name: "Quiz",
     component: () => import("../views/qiuz.vue"),
    
   },
@@ -41,7 +32,7 @@ const routes = [
     path: "/card/:id/:card/:condition",
     props: true,
     name: " Card",
-    component: () => import("../views/waec.vue"),
+    component: () => import("../views/CardsPage.vue"),
    
   
     
@@ -157,7 +148,7 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-
+router.replace(router.currentRoute.value.fullPath)
 
 
 async function checkAuth(to, from, next) {

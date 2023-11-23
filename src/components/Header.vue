@@ -14,7 +14,7 @@
            <logo1  class="ml-3" ></logo1>
           </div>
         <div class=" text-white h-fit">
-           <p class=" leading-[20px] sm:text-4xl text-xl  font-medium">Abanise_edu</p>
+           <p class=" leading-[20px] sm:text-xl text-[15px]   font-medium">Abanise_edu</p>
          <p class=" leading-[20px] sm:text-[16px] text-[13px] font-medium"> consultant</p>
         </div>
      </router-link>
