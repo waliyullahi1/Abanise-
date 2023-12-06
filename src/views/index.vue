@@ -162,6 +162,9 @@
             </div>
         </div>
     </section>
+     <div class="w-full flex justify-center items-center">
+        <button  class= "bg-primary justify-center flex hover:bg-secondary ease-in-out duration-700 text-white rounded-xl text-xl py-2 px-4 "> Click here to collect your year gift</button>
+    </div>
     <section class="container hidden my-20 mx-auto py-5 ">
      <div class="flex flex-col gap-5 justify-center images h-96 items-center">
      <h2 class="text-3xl justify-center font-semibold text-white  ">ABOUT US</h2>
